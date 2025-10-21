@@ -220,7 +220,7 @@ const HomeContent = ({ setActiveTab }) => {
             <span className="font-bold">full-stack software developer</span>{" "}
             with a strong foundation in building dynamic, user-focused
             applications. Currently advancing my expertise through the{" "}
-            <span className="font-semibold">AiCE program</span> ....
+            <span className="font-semibold">AiCE program</span> ...
             <button
               onClick={handleAboutMeClick}
               className="inline-block bg-blue-600 text-white px-3 py-1.5 rounded-lg hover:bg-blue-700 text-xs sm:text-sm md:hidden transition-colors duration-200 mx-2"
