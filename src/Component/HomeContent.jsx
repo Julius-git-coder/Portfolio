@@ -87,7 +87,7 @@ const HomeContent = ({ setActiveTab }) => {
   // Function to handle CV download
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/CV11.pdf";
+    link.href = "/CV111.pdf";
     link.download = "Julius_Dagana_CV.pdf";
     document.body.appendChild(link);
     link.click();
@@ -262,7 +262,8 @@ const HomeContent = ({ setActiveTab }) => {
             </div>
             <div className="flex-1 md:pl-6 lg:pl-8">
               <h2 className="text-xl underline sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-[7rem] sm:mb-6 hidden md:block">
-                 One Year<span className="absolute bottom-[-7rem] ">+</span> <span className="ml-5"></span>of Experience In Programming
+                One Year<span className="absolute bottom-[-7rem] ">+</span>{" "}
+                <span className="ml-5"></span>of Experience In Programming
               </h2>
               <p className="text-gray-600 md:font-bold mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                 My latest project, HydroFlow, is a water tracking app designed
@@ -279,7 +280,6 @@ const HomeContent = ({ setActiveTab }) => {
                   { name: "Firebase", percent: "90%", color: "blue-600" },
                   { name: "CSS", percent: "85%", color: "blue-600" },
                   { name: "JavaScript", percent: "80%", color: "blue-600" },
-                
                 ].map((skill, index) => (
                   <div key={index}>
                     <div className="flex justify-between items-center">
@@ -290,7 +290,6 @@ const HomeContent = ({ setActiveTab }) => {
                         {skill.percent}
                       </span> */}
                     </div>
-               
                   </div>
                 ))}
               </div>
@@ -323,7 +322,6 @@ const HomeContent = ({ setActiveTab }) => {
                   { name: "Firebase", percent: "90%", color: "blue-600" },
                   { name: "CSS", percent: "85%", color: "blue-600" },
                   { name: "JavaScript", percent: "80%", color: "blue-600" },
-            
                 ].map((skill, index) => (
                   <div key={index}>
                     <div className="flex justify-between items-center">
@@ -334,7 +332,6 @@ const HomeContent = ({ setActiveTab }) => {
                         {skill.percent}
                       </span> */}
                     </div>
-              
                   </div>
                 ))}
               </div>

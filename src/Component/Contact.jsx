@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = ({ setActiveTab }) => {
-    const handleDownloadCV = () => {
-      const link = document.createElement("a");
-      link.href = "/CV11.pdf";
-      link.download = "Julius_Dagana_CV.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    };
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/CV111.pdf";
+    link.download = "Julius_Dagana_CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   const contactInfo = [
     {
       icon: (
