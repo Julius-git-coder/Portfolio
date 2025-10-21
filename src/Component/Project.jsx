@@ -263,26 +263,26 @@ const Project = () => {
       image: "/EassyP.png",
       link: "https://easyprofile-app.netlify.app",
     },
-    {
-      title: "TaskMaster",
-      description:
-        "A task management tool to organize and prioritize your daily tasks.",
-      image: "/AquqTrack.png",
-      link: "https://taskmaster-app.netlify.app",
-    },
-    {
-      title: "ShopEasy",
-      description:
-        "An e-commerce platform for seamless online shopping experiences.",
-      image: "/AquqTrack.png",
-      link: "https://shopeasy-app.netlify.app",
-    },
-    {
-      title: "FitTrack",
-      description: "A fitness tracking app to monitor workouts and progress.",
-      image: "/AquqTrack.png",
-      link: "https://fittrack-app.netlify.app",
-    },
+    // {
+    //   title: "TaskMaster",
+    //   description:
+    //     "A task management tool to organize and prioritize your daily tasks.",
+    //   image: "/AquqTrack.png",
+    //   link: "https://taskmaster-app.netlify.app",
+    // },
+    // {
+    //   title: "ShopEasy",
+    //   description:
+    //     "An e-commerce platform for seamless online shopping experiences.",
+    //   image: "/AquqTrack.png",
+    //   link: "https://shopeasy-app.netlify.app",
+    // },
+    // {
+    //   title: "FitTrack",
+    //   description: "A fitness tracking app to monitor workouts and progress.",
+    //   image: "/AquqTrack.png",
+    //   link: "https://fittrack-app.netlify.app",
+    // },
   ];
 
   return (
