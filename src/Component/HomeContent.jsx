@@ -87,8 +87,8 @@ const HomeContent = ({ setActiveTab }) => {
   // Function to handle CV download
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/CV111.pdf";
-    link.download = "Julius_Dagana_CV.pdf";
+    link.href = "/Resume.pdf";
+    link.download = "Julius_Dagana_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -127,12 +127,12 @@ const HomeContent = ({ setActiveTab }) => {
               <button
                 onClick={handleDownloadCV}
                 className="relative bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center text-sm sm:text-base font-medium transition-all duration-200 hover:from-blue-600 hover:via-blue-700 hover:to-blue-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                aria-label="Download CV"
+                aria-label="Download Resume"
                 type="button"
                 disabled={false} // Set to true conditionally if needed
               >
                 <Download className="w-4 h-4 mr-2 shrink-0" />
-                <span>Download CV</span>
+                <span>Download Resume</span>
               </button>
               <button
                 onClick={handleContactClick}
@@ -647,7 +647,7 @@ const HomeContent = ({ setActiveTab }) => {
               onClick={handleDownloadCV}
               className="bg-transparent border-2 md:mb-[6rem] border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 min-w-[200px]"
             >
-              Download CV
+              Download Resume
             </button>
           </div>
         </div>

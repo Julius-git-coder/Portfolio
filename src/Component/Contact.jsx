@@ -4,8 +4,8 @@ import { FaWhatsapp } from "react-icons/fa";
 const Contact = ({ setActiveTab }) => {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/CV111.pdf";
-    link.download = "Julius_Dagana_CV.pdf";
+    link.href = "/Resume.pdf";
+    link.download = "Julius_Dagana_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
