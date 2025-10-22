@@ -21,8 +21,8 @@ const AboutMe = () => {
   // Function to handle CV download
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/CV111.pdf";
-    link.download = "Julius_Dagana_CV.pdf";
+    link.href = "/CV1111.pdf";
+    link.download = "Julius_Dagana_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
