@@ -64,16 +64,15 @@ const Project = () => {
       description:
         "A water tracking app to help users stay hydrated and meet daily goals.",
       image: "/AquqTrack.png",
-      link: "https://hydroflow-app.netlify.app",
+      link: "https://hydro-flow-y4rx.vercel.app/",
     },
     {
       title: "EasyProfile",
       description:
         "A profile management app for creating and customizing user profiles.",
       image: "/EassyP.png",
-      link: "https://easyprofile-app.netlify.app",
+      link: "https://easy-profile-ms2l.vercel.app/",
     },
-
   ];
 
   return (
