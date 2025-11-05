@@ -213,14 +213,23 @@ const HomeContent = ({ setActiveTab }) => {
         `}
       </style>
       {/* Partner Logos */}
+      
       <section className="bg-white py-6 sm:py-10 lg:py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <p className="text-center mb-4 sm:mb-6 text-sm sm:text-base md:text-lg lg:text-xl">
             I am a{" "}
-            <span className="font-bold">full-stack software developer</span>{" "}
-            with a strong foundation in building dynamic, user-focused
-            applications. Currently advancing my expertise through the{" "}
-            <span className="font-semibold">AiCE program</span> ...
+            <span className="font-bold pr-2">full-stack software developer</span>
+             with a strong foundation in building dynamic, user-focused
+            applications. I have successfully completed the{" "}
+            <span className="font-semibold">
+              A<span className="text-blue-600 font-bold">I</span>CE program
+            </span>
+            , a professional training focused on{" "}
+            <span className="font-bold">
+              Artificial Intelligence and modern software engineering
+            </span>
+            . This program strengthened my ability to build intelligent,
+            scalable applications.
             <button
               onClick={handleAboutMeClick}
               className="inline-block bg-blue-600 text-white px-3 py-1.5 rounded-lg hover:bg-blue-700 text-xs sm:text-sm md:hidden transition-colors duration-200 mx-2"
@@ -228,19 +237,17 @@ const HomeContent = ({ setActiveTab }) => {
               View More
             </button>
             <span className="hidden md:inline">
-              , I am deepening my skills across modern web technologies,
-              frameworks, and best practices. Beyond coding, I bring discipline
-              and focus from my passion for{" "}
-              <span className="font-bold">fitness</span>, <br />
-              applying the same commitment to problem-solving, collaboration,
-              and continuous improvement in
-              <br /> software development. My goal is to create innovative and
-              scalable solutions that deliver
-              <br /> real value to users and businesses alike.
+              . My journey in software development is fueled by discipline and
+              consistency, inspired by my passion for{" "}
+              <span className="font-bold">fitness</span>. I apply the same
+              mindset to problem-solving, teamwork, and continuous learning. My
+              goal is to build innovative, AI-enhanced and scalable solutions
+              that create meaningful value for users and businesses.
             </span>
           </p>
         </div>
       </section>
+
       {/* About Section */}
       <section className="bg-gray-50 py-8 sm:py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -262,7 +269,7 @@ const HomeContent = ({ setActiveTab }) => {
             </div>
             <div className="flex-1 md:pl-6 lg:pl-8">
               <h2 className="text-xl underline sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-[7rem] sm:mb-6 hidden md:block">
-                One Year<span className="absolute bottom-[-7rem] ">+</span>{" "}
+                One Year<span className="absolute my-[-1rem]">+</span>{" "}
                 <span className="ml-5"></span>of Experience In Programming
               </h2>
               <p className="text-gray-600 md:font-bold mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
