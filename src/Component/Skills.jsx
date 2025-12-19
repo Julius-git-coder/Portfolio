@@ -137,18 +137,30 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
   ];
 
   // Skill categories
-  const skillCategories = {
-    Frontend: [
-      "React",
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "Tailwind CSS",
-      "Material-UI",
-    ],
-    Backend: ["Node.js", "Express.js", "MongoDB", "Firebase"],
-    "Tools & Deployment": ["Git", "Netlify", "Cloudinary"],
-  };
+const skillCategories = {
+  Frontend: [
+    "React",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "Tailwind CSS",
+    "Material-UI",
+  ],
+  Backend: [
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Firebase",
+    "Python", // ✅ add
+  ],
+  "Tools & Deployment": [
+    "Git",
+    "Netlify",
+    "Cloudinary",
+    "Render", // ✅ add
+  ],
+};
+
 
   const getLevelColor = (level) => {
     switch (level) {
