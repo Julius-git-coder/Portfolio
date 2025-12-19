@@ -49,7 +49,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
     {
       name: "Node.js",
       icon: "/Node.png",
-      level: "Intermediate",
+      level: "Expert",
       description:
         "Server-side JavaScript runtime for building scalable applications",
       experience: "0-1 year",
@@ -58,15 +58,34 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
     {
       name: "Express.js",
       icon: "/Express.png",
-      level: "Intermediate",
+      level: "Expert",
       description: "Fast, unopinionated web framework for Node.js applications",
       experience: "0-1 year",
       projects: ["API Development", "Backend Services"],
     },
     {
+      name: "Python",
+      icon: "/Python.png",
+      level: "Intermediate",
+      description:
+        "General-purpose programming language for backend, scripting, and data processing",
+      experience: "0-1 year",
+      projects: ["Backend Scripts", "APIs", "Automation"],
+    },
+    {
+      name: "Render",
+      icon: "/Render.png",
+      level: "Intermediate",
+      description:
+        "Cloud platform for deploying and scaling web services and APIs",
+      experience: "0-1 year",
+      projects: ["API Deployment", "Backend Services"],
+    },
+
+    {
       name: "MongoDB",
       icon: "/Mogo.png",
-      level: "Intermediate",
+      level: "Expert",
       description:
         "NoSQL database for flexible, scalable data storage solutions",
       experience: "0-1 year",
