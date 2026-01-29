@@ -203,8 +203,7 @@ const HomeContent = ({ setActiveTab }) => {
                     style={{
                       top: "50%",
                       left: "50%",
-                      transformOrigin: "center center",
-                      "--angle": `${angle}deg`,
+                      animationDelay: `${(index / techIcons.length) * -20}s`,
                     }}
                   >
                     <img
@@ -222,8 +221,8 @@ const HomeContent = ({ setActiveTab }) => {
       <style>
         {`
           .floating-icon {
-            transform: translate(-50%, -50%) rotate(var(--angle)) translate(8rem) rotate(calc(-1 * var(--angle)));
-            animation: orbit 15s linear infinite;
+            position: absolute;
+            animation: orbit 20s linear infinite;
           }
 
           @keyframes orbit {
@@ -233,8 +232,7 @@ const HomeContent = ({ setActiveTab }) => {
 
           @media (min-width: 640px) {
             .floating-icon {
-              transform: translate(-50%, -50%) rotate(var(--angle)) translate(11rem) rotate(calc(-1 * var(--angle)));
-              animation: orbit-sm 20s linear infinite;
+              animation-name: orbit-sm;
             }
             @keyframes orbit-sm {
               from { transform: translate(-50%, -50%) rotate(0deg) translate(11rem) rotate(0deg); }
@@ -244,8 +242,7 @@ const HomeContent = ({ setActiveTab }) => {
 
           @media (min-width: 1024px) {
             .floating-icon {
-              transform: translate(-50%, -50%) rotate(var(--angle)) translate(14rem) rotate(calc(-1 * var(--angle)));
-              animation: orbit-lg 25s linear infinite;
+              animation-name: orbit-lg;
             }
             @keyframes orbit-lg {
               from { transform: translate(-50%, -50%) rotate(0deg) translate(14rem) rotate(0deg); }
