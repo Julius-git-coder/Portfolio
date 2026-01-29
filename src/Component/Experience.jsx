@@ -16,16 +16,16 @@ const Experience = () => {
       company: "Jnard IT Consultancy, Accra, Ghana",
       description:
         "Built responsive front-end interfaces with React and Tailwind CSS, focusing on user experience and performance optimization. Contributed to backend APIs using Node.js and deployed projects on Netlify.",
-      icon: <img src="/code.png"/>,
+      icon: <img src="/code.png" />,
     },
-    // {
-    //   year: "2022 - 2023",
-    //   title: "Freelance Web Developer",
-    //   company: "Self-Employed, Accra, Ghana",
-    //   description:
-    //     "Designed and developed custom websites for small businesses, utilizing HTML, CSS, JavaScript, and Firebase. Provided ongoing maintenance and implemented SEO best practices to improve client visibility.",
-    //   icon: "🌐",
-    // },
+    {
+      year: "2024",
+      title: "Ewash - Mobile Service Booking Platform",
+      company: "Personal Project",
+      description:
+        "A mobile application designed for shop owners to easily showcase their services online. Ewash allows users to post their shops, make services available on the internet, and let customers book appointments seamlessly. This helps reduce time wastage, stress, long queues, and other operational challenges. Technologies Used: TypeScript, HTML, CSS, MongoDB, Express, Tailwind CSS, Cloudinary, React Native, Expo Go",
+      icon: <img src="/Ewash.png" className="w-full h-full object-cover rounded-lg" />,
+    },
   ];
 
   return (

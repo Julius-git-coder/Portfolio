@@ -286,114 +286,236 @@ const HomeContent = ({ setActiveTab }) => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="bg-gray-50 py-8 sm:py-12 lg:py-16">
+      {/* Personal Projects Section - Redesigned */}
+      <section className="bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50 py-16 sm:py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center mb-12 lg:mb-16">
-            <div className="flex-1 mb-6 md:mb-0">
-              <h2 className="text-xl  sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-[5rem] text-gray-900 sm:mb-[4rem] md:hidden">
-                Almost A Year+ Programming
-                <br />
-                Experienced
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-block">
+              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block">Portfolio</span>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+                Personal <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
               </h2>
-              <h1 className="text-center pr-[4rem] font-bold">HydroFlow App</h1>
-              <div className="w-56 h-56 mt:[5rem] sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-white rounded-2xl flex items-center justify-center shadow-lg">
-                <img
-                  src="/AquqTrack.png"
-                  alt="HydroFlow Project"
-                  className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 object-cover rounded-xl"
-                />
-              </div>
+              <div className="h-1 w-24 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
             </div>
-            <div className="flex-1 md:pl-6 lg:pl-8">
-              <h2 className="text-xl underline sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-[7rem] sm:mb-6 hidden md:block">
-                One Year<span className="absolute my-[-1rem]">+</span>{" "}
-                <span className="ml-5"></span>of Experience In Programming
-              </h2>
-              <p className="text-gray-600 md:font-bold mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                My latest project, HydroFlow, is a water tracking app designed
-                to help users stay healthy, hydrated, and consistent with their
-                daily goals. I built it using modern tools and technologies such
-                as ⬇️
-              </p>
-              <div className="space-y-3 mb-4 sm:mb-6">
-                {[
-                  { name: "Tailwindcss", percent: "90%", color: "blue-600" },
-                  { name: "HTML", percent: "90%", color: "blue-600" },
-                  { name: "MUI", percent: "50%", color: "blue-400" },
-                  { name: "React", percent: "98%", color: "blue-600" },
-                  { name: "Firebase", percent: "90%", color: "blue-600" },
-                  { name: "CSS", percent: "85%", color: "blue-600" },
-                  { name: "JavaScript", percent: "80%", color: "blue-600" },
-                ].map((skill, index) => (
-                  <div key={index}>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-700 text-xs sm:text-sm">
-                        {skill.name}
-                      </span>
-                      {/* <span className="text-blue-600 text-xs sm:text-sm">
-                        {skill.percent}
-                      </span> */}
+            <p className="text-gray-600 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
+              Showcasing my expertise in full-stack development through real-world applications
+            </p>
+          </div>
+
+          {/* Projects Grid */}
+          <div className="space-y-20">
+            {/* HydroFlow Project */}
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+              <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div className="grid md:grid-cols-2 gap-8 p-8 lg:p-12">
+                  {/* Project Image */}
+                  <div className="relative order-2 md:order-1">
+                    <div className="absolute -inset-4 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-2xl blur-2xl"></div>
+                    <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 flex items-center justify-center aspect-square">
+                      <img
+                        src="/AquqTrack.png"
+                        alt="HydroFlow Project"
+                        className="w-full h-full object-contain rounded-xl transform group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white px-6 py-3 rounded-full font-bold shadow-lg">
+                      Web App
                     </div>
                   </div>
-                ))}
+
+                  {/* Project Details */}
+                  <div className="flex flex-col justify-center order-1 md:order-2">
+                    <div className="inline-flex items-center gap-2 text-blue-600 font-semibold mb-4">
+                      <div className="w-12 h-1 bg-blue-600 rounded-full"></div>
+                      <span className="text-sm uppercase tracking-wider">Personal Project</span>
+                    </div>
+                    <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                      HydroFlow
+                    </h3>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                      A water tracking app designed to help users stay healthy, hydrated, and consistent with their
+                      daily goals. Built with modern tools for optimal performance and user experience.
+                    </p>
+
+                    {/* Tech Stack */}
+                    <div className="mb-6">
+                      <p className="text-sm font-semibold text-gray-700 mb-3">Technologies Used:</p>
+                      <div className="flex flex-wrap gap-2">
+                        {["React", "Tailwind CSS", "Firebase", "JavaScript", "HTML", "CSS", "MUI"].map((tech) => (
+                          <span key={tech} className="px-4 py-2 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 rounded-full text-sm font-medium border border-blue-200 hover:border-blue-400 transition-colors">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex flex-wrap gap-4">
+                      <button
+                        onClick={handleViewAllClick}
+                        className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+                      >
+                        View Details
+                      </button>
+                      <button
+                        onClick={handleContactClick}
+                        className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300"
+                      >
+                        Get In Touch
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* EasyProfile Project */}
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+              <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div className="grid md:grid-cols-2 gap-8 p-8 lg:p-12">
+                  {/* Project Details */}
+                  <div className="flex flex-col justify-center">
+                    <div className="inline-flex items-center gap-2 text-purple-600 font-semibold mb-4">
+                      <div className="w-12 h-1 bg-purple-600 rounded-full"></div>
+                      <span className="text-sm uppercase tracking-wider">Personal Project</span>
+                    </div>
+                    <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                      EasyProfile
+                    </h3>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                      A profile management application designed to help users create, customize, and manage
+                      their personal information with ease using modern web technologies.
+                    </p>
+
+                    {/* Tech Stack */}
+                    <div className="mb-6">
+                      <p className="text-sm font-semibold text-gray-700 mb-3">Technologies Used:</p>
+                      <div className="flex flex-wrap gap-2">
+                        {["React", "Tailwind CSS", "Firebase", "Cloudinary", "JavaScript", "HTML", "CSS"].map((tech) => (
+                          <span key={tech} className="px-4 py-2 bg-gradient-to-r from-purple-50 to-pink-50 text-purple-700 rounded-full text-sm font-medium border border-purple-200 hover:border-purple-400 transition-colors">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex flex-wrap gap-4">
+                      <button
+                        onClick={handleViewAllClick}
+                        className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+                      >
+                        View Details
+                      </button>
+                      <button
+                        onClick={handleContactClick}
+                        className="px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-xl font-semibold hover:bg-purple-50 transition-all duration-300"
+                      >
+                        Get In Touch
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Project Image */}
+                  <div className="relative">
+                    <div className="absolute -inset-4 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-2xl blur-2xl"></div>
+                    <div className="relative bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 flex items-center justify-center aspect-square">
+                      <img
+                        src="/EassyP.png"
+                        alt="EasyProfile Project"
+                        className="w-full h-full object-contain rounded-xl transform group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="absolute -bottom-4 -right-4 bg-purple-600 text-white px-6 py-3 rounded-full font-bold shadow-lg">
+                      Web App
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Ewash Project */}
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+              <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div className="grid md:grid-cols-2 gap-8 p-8 lg:p-12">
+                  {/* Project Image */}
+                  <div className="relative order-2 md:order-1">
+                    <div className="absolute -inset-4 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-2xl blur-2xl"></div>
+                    <div className="relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 flex items-center justify-center aspect-square">
+                      <img
+                        src="/Ewash.png"
+                        alt="Ewash Project"
+                        className="w-full h-full object-contain rounded-xl transform group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="absolute -bottom-4 -right-4 bg-emerald-600 text-white px-6 py-3 rounded-full font-bold shadow-lg">
+                      Mobile App
+                    </div>
+                  </div>
+
+                  {/* Project Details */}
+                  <div className="flex flex-col justify-center order-1 md:order-2">
+                    <div className="inline-flex items-center gap-2 text-emerald-600 font-semibold mb-4">
+                      <div className="w-12 h-1 bg-emerald-600 rounded-full"></div>
+                      <span className="text-sm uppercase tracking-wider">Personal Project</span>
+                    </div>
+                    <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                      Ewash
+                    </h3>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                      A mobile application designed for shop owners to easily showcase their services online.
+                      Ewash allows users to post their shops, make services available, and let customers book
+                      appointments seamlessly, reducing time wastage and operational challenges.
+                    </p>
+
+                    {/* Tech Stack */}
+                    <div className="mb-6">
+                      <p className="text-sm font-semibold text-gray-700 mb-3">Technologies Used:</p>
+                      <div className="flex flex-wrap gap-2">
+                        {["TypeScript", "React Native", "MongoDB", "Express", "Tailwind CSS", "Cloudinary", "Expo Go"].map((tech) => (
+                          <span key={tech} className="px-4 py-2 bg-gradient-to-r from-emerald-50 to-teal-50 text-emerald-700 rounded-full text-sm font-medium border border-emerald-200 hover:border-emerald-400 transition-colors">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex flex-wrap gap-4">
+                      <button
+                        onClick={handleViewAllClick}
+                        className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+                      >
+                        View Details
+                      </button>
+                      <button
+                        onClick={handleContactClick}
+                        className="px-6 py-3 border-2 border-emerald-600 text-emerald-600 rounded-xl font-semibold hover:bg-emerald-50 transition-all duration-300"
+                      >
+                        Get In Touch
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row items-center">
-            <div className="flex-1 mb-6 md:mb-0">
-              <h1 className="font-bold">EasyProfile App</h1>
-              <div className="w-56 h-56 sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-white rounded-2xl flex items-center justify-center shadow-lg">
-                <img
-                  src="/EassyP.png"
-                  alt="EasyProfile Project"
-                  className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 object-cover rounded-xl"
-                />
-              </div>
-            </div>
-            <div className="flex-1 md:pl-6 lg:pl-8">
-              <p className="text-gray-600 md:font-bold mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                My latest project, EasyProfile, is a profile management
-                application designed to help users create, customize, and manage
-                their personal information with ease. I developed it using
-                modern tools and technologies such as ⬇️
-              </p>
-              <div className="space-y-3 mb-4 sm:mb-6">
-                {[
-                  { name: "Tailwindcss", percent: "90%", color: "blue-600" },
-                  { name: "HTML", percent: "90%", color: "blue-600" },
-                  { name: "Cloudinary", percent: "70%", color: "blue-500" },
-                  { name: "React", percent: "98%", color: "blue-600" },
-                  { name: "Firebase", percent: "90%", color: "blue-600" },
-                  { name: "CSS", percent: "85%", color: "blue-600" },
-                  { name: "JavaScript", percent: "80%", color: "blue-600" },
-                ].map((skill, index) => (
-                  <div key={index}>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-700 text-xs sm:text-sm">
-                        {skill.name}
-                      </span>
-                      {/* <span className="text-blue-600 text-xs sm:text-sm">
-                        {skill.percent}
-                      </span> */}
-                    </div>
-                  </div>
-                ))}
-              </div>
 
-              <button
-                onClick={handleContactClick}
-                className="border-2 border-blue-500  px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200"
-              >
-                Get In Touch
-              </button>
-              <button
-                onClick={handleViewAllClick}
-                className="mx-5 bg-white border-2 border-blue-500 text-blue-600 hover:bgwhite px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg hover:text-black text-sm sm:text-base"
-              >
-                View All Projects
-              </button>
-            </div>
+          {/* View All Projects CTA */}
+          <div className="text-center mt-16">
+            <button
+              onClick={handleViewAllClick}
+              className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+            >
+              <span>Explore All Projects</span>
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </button>
           </div>
         </div>
       </section>
