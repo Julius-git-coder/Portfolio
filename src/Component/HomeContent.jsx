@@ -4,7 +4,6 @@ import { Coffee, Download } from "lucide-react";
 const HomeContent = ({ setActiveTab }) => {
   // Array of icons (images and Coffee SVG) and their alt texts for the floating icons
   const techIcons = [
-    { type: "image", src: "/React.png", alt: "React icon" },
     { type: "image", src: "/CSS.png", alt: "CSS icon" },
     { type: "image", src: "/Firebase.png", alt: "Firebase icon" },
     { type: "image", src: "/Html.png", alt: "HTML icon" },
@@ -19,6 +18,8 @@ const HomeContent = ({ setActiveTab }) => {
     { type: "image", src: "/Cloudinary.png", alt: "Cloudinary icon" },
     { type: "image", src: "/Nextjs.png", alt: "Next.js icon" },
     { type: "image", src: "/ReactNative.png", alt: "React Native icon" },
+    { type: "image", src: "/Render.png", alt: "Render icon" },
+    { type: "image", src: "/Expo_Go.png", alt: "Expo Go icon" },
   ];
 
   // Skills data for the enhanced skills section (showing first 8 only)
@@ -82,6 +83,18 @@ const HomeContent = ({ setActiveTab }) => {
       icon: "/ReactNative.png",
       level: "Advanced",
       description: "Cross-platform mobile apps",
+    },
+    {
+      name: "Render",
+      icon: "/Render.png",
+      level: "Advanced",
+      description: "Cloud hosting platform",
+    },
+    {
+      name: "Expo Go",
+      icon: "/Expo_Go.png",
+      level: "Advanced",
+      description: "React Native development tool",
     },
   ];
 
@@ -426,14 +439,14 @@ const HomeContent = ({ setActiveTab }) => {
                       <div
                         key={i}
                         className={`w-2 h-2 rounded-full ${skill.level === "Expert"
-                            ? "bg-green-400"
-                            : skill.level === "Advanced"
-                              ? i < 2
-                                ? "bg-blue-400"
-                                : "bg-gray-200"
-                              : i < 1
-                                ? "bg-yellow-400"
-                                : "bg-gray-200"
+                          ? "bg-green-400"
+                          : skill.level === "Advanced"
+                            ? i < 2
+                              ? "bg-blue-400"
+                              : "bg-gray-200"
+                            : i < 1
+                              ? "bg-yellow-400"
+                              : "bg-gray-200"
                           }`}
                       />
                     ))}
