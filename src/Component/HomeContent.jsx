@@ -20,6 +20,7 @@ const HomeContent = ({ setActiveTab }) => {
     { type: "image", src: "/ReactNative.png", alt: "React Native icon" },
     { type: "image", src: "/Render.png", alt: "Render icon" },
     { type: "image", src: "/Expo_Go.png", alt: "Expo Go icon" },
+    { type: "image", src: "/Typescript Logo.jpeg", alt: "TypeScript icon" },
   ];
 
   // Skills data for the enhanced skills section (showing first 8 only)
@@ -33,7 +34,7 @@ const HomeContent = ({ setActiveTab }) => {
     {
       name: "JavaScript",
       icon: "/Javascript.png",
-      level: "Advanced",
+      level: "Expert",
       description: "Core programming language",
     },
     {
@@ -45,7 +46,7 @@ const HomeContent = ({ setActiveTab }) => {
     {
       name: "CSS",
       icon: "/CSS.png",
-      level: "Advanced",
+      level: "Expert",
       description: "Styling and layouts",
     },
     {
@@ -57,43 +58,49 @@ const HomeContent = ({ setActiveTab }) => {
     {
       name: "Node.js",
       icon: "/Node.png",
-      level: "Intermediate",
+      level: "Expert",
       description: "Server-side JavaScript runtime",
     },
     {
       name: "Express.js",
       icon: "/Express.png",
-      level: "Intermediate",
+      level: "Expert",
       description: "Web application framework",
     },
     {
       name: "MongoDB",
       icon: "/Mogo.png",
-      level: "Intermediate",
+      level: "Expert",
       description: "NoSQL database management",
     },
     {
       name: "Next.js",
       icon: "/Nextjs.png",
-      level: "Advanced",
+      level: "Expert",
       description: "React framework for production",
     },
     {
       name: "React Native",
       icon: "/ReactNative.png",
-      level: "Advanced",
+      level: "Expert",
       description: "Cross-platform mobile apps",
     },
     {
       name: "Render",
       icon: "/Render.png",
-      level: "Advanced",
+      level: "Expert",
       description: "Cloud hosting platform",
+    },
+    {
+      name: "Typescript",
+      icon: "/Typescript Logo.jpeg",
+      level: "Expert",
+      description: "Typed JavaScript development",
     },
     {
       name: "Expo Go",
       icon: "/Expo_Go.png",
-      level: "Advanced",
+      level: "Expert",
       description: "React Native development tool",
     },
   ];
