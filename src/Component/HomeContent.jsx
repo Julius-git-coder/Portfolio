@@ -21,6 +21,7 @@ const HomeContent = ({ setActiveTab }) => {
     { type: "image", src: "/Render.png", alt: "Render icon" },
     { type: "image", src: "/Expo_Go.png", alt: "Expo Go icon" },
     { type: "image", src: "/Typescript Logo.jpeg", alt: "TypeScript icon" },
+    { type: "image", src: "/Python.png", alt: "Python icon" },
   ];
 
   // Skills data for the enhanced skills section (showing first 8 only)
@@ -102,6 +103,12 @@ const HomeContent = ({ setActiveTab }) => {
       icon: "/Expo_Go.png",
       level: "Expert",
       description: "React Native development tool",
+    },
+    {
+      name: "Python",
+      icon: "/Python.png",
+      level: "Expert",
+      description: "Versatile programming language",
     },
   ];
 
