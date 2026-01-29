@@ -222,33 +222,33 @@ const HomeContent = ({ setActiveTab }) => {
       <style>
         {`
           .floating-icon {
-            transform: translate(-50%, -50%) rotate(var(--angle)) translate(6rem) rotate(calc(-1 * var(--angle)));
+            transform: translate(-50%, -50%) rotate(var(--angle)) translate(8rem) rotate(calc(-1 * var(--angle)));
             animation: float ease-in-out infinite;
             animation-delay: calc(var(--angle) * 0.01s);
           }
 
           @keyframes float {
-            0%, 100% { transform: translate(-50%, -50%) rotate(var(--angle)) translate(6rem) rotate(calc(-1 * var(--angle))) translateY(0px); }
-            50% { transform: translate(-50%, -50%) rotate(var(--angle)) translate(6rem) rotate(calc(-1 * var(--angle))) translateY(-8px); }
+            0%, 100% { transform: translate(-50%, -50%) rotate(var(--angle)) translate(8rem) rotate(calc(-1 * var(--angle))) translateY(0px); }
+            50% { transform: translate(-50%, -50%) rotate(var(--angle)) translate(8rem) rotate(calc(-1 * var(--angle))) translateY(-8px); }
           }
 
           @media (min-width: 640px) {
             .floating-icon {
-              transform: translate(-50%, -50%) rotate(var(--angle)) translate(8rem) rotate(calc(-1 * var(--angle)));
+              transform: translate(-50%, -50%) rotate(var(--angle)) translate(11rem) rotate(calc(-1 * var(--angle)));
             }
             @keyframes float {
-              0%, 100% { transform: translate(-50%, -50%) rotate(var(--angle)) translate(8rem) rotate(calc(-1 * var(--angle))) translateY(0px); }
-              50% { transform: translate(-50%, -50%) rotate(var(--angle)) translate(8rem) rotate(calc(-1 * var(--angle))) translateY(-10px); }
+              0%, 100% { transform: translate(-50%, -50%) rotate(var(--angle)) translate(11rem) rotate(calc(-1 * var(--angle))) translateY(0px); }
+              50% { transform: translate(-50%, -50%) rotate(var(--angle)) translate(11rem) rotate(calc(-1 * var(--angle))) translateY(-10px); }
             }
           }
 
           @media (min-width: 1024px) {
             .floating-icon {
-              transform: translate(-50%, -50%) rotate(var(--angle)) translate(10rem) rotate(calc(-1 * var(--angle)));
+              transform: translate(-50%, -50%) rotate(var(--angle)) translate(14rem) rotate(calc(-1 * var(--angle)));
             }
             @keyframes float {
-              0%, 100% { transform: translate(-50%, -50%) rotate(var(--angle)) translate(10rem) rotate(calc(-1 * var(--angle))) translateY(0px); }
-              50% { transform: translate(-50%, -50%) rotate(var(--angle)) translate(10rem) rotate(calc(-1 * var(--angle))) translateY(-12px); }
+              0%, 100% { transform: translate(-50%, -50%) rotate(var(--angle)) translate(14rem) rotate(calc(-1 * var(--angle))) translateY(0px); }
+              50% { transform: translate(-50%, -50%) rotate(var(--angle)) translate(14rem) rotate(calc(-1 * var(--angle))) translateY(-12px); }
             }
           }
         `}
