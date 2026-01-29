@@ -1,5 +1,5 @@
 import React from "react";
-import { Coffee, Download } from "lucide-react";
+import { Coffee, Download, Users, Rocket, Code2, Trophy, BookOpen, Briefcase, GraduationCap, Milestone } from "lucide-react";
 
 const HomeContent = ({ setActiveTab }) => {
   // Array of icons (images and Coffee SVG) and their alt texts for the floating icons
@@ -519,106 +519,135 @@ const HomeContent = ({ setActiveTab }) => {
           </div>
         </div>
       </section>
-      {/* Enhanced Skills Section */}
-      <section className="bg-white py-8 sm:py-12 lg:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600 mb-4 sm:mb-6">
-              Skills
-              <span className=" text-black px-3">Areas</span>
-            </h2>
-            <p className="text-gray-600  md:font-bold mb-6 leading-relaxed text-sm sm:text-base max-w-2xl mx-auto">
+      {/* Enhanced Skills Section - Redesigned */}
+      <section className="bg-gradient-to-br from-white via-gray-50 to-white py-16 sm:py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-block">
+              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block text-center">Expertise</span>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 text-center">
+                Skills <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Areas</span>
+              </h2>
+              <div className="h-1 w-24 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+            </div>
+            <p className="text-gray-600 text-lg mt-6 max-w-2xl mx-auto leading-relaxed md:font-bold">
               I bring expertise across the full stack of modern web development
               technologies, from frontend frameworks to backend services and
               deployment platforms.
             </p>
-            <button
-              onClick={handleSkillsClick}
-              className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg hover:bg-blue-700 text-sm sm:text-base transition-colors duration-200"
-            >
-              See All Skills
-            </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+          {/* Skills Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
+                className="group relative"
               >
-                <div className="flex items-center justify-center w-12 h-12 bg-gray-50 rounded-lg mb-4 group-hover:bg-blue-50 transition-colors duration-300">
-                  <img
-                    src={skill.icon}
-                    alt={skill.name}
-                    className="w-8 h-8 object-contain"
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">
-                  {skill.name}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                  {skill.description}
-                </p>
-                <div className="flex justify-between items-center">
-                  <span
-                    className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${getLevelColor(
-                      skill.level
-                    )}`}
-                  >
-                    {skill.level}
-                  </span>
-                  <div className="flex space-x-1">
-                    {[...Array(3)].map((_, i) => (
-                      <div
-                        key={i}
-                        className={`w-2 h-2 rounded-full ${skill.level === "Expert"
-                          ? "bg-green-400"
-                          : skill.level === "Advanced"
-                            ? i < 2
-                              ? "bg-blue-400"
-                              : "bg-gray-200"
-                            : i < 1
-                              ? "bg-yellow-400"
-                              : "bg-gray-200"
-                          }`}
+                {/* Glow Effect on Hover */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
+                {/* Main Card */}
+                <div className="relative h-full bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-14 h-14 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl flex items-center justify-center group-hover:from-blue-100 group-hover:to-purple-100 transition-colors duration-300">
+                      <img
+                        src={skill.icon}
+                        alt={skill.name}
+                        className="w-10 h-10 object-contain transform group-hover:scale-110 transition-transform duration-300"
                       />
-                    ))}
+                    </div>
+                    {/* Expertise Indicator */}
+                    <div className="flex space-x-1">
+                      {[...Array(3)].map((_, i) => (
+                        <div
+                          key={i}
+                          className={`w-1.5 h-1.5 rounded-full ${skill.level === "Expert" ? "bg-green-500" : "bg-blue-500"
+                            }`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300 font-bold">
+                    {skill.name}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-2 md:font-semibold">
+                    {skill.description}
+                  </p>
+
+                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-50">
+                    <span
+                      className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border ${getLevelColor(
+                        skill.level
+                      )}`}
+                    >
+                      {skill.level}
+                    </span>
+                    <button
+                      onClick={handleSkillsClick}
+                      className="text-blue-600 text-xs font-bold hover:underline opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      Learn More
+                    </button>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-8 sm:mt-12">
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 sm:p-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Ready to work together?
-              </h3>
-              <p className="text-gray-600 mb-4 md:font-semibold">
-                Let's build something amazing with these technologies
-              </p>
-              <button
-                onClick={handleSkillsClick}
-                className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-700 font-semibold transition-colors duration-200"
-              >
-                View Full Portfolio
-              </button>
+          {/* Bottom CTA */}
+          <div className="mt-20 text-center">
+            <div className="relative inline-block group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-100 transition duration-500"></div>
+              <div className="relative bg-white border border-blue-100 rounded-3xl p-8 sm:p-10 shadow-xl max-w-4xl mx-auto">
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                  Ready to Build Something <span className="text-blue-600">Legendary?</span>
+                </h3>
+                <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-lg md:font-bold">
+                  Let's leverage these technologies to bring your vision to life.
+                  My expertise is at your service.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <button
+                    onClick={handleSkillsClick}
+                    className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-bold shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300"
+                  >
+                    View Stack Breakdown
+                  </button>
+                  <button
+                    onClick={handleViewAllClick}
+                    className="w-full sm:w-auto px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-xl font-bold hover:bg-blue-50 transition-all duration-300"
+                  >
+                    Explore Projects
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      {/* Services Section */}
-      <section className="bg-gray-50 py-8 sm:py-12 lg:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-8 sm:mb-12">
-            <p className="text-blue-600 font-semibold mb-2 text-sm sm:text-base">
-              MY SERVICES
+      {/* Featured Services Section - Redesigned */}
+      <section className="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-16 sm:py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-block">
+              <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block text-center">Solutions</span>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 text-center">
+                Awesome <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Services</span>
+              </h2>
+              <div className="h-1 w-24 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+            </div>
+            <p className="text-gray-600 text-lg mt-6 max-w-2xl mx-auto leading-relaxed md:font-bold">
+              Deliver high-impact digital experiences with my specialized service offerings,
+              tailored to help your business thrive in the modern web landscape.
             </p>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
-              Awesome Services For You
-            </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+
+          {/* Services Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 title: "Web Design",
@@ -626,6 +655,9 @@ const HomeContent = ({ setActiveTab }) => {
                   "Creating visually appealing and user-friendly web interfaces with modern tools like Tailwind CSS and React, as seen in EasyProfile.",
                 icon: "/Tailwind.png",
                 level: "Expert",
+                bgColor: "from-blue-500/10 to-transparent",
+                hoverBorder: "group-hover:border-blue-500/50",
+                iconBg: "bg-blue-50"
               },
               {
                 title: "Web Development",
@@ -633,6 +665,9 @@ const HomeContent = ({ setActiveTab }) => {
                   "Building responsive, scalable web apps using React, Firebase, and Node.js, demonstrated in HydroFlow.",
                 icon: "/React.png",
                 level: "Advanced",
+                bgColor: "from-purple-500/10 to-transparent",
+                hoverBorder: "group-hover:border-purple-500/50",
+                iconBg: "bg-purple-50"
               },
               {
                 title: "UI/UX Design",
@@ -640,140 +675,217 @@ const HomeContent = ({ setActiveTab }) => {
                   "Designing intuitive experiences with MUI and Tailwind CSS, focusing on usability and accessibility.",
                 icon: "/MUI.png",
                 level: "Intermediate",
+                bgColor: "from-pink-500/10 to-transparent",
+                hoverBorder: "group-hover:border-pink-500/50",
+                iconBg: "bg-pink-50"
               },
             ].map((service, index) => (
               <div
                 key={index}
-                className="bg-white p-4 md:font-semibold  sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow"
+                className="group relative h-full transition-all duration-300"
               >
-                <div className="w-10 h-10 flex items-center justify-center mb-4">
-                  <img
-                    src={service.icon}
-                    alt={`${service.title} icon`}
-                    className="w-6 h-6 object-contain"
-                  />
+                {/* Background Decoration */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl -z-10`}></div>
+
+                {/* Main Card */}
+                <div className={`h-full bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all duration-300 ${service.hoverBorder} group-hover:-translate-y-2`}>
+                  <div className={`w-16 h-16 ${service.iconBg} rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-6 transition-transform duration-300 shadow-inner`}>
+                    <img
+                      src={service.icon}
+                      alt={`${service.title} icon`}
+                      className="w-10 h-10 object-contain"
+                    />
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                    {service.title}
+                  </h3>
+
+                  <p className="text-gray-600 text-base leading-relaxed mb-6 md:font-semibold">
+                    {service.description}
+                  </p>
+
+                  <div className="flex items-center justify-between pt-6 border-t border-gray-50">
+                    <span className="inline-flex items-center px-4 py-1 rounded-full text-xs font-bold bg-gray-50 text-gray-700 border border-gray-100">
+                      {service.level}
+                    </span>
+                    <a
+                      href="#"
+                      className="text-blue-600 font-bold hover:underline inline-flex items-center gap-2 group/link"
+                    >
+                      Learn More
+                      <svg className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-4 text-xs sm:text-sm">
-                  {service.description}
-                </p>
-                <div className="flex justify-between items-center">
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-200">
-                    {service.level}
-                  </span>
-                </div>
-                <a
-                  href="#"
-                  className="text-blue-600 font-semibold hover:underline text-xs sm:text-sm mt-2 block"
-                >
-                  Learn More
-                </a>
               </div>
             ))}
           </div>
-          <div className="text-center mt-6">
+
+          {/* Get Started CTA */}
+          <div className="mt-20 text-center">
             <button
               onClick={() => setActiveTab("Contact")}
-              className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 text-sm sm:text-base font-semibold transition-colors duration-200"
+              className="group relative inline-flex items-center gap-4 px-10 py-5 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 text-white rounded-2xl font-bold text-lg shadow-xl hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden"
             >
-              Get Started
+              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+              <span>Ready to Start Your Project?</span>
+              <svg className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+              </svg>
             </button>
+            <p className="text-gray-500 mt-6 font-medium">Let's build something exceptional together.</p>
           </div>
         </div>
       </section>
-      {/* Stats Section */}
-      <section className="bg-white py-8 sm:py-12 lg:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
+      {/* Stats Section - Redesigned */}
+      <section className="bg-white py-16 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
             {[
-              { value: "10+", label: "Satisfied Clients" },
-              { value: "15+", label: "Projects Completed" },
-              { value: "25k+", label: "Lines of Code" },
-              { value: "0-1", label: "Year Experience" },
+              {
+                value: "10+",
+                label: "Satisfied Clients",
+                icon: <Users className="w-6 h-6 text-blue-600" />,
+                gradient: "from-blue-600 to-blue-400"
+              },
+              {
+                value: "15+",
+                label: "Projects Completed",
+                icon: <Rocket className="w-6 h-6 text-purple-600" />,
+                gradient: "from-purple-600 to-purple-400"
+              },
+              {
+                value: "25k+",
+                label: "Lines of Code",
+                icon: <Code2 className="w-6 h-6 text-emerald-600" />,
+                gradient: "from-emerald-600 to-emerald-400"
+              },
+              {
+                value: "0-1",
+                label: "Year Experience",
+                icon: <Trophy className="w-6 h-6 text-amber-600" />,
+                gradient: "from-amber-600 to-amber-400"
+              },
             ].map((stat, index) => (
-              <div key={index}>
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-1">
+              <div
+                key={index}
+                className="group relative p-8 bg-gray-50/50 rounded-3xl border border-gray-100 hover:border-blue-200 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-2 text-center"
+              >
+                <div className="inline-flex items-center justify-center p-4 bg-white rounded-2xl shadow-sm mb-6 group-hover:scale-110 transition-transform duration-300">
+                  {stat.icon}
+                </div>
+                <h3 className={`text-3xl lg:text-4xl font-extrabold mb-2 bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
                   {stat.value}
                 </h3>
-                <p className="text-gray-600 text-xs sm:text-sm">{stat.label}</p>
+                <p className="text-gray-600 font-bold text-sm tracking-wide uppercase">{stat.label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
-      {/* Education & Experience Section */}
-      <section className="bg-gray-50 py-8 sm:py-12 lg:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+
+      {/* Education & Journey Section - Redesigned */}
+      <section className="bg-gray-50/50 py-16 sm:py-20 lg:py-24 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            {/* Education Column */}
             <div>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
-                My Education
-              </h2>
-              <div className="space-y-4">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="p-3 bg-red-100 rounded-2xl">
+                  <GraduationCap className="w-8 h-8 text-red-600" />
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+                  My <span className="text-red-600">Education</span>
+                </h2>
+              </div>
+
+              <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
                 {[
                   {
                     title: "AiCE Program",
-                    institution: "Current Advancement Program (2024-Present)",
+                    institution: "Current Advancement Program",
+                    period: "2024 - Present",
                     description:
                       "Deepening expertise in modern web technologies, frameworks, and software development best practices through intensive training.",
+                    color: "red"
                   },
                   {
-                    title: "Full-Stack Development Program",
-                    institution: "Codetrain, 2024-Present",
+                    title: "Full-Stack Development",
+                    institution: "Codetrain",
+                    period: "2024 - Present",
                     description:
                       "Currently enhancing skills in full-stack development through Codetrain's comprehensive curriculum, utilizing online resources, documentation, and practical project-based learning.",
+                    color: "red"
                   },
                 ].map((edu, index) => (
-                  <div key={index} className="flex">
-                    <div className="w-3 h-3 bg-red-500 rounded-full mt-2 mr-3"></div>
-                    <div>
-                      <h3 className="font-bold text-gray-900 text-sm sm:text-base">
-                        {edu.title}
-                      </h3>
-                      <p className="text-blue-600 text-xs sm:text-sm mb-1">
-                        {edu.institution}
-                      </p>
-                      <p className="text-gray-600 text-xs sm:text-sm">
-                        {edu.description}
-                      </p>
+                  <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    {/* Icon/Dot */}
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-red-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                      <BookOpen className="w-5 h-5 text-white" />
+                    </div>
+                    {/* Content */}
+                    <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-red-600 font-bold text-xs uppercase tracking-wider">{edu.period}</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-1">{edu.title}</h3>
+                      <p className="text-blue-600 font-bold text-sm mb-3">{edu.institution}</p>
+                      <p className="text-gray-600 text-sm leading-relaxed font-semibold">{edu.description}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
+
+            {/* Journey Column */}
             <div>
-              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
-                My Development Journey
-              </h2>
-              <div className="space-y-4">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="p-3 bg-blue-100 rounded-2xl">
+                  <Milestone className="w-8 h-8 text-blue-600" />
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+                  Work <span className="text-blue-600">Journey</span>
+                </h2>
+              </div>
+
+              <div className="space-y-8 relative">
                 {[
                   {
                     title: "Personal Projects",
-                    role: "Full Stack Developer (2024-Present)",
+                    role: "Full Stack Developer",
+                    period: "2024 - Present",
                     description:
                       "Developing personal projects like HydroFlow and EasyProfile to demonstrate skills in React, Firebase, and modern web technologies.",
+                    icon: <Code2 className="w-5 h-5 text-white" />
                   },
                   {
                     title: "Learning & Growth",
-                    role: "Continuous Development (2023-Present)",
+                    role: "Continuous Development",
+                    period: "2023 - Present",
                     description:
                       "Consistently learning new technologies, building projects, and improving coding practices through hands-on experience and community involvement.",
+                    icon: <Rocket className="w-5 h-5 text-white" />
                   },
                 ].map((exp, index) => (
-                  <div key={index} className="flex">
-                    <div className="w-3 h-3 bg-blue-600 rounded-full mt-2 mr-3"></div>
-                    <div>
-                      <h3 className="font-bold text-gray-900 text-sm sm:text-base">
-                        {exp.title}
-                      </h3>
-                      <p className="text-blue-600 text-xs sm:text-sm mb-1">
-                        {exp.role}
-                      </p>
-                      <p className="text-gray-600 text-xs sm:text-sm">
-                        {exp.description}
-                      </p>
+                  <div key={index} className="flex gap-6 group">
+                    <div className="flex flex-col items-center">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        {exp.icon}
+                      </div>
+                      <div className="w-0.5 h-full bg-blue-100 group-last:bg-transparent"></div>
+                    </div>
+                    <div className="flex-1 pb-8 group-last:pb-0">
+                      <div className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-blue-600 font-bold text-xs uppercase tracking-wider">{exp.period}</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-1">{exp.title}</h3>
+                        <p className="text-purple-600 font-bold text-sm mb-3">{exp.role}</p>
+                        <p className="text-gray-600 text-sm leading-relaxed font-semibold">{exp.description}</p>
+                      </div>
                     </div>
                   </div>
                 ))}

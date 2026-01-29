@@ -1,5 +1,20 @@
 
 import React from "react";
+import {
+  Code2,
+  Terminal,
+  Wrench,
+  ExternalLink,
+  CheckCircle2,
+  Cpu,
+  Cloud,
+  Database,
+  Smartphone,
+  Layout,
+  GitBranch,
+  Rocket,
+  ChevronRight
+} from "lucide-react";
 
 const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
   // Complete skills data
@@ -8,10 +23,10 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       name: "React",
       icon: "/React.png",
       level: "Expert",
-      description:
-        "Building dynamic user interfaces with hooks, context, and advanced patterns",
+      description: "Building dynamic user interfaces with hooks, context, and advanced patterns",
       experience: "0-1 year",
       projects: ["HydroFlow", "EasyProfile", "Portfolio"],
+      color: "blue"
     },
     {
       name: "JavaScript",
@@ -20,6 +35,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       description: "ES6+, async programming, and modern JavaScript patterns",
       experience: "0-1 year",
       projects: ["All Projects"],
+      color: "yellow"
     },
     {
       name: "HTML",
@@ -28,15 +44,16 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       description: "Semantic markup, accessibility, and modern HTML5 features",
       experience: "0-1 year",
       projects: ["All Web Projects"],
+      color: "orange"
     },
     {
       name: "CSS",
       icon: "/CSS.png",
       level: "Advanced",
-      description:
-        "Flexbox, Grid, animations, and responsive design principles",
+      description: "Flexbox, Grid, animations, and responsive design principles",
       experience: "0-1 year",
       projects: ["Portfolio", "Custom Styling"],
+      color: "blue"
     },
     {
       name: "Tailwind CSS",
@@ -45,15 +62,16 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       description: "Utility-first CSS framework for rapid UI development",
       experience: "0-1 year",
       projects: ["HydroFlow", "EasyProfile", "Portfolio"],
+      color: "teal"
     },
     {
       name: "Node.js",
       icon: "/Node.png",
       level: "Expert",
-      description:
-        "Server-side JavaScript runtime for building scalable applications",
+      description: "Server-side JavaScript runtime for building scalable applications",
       experience: "0-1 year",
       projects: ["Backend APIs", "Server Projects"],
+      color: "green"
     },
     {
       name: "Express.js",
@@ -62,61 +80,61 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       description: "Fast, unopinionated web framework for Node.js applications",
       experience: "0-1 year",
       projects: ["API Development", "Backend Services"],
+      color: "gray"
     },
     {
       name: "Python",
       icon: "/Python.png",
       level: "Intermediate",
-      description:
-        "General-purpose programming language for backend, scripting, and data processing",
+      description: "General-purpose programming language for backend, scripting, and data processing",
       experience: "0-1 year",
       projects: ["Backend Scripts", "APIs", "Automation"],
+      color: "blue"
     },
     {
       name: "Render",
       icon: "/Render.png",
       level: "Intermediate",
-      description:
-        "Cloud platform for deploying and scaling web services and APIs",
+      description: "Cloud platform for deploying and scaling web services and APIs",
       experience: "0-1 year",
       projects: ["API Deployment", "Backend Services"],
+      color: "indigo"
     },
-
     {
       name: "MongoDB",
       icon: "/Mogo.png",
       level: "Expert",
-      description:
-        "NoSQL database for flexible, scalable data storage solutions",
+      description: "NoSQL database for flexible, scalable data storage solutions",
       experience: "0-1 year",
       projects: ["Database Design", "Data Management"],
+      color: "green"
     },
     {
       name: "Firebase",
       icon: "/Firebase.png",
       level: "Expert",
-      description:
-        "Backend-as-a-Service platform for authentication and real-time data",
+      description: "Backend-as-a-Service platform for authentication and real-time data",
       experience: "0-1 year",
       projects: ["HydroFlow", "EasyProfile", "Real-time Apps"],
+      color: "orange"
     },
     {
       name: "Git",
       icon: "/Git.png",
       level: "Advanced",
-      description:
-        "Version control system for tracking changes and collaboration",
+      description: "Version control system for tracking changes and collaboration",
       experience: "0-1 year",
       projects: ["All Projects"],
+      color: "red"
     },
     {
       name: "Material-UI",
       icon: "/MUI.png",
       level: "Intermediate",
-      description:
-        "React component library implementing Google's Material Design",
+      description: "React component library implementing Google's Material Design",
       experience: "0-1 year",
       projects: ["Component Libraries", "UI Development"],
+      color: "blue"
     },
     {
       name: "Netlify",
@@ -125,6 +143,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       description: "Platform for deploying and hosting modern web applications",
       experience: "0-1 year",
       projects: ["All Deployed Projects"],
+      color: "cyan"
     },
     {
       name: "Cloudinary",
@@ -133,215 +152,167 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       description: "Cloud-based image and video management platform",
       experience: "0-1 year",
       projects: ["EasyProfile"],
+      color: "blue"
     },
   ];
 
-  // Skill categories
-  const skillCategories = {
-    Frontend: [
-      "React",
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "Tailwind CSS",
-      "Material-UI",
-    ],
-    Backend: [
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Firebase",
-      "Python", // ✅ add
-    ],
-    "Tools & Deployment": [
-      "Git",
-      "Netlify",
-      "Cloudinary",
-      "Render", // ✅ add
-    ],
-  };
-
+  const categories = [
+    {
+      id: "frontend",
+      name: "Frontend Development",
+      icon: <Layout className="w-6 h-6" />,
+      skills: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Material-UI"],
+      gradient: "from-blue-600 to-cyan-500"
+    },
+    {
+      id: "backend",
+      name: "Backend & Systems",
+      icon: <Database className="w-6 h-6" />,
+      skills: ["Node.js", "Express.js", "MongoDB", "Firebase", "Python"],
+      gradient: "from-purple-600 to-indigo-500"
+    },
+    {
+      id: "devops",
+      name: "Tools & Deployment",
+      icon: <Cloud className="w-6 h-6" />,
+      skills: ["Git", "Netlify", "Cloudinary", "Render"],
+      gradient: "from-emerald-600 to-teal-500"
+    }
+  ];
 
   const getLevelColor = (level) => {
     switch (level) {
-      case "Expert":
-        return "bg-green-100 text-green-800 border-green-200";
-      case "Advanced":
-        return "bg-blue-100 text-blue-800 border-blue-200";
-      case "Intermediate":
-        return "bg-yellow-100 text-yellow-800 border-yellow-200";
-      default:
-        return "bg-gray-100 text-gray-800 border-gray-200";
+      case "Expert": return "text-emerald-600 bg-emerald-50 border-emerald-100";
+      case "Advanced": return "text-blue-600 bg-blue-50 border-blue-100";
+      case "Intermediate": return "text-amber-600 bg-amber-50 border-amber-100";
+      default: return "text-gray-600 bg-gray-50 border-gray-100";
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 sm:py-12 lg:py-16">
+    <div className="min-h-screen bg-[#fcfcfd] py-16 sm:py-20 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Technical <span className="text-blue-600">Skills</span>
-          </h1>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            A comprehensive overview of my technical expertise across the full
-            stack of modern web development technologies, from frontend
-            frameworks to backend services and deployment platforms.
+        <div className="text-center mb-16 lg:mb-24">
+          <div className="inline-block">
+            <span className="text-blue-600 font-bold text-sm uppercase tracking-[0.2em] mb-3 block">Technical Arsenal</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 mb-6 tracking-tight">
+              Mastered <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Tech Stack</span>
+            </h1>
+            <div className="h-1.5 w-32 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+          </div>
+          <p className="text-gray-600 text-xl max-w-2xl mx-auto mt-8 font-semibold leading-relaxed">
+            A comprehensive landscape of my technical capabilities, ranging from high-performance frontend engineering to robust backend architecture.
           </p>
         </div>
 
-        {/* Skills Overview Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12">
-          <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg text-center">
-            <h3 className="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">
-              13+
-            </h3>
-            <p className="text-gray-600 text-sm">Technologies</p>
-          </div>
-          <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg text-center">
-            <h3 className="text-2xl sm:text-3xl font-bold text-green-600 mb-2">
-              5
-            </h3>
-            <p className="text-gray-600 text-sm">Expert Level</p>
-          </div>
-          <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg text-center">
-            <h3 className="text-2xl sm:text-3xl font-bold text-purple-600 mb-2">
-              15+
-            </h3>
-            <p className="text-gray-600 text-sm">Projects Built</p>
-          </div>
-          <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg text-center">
-            <h3 className="text-2xl sm:text-3xl font-bold text-orange-600 mb-2">
-              <span className="text-black">0</span>-1
-            </h3>
-            <p className="text-gray-600 text-sm">Year Experience</p>
-          </div>
+        {/* Stats Overview */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 lg:mb-32">
+          {[
+            { label: "Technologies", value: "15+", icon: <Cpu className="w-5 h-5 text-blue-600" />, color: "blue" },
+            { label: "Expert Level", value: "6", icon: <CheckCircle2 className="w-5 h-5 text-emerald-600" />, color: "emerald" },
+            { label: "Projects Built", value: "20+", icon: <Rocket className="w-5 h-5 text-purple-600" />, color: "purple" },
+            { label: "Focus Areas", value: "3", icon: <Layout className="w-5 h-5 text-amber-600" />, color: "amber" },
+          ].map((stat, index) => (
+            <div key={index} className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 text-center group">
+              <div className="inline-flex p-3 bg-gray-50 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                {stat.icon}
+              </div>
+              <div className="text-3xl font-black text-gray-900 mb-1 tracking-tighter">{stat.value}</div>
+              <div className="text-gray-500 text-xs font-bold uppercase tracking-widest">{stat.label}</div>
+            </div>
+          ))}
         </div>
 
-        {/* Skills by Category */}
-        {Object.entries(skillCategories).map(([category, skillNames]) => (
-          <div key={category} className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-center">
-              {category} <span className="text-blue-600">Skills</span>
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {allSkills
-                .filter((skill) => skillNames.includes(skill.name))
-                .map((skill) => (
-                  <div
-                    key={skill.name}
-                    className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group border border-gray-100"
-                  >
-                    {/* Skill Header */}
-                    <div className="flex items-center mb-4">
-                      <div className="flex items-center justify-center w-14 h-14 bg-gray-50 rounded-lg mr-4 group-hover:bg-blue-50 transition-colors duration-300">
-                        <img
-                          src={skill.icon}
-                          alt={skill.name}
-                          className="w-10 h-10 object-contain"
-                        />
+        {/* Categorized Skills */}
+        <div className="space-y-24 lg:space-y-32">
+          {categories.map((category) => (
+            <div key={category.id} className="relative">
+              <div className="flex items-center gap-6 mb-12">
+                <div className={`p-4 rounded-2xl bg-gradient-to-br ${category.gradient} text-white shadow-lg shadow-blue-500/10`}>
+                  {category.icon}
+                </div>
+                <div>
+                  <h2 className="text-3xl font-black text-gray-900 tracking-tight">{category.name}</h2>
+                  <p className="text-gray-500 font-semibold">{category.skills.length} Advanced Tools</p>
+                </div>
+                <div className="h-px bg-gray-100 flex-1 hidden md:block"></div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {allSkills
+                  .filter((skill) => category.skills.includes(skill.name))
+                  .map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="group relative bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+                    >
+                      <div className="absolute top-0 right-0 -m-4 w-24 h-24 bg-gray-50 rounded-full opacity-50 transition-all duration-500 group-hover:scale-150 group-hover:bg-blue-50"></div>
+
+                      <div className="relative flex items-center justify-between mb-8">
+                        <div className="flex items-center gap-4">
+                          <div className="w-14 h-14 bg-white rounded-2xl shadow-inner border border-gray-50 flex items-center justify-center p-3 group-hover:shadow-blue-500/20 transition-all duration-300">
+                            <img src={skill.icon} alt={skill.name} className="w-full h-full object-contain" />
+                          </div>
+                          <div>
+                            <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">{skill.name}</h3>
+                            <span className={`inline-flex px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider border mt-1 ${getLevelColor(skill.level)}`}>
+                              {skill.level}
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-                          {skill.name}
-                        </h3>
-                        <span
-                          className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${getLevelColor(
-                            skill.level
-                          )}`}
-                        >
-                          {skill.level}
-                        </span>
+
+                      <p className="relative text-gray-500 text-sm font-semibold leading-relaxed mb-8 min-h-[40px]">
+                        {skill.description}
+                      </p>
+
+                      <div className="relative space-y-4 pt-6 border-t border-gray-50">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="text-gray-400 font-bold uppercase tracking-widest">Experience</span>
+                          <span className="text-gray-900 font-black">{skill.experience}</span>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {skill.projects.map((proj, i) => (
+                            <span key={i} className="text-[10px] bg-gray-50 text-gray-500 px-2.5 py-1 rounded-lg font-bold">
+                              {proj}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
-
-                    {/* Progress Bar */}
-                    <div className="mb-4">
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="text-sm text-gray-600">
-                          Proficiency
-                        </span>
-                        {/* <span className="text-sm font-semibold text-blue-600">
-                          {getLevelProgress(skill.level)}%
-                        </span> */}
-                      </div>
-
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                      {skill.description}
-                    </p>
-
-                    {/* Experience & Projects */}
-                    <div className="space-y-2">
-                      <div className="flex items-center text-sm">
-                        <svg
-                          className="w-4 h-4 text-blue-500 mr-2"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                        <span className="text-gray-600">Experience: </span>
-                        <span className="font-medium text-gray-900 ml-1">
-                          {skill.experience}
-                        </span>
-                      </div>
-                      <div className="flex items-start text-sm">
-                        <svg
-                          className="w-4 h-4 text-blue-500 mr-2 mt-0.5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 7a2 2 0 012-2h10a2 2 0 012 2v2M5 11h14"
-                          />
-                        </svg>
-                        <span className="text-gray-600">Projects: </span>
-                        <span className="font-medium text-gray-900 ml-1">
-                          {skill.projects.join(", ")}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
 
-        {/* Call to Action Section */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
-              Ready to Build Something Amazing?
-            </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-              With expertise across the full stack, I'm ready to bring your
-              ideas to life using modern technologies and best practices.
+        {/* Dynamic CTA */}
+        <div className="mt-24 lg:mt-32 relative group">
+          <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-[3rem] blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
+          <div className="relative bg-gray-900 rounded-[3rem] p-12 lg:p-20 text-white overflow-hidden text-center">
+            <div className="absolute top-0 left-0 -m-20 w-80 h-80 bg-blue-600 rounded-full blur-[120px] opacity-20"></div>
+            <div className="absolute bottom-0 right-0 -m-20 w-80 h-80 bg-purple-600 rounded-full blur-[120px] opacity-20"></div>
+
+            <h2 className="relative text-3xl sm:text-4xl lg:text-5xl font-black mb-6 tracking-tight">Need a Customized Solution?</h2>
+            <p className="relative text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto mb-12 font-semibold">
+              Leveraging this stack to bring high-performance applications to life. Your vision, my expertise, extraordinary results.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            <div className="relative flex flex-col sm:flex-row gap-6 justify-center">
               <button
-                className="bg-white border-gradient-to-br border-2 from-blue-500 hover:border-via-blue-600 to-blue-700 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
                 onClick={onSwitchToProjects}
+                className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-gray-900 rounded-2xl font-black transition-all duration-300 hover:scale-[1.05] active:scale-95 shadow-xl"
               >
-                View My Projects
+                <span>View My Portfolio</span>
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button
-                className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200"
                 onClick={onSwitchToContact}
+                className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-white/10 text-white rounded-2xl font-black border border-white/20 transition-all duration-300 hover:bg-white/20 active:scale-95"
               >
-                Get In Touch
+                <span>Consultation</span>
+                <Terminal className="w-4 h-4" />
               </button>
             </div>
           </div>
