@@ -1,7 +1,8 @@
 
 
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Spline from "@splinetool/react-spline";
 import Navbar from "./Navbar";
 import HomeContent from "./HomeContent";
 import AboutMe from "./AboutMe";
@@ -52,8 +53,22 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen 2">
+    <div className="min-h-screen relative overflow-x-hidden">
       <Navbar setActiveTab={setActiveTab} activeTab={activeTab} />
+
+      {/* Persistent 3D Avatar - Fixed on all screens */}
+      <div className="fixed bottom-0 left-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[450px] lg:h-[450px] pointer-events-none z-50">
+        <div className="w-full h-full pointer-events-auto">
+          <iframe
+            src="https://my.spline.design/charactertutorialinteraction-029873c89e242ce7b078902df32b5f40/"
+            frameBorder="0"
+            width="100%"
+            height="100%"
+            title="3D Avatar"
+          />
+        </div>
+      </div>
+
       <div className="pt-[3.5rem]">
         <AnimatePresence mode="wait">
           <motion.div
