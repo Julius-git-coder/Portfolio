@@ -17,6 +17,8 @@ const HomeContent = ({ setActiveTab }) => {
     { type: "image", src: "/Node.png", alt: "Node.js icon" },
     { type: "image", src: "/Express.png", alt: "Express icon" },
     { type: "image", src: "/Cloudinary.png", alt: "Cloudinary icon" },
+    { type: "image", src: "/Nextjs.png", alt: "Next.js icon" },
+    { type: "image", src: "/ReactNative.png", alt: "React Native icon" },
   ];
 
   // Skills data for the enhanced skills section (showing first 8 only)
@@ -68,6 +70,18 @@ const HomeContent = ({ setActiveTab }) => {
       icon: "/Mogo.png",
       level: "Intermediate",
       description: "NoSQL database management",
+    },
+    {
+      name: "Next.js",
+      icon: "/Nextjs.png",
+      level: "Advanced",
+      description: "React framework for production",
+    },
+    {
+      name: "React Native",
+      icon: "/ReactNative.png",
+      level: "Advanced",
+      description: "Cross-platform mobile apps",
     },
   ];
 
@@ -213,13 +227,13 @@ const HomeContent = ({ setActiveTab }) => {
         `}
       </style>
       {/* Partner Logos */}
-      
+
       <section className="bg-white py-6 sm:py-10 lg:py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <p className="text-center mb-4 sm:mb-6 text-sm sm:text-base md:text-lg lg:text-xl">
             I am a{" "}
             <span className="font-bold pr-2">full-stack software developer</span>
-             with a strong foundation in building dynamic, user-focused
+            with a strong foundation in building dynamic, user-focused
             applications. I have successfully completed the{" "}
             <span className="font-semibold">
               A<span className="text-blue-600 font-bold">I</span>CE program
@@ -411,17 +425,16 @@ const HomeContent = ({ setActiveTab }) => {
                     {[...Array(3)].map((_, i) => (
                       <div
                         key={i}
-                        className={`w-2 h-2 rounded-full ${
-                          skill.level === "Expert"
+                        className={`w-2 h-2 rounded-full ${skill.level === "Expert"
                             ? "bg-green-400"
                             : skill.level === "Advanced"
-                            ? i < 2
-                              ? "bg-blue-400"
-                              : "bg-gray-200"
-                            : i < 1
-                            ? "bg-yellow-400"
-                            : "bg-gray-200"
-                        }`}
+                              ? i < 2
+                                ? "bg-blue-400"
+                                : "bg-gray-200"
+                              : i < 1
+                                ? "bg-yellow-400"
+                                : "bg-gray-200"
+                          }`}
                       />
                     ))}
                   </div>
