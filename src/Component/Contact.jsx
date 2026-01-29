@@ -221,7 +221,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full group relative inline-flex items-center justify-center gap-4 px-10 py-5 bg-gray-900 text-white rounded-2xl font-black overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-2xl"
+                  className="w-full group relative inline-flex items-center justify-center gap-4 px-10 py-5 bg-gray-900 text-white rounded-2xl font-black overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-95 shadow-2xl whitespace-nowrap"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <span className="relative">Deploy Inquiry</span>
@@ -242,7 +242,7 @@ const Contact = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a
               href="mailto:daganajulius5@gmail.com"
-              className="group flex items-center gap-3 px-8 py-4 bg-blue-50 text-blue-600 rounded-2xl font-black hover:bg-blue-600 hover:text-white transition-all duration-300"
+              className="group flex items-center gap-3 px-8 py-4 bg-blue-50 text-blue-600 rounded-2xl font-black hover:bg-blue-600 hover:text-white transition-all duration-300 whitespace-nowrap"
             >
               <Mail className="w-5 h-5" />
               Direct Email
@@ -250,7 +250,7 @@ const Contact = () => {
             </a>
             <button
               onClick={handleDownloadCV}
-              className="group flex items-center gap-3 px-8 py-4 bg-gray-50 text-gray-900 rounded-2xl font-black hover:bg-gray-900 hover:text-white transition-all duration-300"
+              className="group flex items-center gap-3 px-8 py-4 bg-gray-50 text-gray-900 rounded-2xl font-black hover:bg-gray-900 hover:text-white transition-all duration-300 whitespace-nowrap"
             >
               <Download className="w-5 h-5" />
               Capture Resume

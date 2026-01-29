@@ -120,7 +120,7 @@ const Project = () => {
                 <div className="pt-6 border-t border-gray-50 mt-auto">
                   <a
                     href={project.link}
-                    className="flex items-center justify-between group/btn text-gray-900 font-black text-sm hover:text-blue-600 transition-colors"
+                    className="flex items-center justify-between group/btn text-gray-900 font-black text-sm hover:text-blue-600 transition-colors whitespace-nowrap"
                   >
                     <span>Execute Live Site</span>
                     <div className="w-10 h-10 rounded-full bg-gray-50 group-hover/btn:bg-blue-600 group-hover/btn:text-white flex items-center justify-center transition-all">
@@ -146,13 +146,13 @@ const Project = () => {
           <div className="relative flex flex-col sm:flex-row gap-6 justify-center">
             <a
               href="mailto:daganajulius5@gmail.com"
-              className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-gray-900 rounded-2xl font-black hover:bg-blue-600 hover:text-white transition-all duration-300"
+              className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-gray-900 rounded-2xl font-black hover:bg-blue-600 hover:text-white transition-all duration-300 whitespace-nowrap"
             >
               Start Consultation
             </a>
             <a
               href="https://github.com/Julius-git-coder"
-              className="inline-flex items-center justify-center gap-3 px-10 py-5 border-2 border-white/10 text-white rounded-2xl font-black hover:bg-white hover:text-gray-900 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-3 px-10 py-5 border-2 border-white/10 text-white rounded-2xl font-black hover:bg-white hover:text-gray-900 transition-all duration-300 whitespace-nowrap"
             >
               <Github className="w-5 h-5" />
               View Lab Space

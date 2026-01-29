@@ -120,7 +120,7 @@ const Navbar = ({ setActiveTab, activeTab }) => {
                 className={`relative flex items-center text-sm sm:text-base md:text-lg font-semibold transition-all duration-1000 transform hover:scale-105 ${activeTab === tab.name
                   ? "text-blue-500"
                   : "text-black hover:text-gray-700"
-                  } px-3 sm:px-4 py-2 focus:outline-none`}
+                  } px-3 sm:px-4 py-2 focus:outline-none whitespace-nowrap`}
               >
                 <span className="mr-2">{tab.icon}</span>
                 {tab.name}
@@ -150,7 +150,7 @@ const Navbar = ({ setActiveTab, activeTab }) => {
                   className={`relative flex items-center text-sm sm:text-base font-semibold transition-all duration-1000 transform hover:scale-105 group ${activeTab === tab.name
                     ? "text-black bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-r-2xl"
                     : "text-black hover:bg-blue-100 rounded-r-lg"
-                    } w-full text-left py-3 px-6 focus:outline-none`}
+                    } w-full text-left py-3 px-6 focus:outline-none whitespace-nowrap`}
                   style={{
                     transitionDelay:
                       isAnimating && isMenuOpen ? `${index * 50}ms` : "0ms",

@@ -246,7 +246,7 @@ const AboutMe = () => {
 
                 <button
                   onClick={handleDownloadCV}
-                  className="w-full group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-2xl font-bold overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-95"
+                  className="w-full group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-2xl font-bold overflow-hidden transition-all duration-300 hover:scale-[1.02] active:scale-95 whitespace-nowrap"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <Download className="relative w-5 h-5" />
@@ -269,9 +269,9 @@ const AboutMe = () => {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex-1 flex items-center justify-center gap-3 px-6 py-4 rounded-[1.75rem] font-black text-sm uppercase tracking-wider transition-all duration-300 ${activeTab === tab.id
-                      ? "bg-white text-gray-900 shadow-xl scale-100"
-                      : "text-gray-500 hover:text-gray-900 hover:bg-white/50"
-                    }`}
+                    ? "bg-white text-gray-900 shadow-xl scale-100"
+                    : "text-gray-500 hover:text-gray-900 hover:bg-white/50"
+                    } whitespace-nowrap`}
                 >
                   {tab.icon}
                   <span className="hidden sm:inline">{tab.label}</span>

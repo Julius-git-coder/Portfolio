@@ -1,5 +1,5 @@
 import React from "react";
-import { Coffee, Download, Users, Rocket, Code2, Trophy, BookOpen, Briefcase, GraduationCap, Milestone } from "lucide-react";
+import { Coffee, Download, Users, Rocket, Code2, Trophy, BookOpen, Briefcase, GraduationCap, Milestone, ArrowRight } from "lucide-react";
 
 const HomeContent = ({ setActiveTab }) => {
   // Array of icons (images and Coffee SVG) and their alt texts for the floating icons
@@ -152,53 +152,71 @@ const HomeContent = ({ setActiveTab }) => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="bg-white py-8 sm:py-12 lg:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
-          <div className="flex-1 mb-6 md:mb-0 text-center md:text-left">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4">
-              Hello 👋
-              <br />
-              I'm Julius Dagana
-              <br />a{" "}
-              <span className="text-blue-600">Full-Stack Developer</span>
-            </h1>
-            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 mt-4 lg:mt-6 justify-center md:justify-start">
-              <button
-                onClick={handleDownloadCV}
-                className="relative bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg flex items-center justify-center text-sm sm:text-base font-medium transition-all duration-200 hover:from-blue-600 hover:via-blue-700 hover:to-blue-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                aria-label="Download Resume"
-                type="button"
-                disabled={false} // Set to true conditionally if needed
-              >
-                <Download className="w-4 h-4 mr-2 shrink-0" />
-                <span>Download Resume</span>
-              </button>
-              <button
-                onClick={handleContactClick}
-                className="border hover:text-blue-500 hover:border-2 hover:border-blue-500 border-gray-300 text-gray-700 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg hover:bg-gray-50 text-sm sm:text-base"
-              >
-                Contact Me
-              </button>
-            </div>
-          </div>
-          <div className="flex-1 flex justify-center md:justify-end relative">
-            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-40 h-40 sm:w-48 sm:h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden flex items-center justify-center z-10 transition-all duration-500">
-                  <img
-                    src="/Codetrain.png"
-                    alt="Julius Dagana"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+    <div className="min-h-screen bg-[#fcfcfd]">
+      {/* Hero & Orbit Section - Redesigned */}
+      <section className="relative overflow-hidden pt-12 sm:pt-16 lg:pt-24 pb-20 sm:pb-28">
+        {/* Abstract Background Elements */}
+        <div className="absolute top-0 right-0 -m-24 w-[40rem] h-[40rem] bg-blue-50 rounded-full blur-[120px] opacity-20 -z-10"></div>
+        <div className="absolute bottom-0 left-0 -m-24 w-[30rem] h-[30rem] bg-purple-50 rounded-full blur-[120px] opacity-20 -z-10"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-32 lg:gap-64">
+            {/* Hero Text */}
+            <div className="flex-1 text-center lg:text-left relative z-10 max-w-2xl px-4 lg:px-0">
+              <div className="inline-block mb-4">
+                <span className="text-blue-600 font-bold text-sm uppercase tracking-[0.2em] px-4 py-2 bg-blue-50 rounded-full">Available for Projects</span>
               </div>
-              {techIcons.map((icon, index) => {
-                return (
+              <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-gray-900 mb-8 tracking-tight leading-[1.05]">
+                Hello <span className="inline-block animate-bounce-slow">👋</span>
+                <br />
+                I'm <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Julius Dagana</span>
+                <br />
+                <span className="text-gray-900">a Architect of Code.</span>
+              </h1>
+              <p className="text-gray-500 text-lg sm:text-xl font-semibold mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                Specializing in high-performance Full-Stack development and intelligent AI orchestration.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start">
+                <button
+                  onClick={handleDownloadCV}
+                  className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-gray-900 text-white rounded-2xl font-black transition-all duration-300 hover:scale-[1.05] active:scale-95 shadow-2xl overflow-hidden whitespace-nowrap"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <Download className="relative w-5 h-5 group-hover:-translate-y-1 transition-transform" />
+                  <span className="relative uppercase tracking-widest text-xs">Capture Resume</span>
+                </button>
+                <button
+                  onClick={handleContactClick}
+                  className="group flex items-center gap-3 px-10 py-5 bg-white text-gray-900 border border-gray-100 rounded-2xl font-black transition-all duration-300 hover:border-blue-200 hover:bg-gray-50 uppercase tracking-widest text-xs whitespace-nowrap"
+                >
+                  Initiate Connection
+                </button>
+              </div>
+            </div>
+
+            {/* Orbiting Tech Section */}
+            <div className="flex-1 flex justify-center lg:justify-end relative">
+              <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[32rem] lg:h-[32rem]">
+                {/* Central Profile Orb */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="relative group p-2 rounded-full bg-white shadow-2xl">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-500"></div>
+                    <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden flex items-center justify-center bg-white z-10 border-4 border-white">
+                      <img
+                        src="/Codetrain.png"
+                        alt="Julius Dagana"
+                        className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Orbiting Icons */}
+                {techIcons.map((icon, index) => (
                   <div
                     key={index}
-                    className="absolute bg-white p-2 sm:p-2.5 rounded-lg floating-icon"
+                    className="absolute bg-white/80 backdrop-blur-md p-3 sm:p-4 rounded-2xl shadow-lg border border-white floating-icon group/icon hover:scale-125 hover:z-50 transition-all duration-300"
                     style={{
                       top: "50%",
                       left: "50%",
@@ -208,15 +226,16 @@ const HomeContent = ({ setActiveTab }) => {
                     <img
                       src={icon.src}
                       alt={icon.alt}
-                      className="w-8 sm:w-10 lg:w-12"
+                      className="w-6 sm:w-8 lg:w-10 opacity-80 group-hover/icon:opacity-100 group-hover/icon:drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all"
                     />
                   </div>
-                );
-              })}
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
+
       <style>
         {`
           .floating-icon {
@@ -225,64 +244,102 @@ const HomeContent = ({ setActiveTab }) => {
           }
 
           @keyframes orbit {
-            from { transform: translate(-50%, -50%) rotate(0deg) translate(8rem) rotate(0deg); }
-            to { transform: translate(-50%, -50%) rotate(360deg) translate(8rem) rotate(-360deg); }
+            from { transform: translate(-50%, -50%) rotate(0deg) translate(9rem) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg) translate(9rem) rotate(-360deg); }
           }
 
           @media (min-width: 640px) {
-            .floating-icon {
-              animation-name: orbit-sm;
-            }
+            .floating-icon { animation-name: orbit-sm; }
             @keyframes orbit-sm {
-              from { transform: translate(-50%, -50%) rotate(0deg) translate(11rem) rotate(0deg); }
-              to { transform: translate(-50%, -50%) rotate(360deg) translate(11rem) rotate(-360deg); }
+              from { transform: translate(-50%, -50%) rotate(0deg) translate(13rem) rotate(0deg); }
+              to { transform: translate(-50%, -50%) rotate(360deg) translate(13rem) rotate(-360deg); }
             }
           }
 
           @media (min-width: 1024px) {
-            .floating-icon {
-              animation-name: orbit-lg;
-            }
+            .floating-icon { animation-name: orbit-lg; }
             @keyframes orbit-lg {
-              from { transform: translate(-50%, -50%) rotate(0deg) translate(14rem) rotate(0deg); }
-              to { transform: translate(-50%, -50%) rotate(360deg) translate(14rem) rotate(-360deg); }
+              from { transform: translate(-50%, -50%) rotate(0deg) translate(18rem) rotate(0deg); }
+              to { transform: translate(-50%, -50%) rotate(360deg) translate(18rem) rotate(-360deg); }
             }
+          }
+
+          .animate-bounce-slow {
+            animation: bounce-slow 3s infinite;
+          }
+
+          @keyframes bounce-slow {
+            0%, 100% { transform: translateY(-5%) rotate(5deg); }
+            50% { transform: translateY(0) rotate(-5deg); }
           }
         `}
       </style>
-      {/* Partner Logos */}
 
-      <section className="bg-white py-6 sm:py-10 lg:py-12">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <p className="text-center mb-4 sm:mb-6 text-sm sm:text-base md:text-lg lg:text-xl">
-            I am a{" "}
-            <span className="font-bold pr-2">full-stack software developer</span>
-            with a strong foundation in building dynamic, user-focused
-            applications. I have successfully completed the{" "}
-            <span className="font-semibold">
-              A<span className="text-blue-600 font-bold">I</span>CE program
-            </span>
-            , a professional training focused on{" "}
-            <span className="font-bold">
-              Artificial Intelligence and modern software engineering
-            </span>
-            . This program strengthened my ability to build intelligent,
-            scalable applications.
-            <button
-              onClick={handleAboutMeClick}
-              className="inline-block bg-blue-600 text-white px-3 py-1.5 rounded-lg hover:bg-blue-700 text-xs sm:text-sm md:hidden transition-colors duration-200 mx-2"
-            >
-              View More
-            </button>
-            <span className="hidden md:inline">
-              . My journey in software development is fueled by discipline and
-              consistency, inspired by my passion for{" "}
-              <span className="font-bold">fitness</span>. I apply the same
-              mindset to problem-solving, teamwork, and continuous learning. My
-              goal is to build innovative, AI-enhanced and scalable solutions
-              that create meaningful value for users and businesses.
-            </span>
-          </p>
+      {/* Intro Section - Redesigned into High-Tier Card */}
+      <section className="bg-[#fcfcfd] pb-16 sm:pb-24 lg:pb-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-[3rem] blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
+            <div className="relative bg-white rounded-[3rem] p-8 sm:p-12 lg:p-20 border border-gray-100 shadow-sm overflow-hidden">
+              <div className="absolute top-0 right-0 p-12 text-blue-50/50">
+                <Trophy className="w-48 h-48 sm:w-64 sm:h-64" />
+              </div>
+
+              <div className="relative z-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-1 bg-blue-600 rounded-full"></div>
+                  <span className="text-gray-400 font-black text-xs uppercase tracking-[0.3em]">Identity Core</span>
+                </div>
+
+                <p className="text-gray-600 text-xl sm:text-2xl lg:text-3xl font-semibold leading-relaxed mb-12">
+                  I am a <span className="text-gray-900 font-extrabold">full-stack software engineer</span> with a precision-driven foundation in building dynamic, user-centric ecosystems.
+                  Having successfully graduated from the <span className="bg-blue-600 text-white px-3 py-1 rounded-xl">AICE program</span>, my technical repertoire is anchored in
+                  <span className="text-blue-600 font-black"> Artificial Intelligence</span> and modern software architecture.
+                </p>
+
+                <div className="grid sm:grid-cols-2 gap-12 lg:gap-20">
+                  <div className="space-y-6">
+                    <h3 className="text-gray-900 font-black text-lg tracking-tight flex items-center gap-3">
+                      <Rocket className="w-5 h-5 text-blue-600" />
+                      The Mission
+                    </h3>
+                    <p className="text-gray-500 font-bold leading-relaxed">
+                      To engineer innovative, AI-enhanced solutions that scale seamlessly and deliver tangible, meaningful value to global enterprises and users alike.
+                    </p>
+                  </div>
+                  <div className="space-y-6">
+                    <h3 className="text-gray-900 font-black text-lg tracking-tight flex items-center gap-3">
+                      <Users className="w-5 h-5 text-purple-600" />
+                      The Philosophy
+                    </h3>
+                    <p className="text-gray-500 font-bold leading-relaxed">
+                      Fuelled by the discipline of fitness, I translate consistency and peak-performance mindsets into every line of code and collaborative initiative.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-16 pt-12 border-t border-gray-50 flex flex-wrap gap-8 items-center justify-between">
+                  <div className="flex -space-x-3">
+                    {[1, 2, 3, 4].map((i) => (
+                      <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center overflow-hidden">
+                        <img src={`https://i.pravatar.cc/100?u=${i}`} alt="Collaborator" className="w-full h-full object-cover opacity-60" />
+                      </div>
+                    ))}
+                    <div className="w-10 h-10 rounded-full border-2 border-white bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white">
+                      +12
+                    </div>
+                  </div>
+                  <button
+                    onClick={handleAboutMeClick}
+                    className="flex items-center gap-3 text-blue-600 font-black text-sm uppercase tracking-widest hover:gap-5 transition-all"
+                  >
+                    Deep Dive Journey
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -355,13 +412,13 @@ const HomeContent = ({ setActiveTab }) => {
                     <div className="flex flex-wrap gap-4">
                       <button
                         onClick={handleViewAllClick}
-                        className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+                        className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
                       >
                         View Details
                       </button>
                       <button
                         onClick={handleContactClick}
-                        className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300"
+                        className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 whitespace-nowrap"
                       >
                         Get In Touch
                       </button>
@@ -406,13 +463,13 @@ const HomeContent = ({ setActiveTab }) => {
                     <div className="flex flex-wrap gap-4">
                       <button
                         onClick={handleViewAllClick}
-                        className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+                        className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
                       >
                         View Details
                       </button>
                       <button
                         onClick={handleContactClick}
-                        className="px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-xl font-semibold hover:bg-purple-50 transition-all duration-300"
+                        className="px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-xl font-semibold hover:bg-purple-50 transition-all duration-300 whitespace-nowrap"
                       >
                         Get In Touch
                       </button>
@@ -488,13 +545,13 @@ const HomeContent = ({ setActiveTab }) => {
                     <div className="flex flex-wrap gap-4">
                       <button
                         onClick={handleViewAllClick}
-                        className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+                        className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
                       >
                         View Details
                       </button>
                       <button
                         onClick={handleContactClick}
-                        className="px-6 py-3 border-2 border-emerald-600 text-emerald-600 rounded-xl font-semibold hover:bg-emerald-50 transition-all duration-300"
+                        className="px-6 py-3 border-2 border-emerald-600 text-emerald-600 rounded-xl font-semibold hover:bg-emerald-50 transition-all duration-300 whitespace-nowrap"
                       >
                         Get In Touch
                       </button>
@@ -509,7 +566,7 @@ const HomeContent = ({ setActiveTab }) => {
           <div className="text-center mt-16">
             <button
               onClick={handleViewAllClick}
-              className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 whitespace-nowrap"
             >
               <span>Explore All Projects</span>
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -587,7 +644,7 @@ const HomeContent = ({ setActiveTab }) => {
                     </span>
                     <button
                       onClick={handleSkillsClick}
-                      className="text-blue-600 text-xs font-bold hover:underline opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="text-blue-600 text-xs font-bold hover:underline opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap"
                     >
                       Learn More
                     </button>
@@ -612,13 +669,13 @@ const HomeContent = ({ setActiveTab }) => {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <button
                     onClick={handleSkillsClick}
-                    className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-bold shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300"
+                    className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-bold shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300 whitespace-nowrap"
                   >
                     View Stack Breakdown
                   </button>
                   <button
                     onClick={handleViewAllClick}
-                    className="w-full sm:w-auto px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-xl font-bold hover:bg-blue-50 transition-all duration-300"
+                    className="w-full sm:w-auto px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-xl font-bold hover:bg-blue-50 transition-all duration-300 whitespace-nowrap"
                   >
                     Explore Projects
                   </button>
@@ -711,7 +768,7 @@ const HomeContent = ({ setActiveTab }) => {
                     </span>
                     <a
                       href="#"
-                      className="text-blue-600 font-bold hover:underline inline-flex items-center gap-2 group/link"
+                      className="text-blue-600 font-bold hover:underline inline-flex items-center gap-2 group/link whitespace-nowrap"
                     >
                       Learn More
                       <svg className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -728,7 +785,7 @@ const HomeContent = ({ setActiveTab }) => {
           <div className="mt-20 text-center">
             <button
               onClick={() => setActiveTab("Contact")}
-              className="group relative inline-flex items-center gap-4 px-10 py-5 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 text-white rounded-2xl font-bold text-lg shadow-xl hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden"
+              className="group relative inline-flex items-center gap-4 px-10 py-5 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 text-white rounded-2xl font-bold text-lg shadow-xl hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden whitespace-nowrap"
             >
               <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
               <span>Ready to Start Your Project?</span>
@@ -917,13 +974,13 @@ const HomeContent = ({ setActiveTab }) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               onClick={handleContactClick}
-              className="bg-white text-blue-600 px-8 py-4 border-2  rounded-lg hover:bg-blue-50 text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl min-w-[200px]"
+              className="bg-white text-blue-600 px-8 py-4 border-2  rounded-lg hover:bg-blue-50 text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl min-w-[200px] whitespace-nowrap"
             >
               Get Started Today
             </button>
             <button
               onClick={handleDownloadCV}
-              className="bg-transparent border-2 md:mb-[6rem] border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 min-w-[200px]"
+              className="bg-transparent border-2 md:mb-[6rem] border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 min-w-[200px] whitespace-nowrap"
             >
               Download Resume
             </button>

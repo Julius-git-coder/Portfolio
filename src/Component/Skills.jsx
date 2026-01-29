@@ -302,14 +302,14 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
             <div className="relative flex flex-col sm:flex-row gap-6 justify-center">
               <button
                 onClick={onSwitchToProjects}
-                className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-gray-900 rounded-2xl font-black transition-all duration-300 hover:scale-[1.05] active:scale-95 shadow-xl"
+                className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-gray-900 rounded-2xl font-black transition-all duration-300 hover:scale-[1.05] active:scale-95 shadow-xl whitespace-nowrap"
               >
                 <span>View My Portfolio</span>
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={onSwitchToContact}
-                className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-white/10 text-white rounded-2xl font-black border border-white/20 transition-all duration-300 hover:bg-white/20 active:scale-95"
+                className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-white/10 text-white rounded-2xl font-black border border-white/20 transition-all duration-300 hover:bg-white/20 active:scale-95 whitespace-nowrap"
               >
                 <span>Consultation</span>
                 <Terminal className="w-4 h-4" />
