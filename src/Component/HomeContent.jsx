@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import { Coffee, Download } from "lucide-react";
+import Spline from "@splinetool/react-spline";
 
 const HomeContent = ({ setActiveTab }) => {
   // Array of icons (images and Coffee SVG) and their alt texts for the floating icons
@@ -186,12 +187,20 @@ const HomeContent = ({ setActiveTab }) => {
           <div className="flex-1 flex justify-center md:justify-end relative">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-40 h-40 sm:w-48 sm:h-48 lg:w-64 lg:h-64 rounded-full overflow-hidden flex items-center justify-center z-10">
-                  <img
-                    src="/Codetrain.png"
-                    alt="Julius Dagana"
-                    className="w-full h-full object-cover rounded-full"
-                  />
+                <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden flex items-center justify-center z-10 transition-all duration-500">
+                  <Suspense fallback={
+                    <div className="w-40 h-40 sm:w-48 sm:h-48 lg:w-64 lg:h-64 rounded-full bg-blue-50 flex items-center justify-center animate-pulse">
+                      <img
+                        src="/Codetrain.png"
+                        alt="Loading Avatar"
+                        className="w-full h-full object-cover rounded-full opacity-50"
+                      />
+                    </div>
+                  }>
+                    <div className="w-full h-full scale-125 lg:scale-150 transform-gpu">
+                      <Spline scene="https://prod.spline.design/6Wq1Q7YGy9Y6O8R8/scene.splinecode" />
+                    </div>
+                  </Suspense>
                 </div>
               </div>
               {techIcons.map((icon, index) => {
