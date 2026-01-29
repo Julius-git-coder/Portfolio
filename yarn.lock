@@ -315,7 +315,7 @@
     react-merge-refs "2.1.1"
     thumbhash "0.1.1"
 
-"@splinetool/runtime@*":
+"@splinetool/runtime@*", "@splinetool/runtime@^1.12.42":
   version "1.12.42"
   resolved "https://registry.npmjs.org/@splinetool/runtime/-/runtime-1.12.42.tgz"
   integrity sha512-jawevNZJe96MOT3yj0Z90VIKw7fbP3njr6gLmuEWeIT+lwIYrnNAEgPRFO2zw5LDs1NFqVLpRNmC2CkUt+UZVg==
@@ -803,6 +803,11 @@ framer-motion@^12.23.16:
     motion-dom "^12.23.12"
     motion-utils "^12.23.6"
     tslib "^2.4.0"
+
+fsevents@~2.3.2, fsevents@~2.3.3:
+  version "2.3.3"
+  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz"
+  integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
 gensync@^1.0.0-beta.2:
   version "1.0.0-beta.2"
