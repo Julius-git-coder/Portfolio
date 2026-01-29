@@ -57,16 +57,19 @@ const Home = () => {
       <Navbar setActiveTab={setActiveTab} activeTab={activeTab} />
 
       {/* Persistent 3D Avatar - Fixed on all screens */}
-      <div className="fixed bottom-0 left-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[450px] lg:h-[450px] pointer-events-none z-50">
-        <div className="w-full h-full pointer-events-auto">
-          <iframe
-            src="https://my.spline.design/charactertutorialinteraction-029873c89e242ce7b078902df32b5f40/"
-            frameBorder="0"
-            width="100%"
-            height="100%"
-            title="3D Avatar"
-          />
-        </div>
+      <div className="fixed bottom-4 left-4 w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 z-[9999] pointer-events-auto">
+        <Suspense fallback={
+          <div className="w-full h-full flex items-center justify-center bg-blue-50/50 backdrop-blur-sm rounded-2xl border border-blue-100 animate-pulse">
+            <p className="text-blue-600 font-medium">3D Avatar Loading...</p>
+          </div>
+        }>
+          <div className="w-full h-full">
+            <Spline
+              scene="https://prod.spline.design/6Wq1Q7YGy9Y6O8R8/scene.splinecode"
+              style={{ width: '100%', height: '100%' }}
+            />
+          </div>
+        </Suspense>
       </div>
 
       <div className="pt-[3.5rem]">
