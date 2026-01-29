@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Coffee, Download } from "lucide-react";
 
 const HomeContent = ({ setActiveTab }) => {
@@ -195,7 +195,6 @@ const HomeContent = ({ setActiveTab }) => {
                 </div>
               </div>
               {techIcons.map((icon, index) => {
-                const angle = (index / techIcons.length) * 360;
                 return (
                   <div
                     key={index}

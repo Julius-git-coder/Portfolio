@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Download } from "lucide-react";
 
-const Contact = ({ setActiveTab }) => {
+const Contact = () => {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
     link.href = "/Resume.pdf";

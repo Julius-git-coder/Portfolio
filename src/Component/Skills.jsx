@@ -137,29 +137,29 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
   ];
 
   // Skill categories
-const skillCategories = {
-  Frontend: [
-    "React",
-    "JavaScript",
-    "HTML",
-    "CSS",
-    "Tailwind CSS",
-    "Material-UI",
-  ],
-  Backend: [
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "Firebase",
-    "Python", // ✅ add
-  ],
-  "Tools & Deployment": [
-    "Git",
-    "Netlify",
-    "Cloudinary",
-    "Render", // ✅ add
-  ],
-};
+  const skillCategories = {
+    Frontend: [
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
+      "Material-UI",
+    ],
+    Backend: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Firebase",
+      "Python", // ✅ add
+    ],
+    "Tools & Deployment": [
+      "Git",
+      "Netlify",
+      "Cloudinary",
+      "Render", // ✅ add
+    ],
+  };
 
 
   const getLevelColor = (level) => {
@@ -172,19 +172,6 @@ const skillCategories = {
         return "bg-yellow-100 text-yellow-800 border-yellow-200";
       default:
         return "bg-gray-100 text-gray-800 border-gray-200";
-    }
-  };
-
-  const getLevelProgress = (level) => {
-    switch (level) {
-      case "Expert":
-        return 90;
-      case "Advanced":
-        return 75;
-      case "Intermediate":
-        return 60;
-      default:
-        return 40;
     }
   };
 
@@ -225,7 +212,7 @@ const skillCategories = {
           </div>
           <div className="bg-white p-4 sm:p-6 rounded-xl shadow-lg text-center">
             <h3 className="text-2xl sm:text-3xl font-bold text-orange-600 mb-2">
-              <span className="text-black">0</span>-1 
+              <span className="text-black">0</span>-1
             </h3>
             <p className="text-gray-600 text-sm">Year Experience</p>
           </div>
@@ -278,7 +265,7 @@ const skillCategories = {
                           {getLevelProgress(skill.level)}%
                         </span> */}
                       </div>
-                   
+
                     </div>
 
                     {/* Description */}

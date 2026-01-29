@@ -30,13 +30,14 @@ const FadeInSection = ({ children, delay = 0 }) => {
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    const currentRef = ref.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
       if (timeoutId) {
         clearTimeout(timeoutId);
@@ -47,9 +48,8 @@ const FadeInSection = ({ children, delay = 0 }) => {
   return (
     <div
       ref={ref}
-      className={`transition-all duration-800 ease-out transform ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-      }`}
+      className={`transition-all duration-800 ease-out transform ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+        }`}
     >
       {children}
     </div>
