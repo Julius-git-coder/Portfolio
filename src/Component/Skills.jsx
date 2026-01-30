@@ -161,7 +161,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       id: "frontend",
       name: "Frontend Development",
       icon: <Layout className="w-6 h-6" />,
-      skills: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Material-UI"],
+      skills: ["React", "Next.js", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS", "Material-UI", "React Native", "Expo Go", "Vercel"],
       gradient: "from-blue-600 to-cyan-500"
     },
     {
