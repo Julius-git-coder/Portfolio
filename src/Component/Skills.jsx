@@ -31,7 +31,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
     {
       name: "JavaScript",
       icon: "/Javascript.png",
-      level: "Advanced",
+      level: "Expert",
       description: "ES6+, async programming, and modern JavaScript patterns",
       experience: "1+ year",
       projects: ["All Projects"],
@@ -49,7 +49,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
     {
       name: "CSS",
       icon: "/CSS.png",
-      level: "Advanced",
+      level: "Expert",
       description: "Flexbox, Grid, animations, and responsive design principles",
       experience: "1+ year",
       projects: ["Portfolio", "Custom Styling"],
@@ -94,7 +94,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
     {
       name: "Render",
       icon: "/Render.png",
-      level: "Intermediate",
+      level: "Expert",
       description: "Cloud platform for deploying and scaling web services and APIs",
       experience: "1+ year",
       projects: ["API Deployment", "Backend Services"],
@@ -121,7 +121,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
     {
       name: "Git",
       icon: "/Git.png",
-      level: "Advanced",
+      level: "Expert",
       description: "Version control system for tracking changes and collaboration",
       experience: "1+ year",
       projects: ["All Projects"],
@@ -153,6 +153,51 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       experience: "1+ year",
       projects: ["EasyProfile"],
       color: "blue"
+    },
+    {
+      name: "Next.js",
+      icon: "/Nextjs.png",
+      level: "Expert",
+      description: "React framework for production with SSR and static generation",
+      experience: "1+ year",
+      projects: ["Web Applications"],
+      color: "gray"
+    },
+    {
+      name: "TypeScript",
+      icon: "/Typescript Logo.jpeg",
+      level: "Expert",
+      description: "Typed superset of JavaScript for scalable applications",
+      experience: "1+ year",
+      projects: ["Ewash", "Type-Safe Apps"],
+      color: "blue"
+    },
+    {
+      name: "React Native",
+      icon: "/ReactNative.png",
+      level: "Expert",
+      description: "Cross-platform mobile app development framework",
+      experience: "1+ year",
+      projects: ["Ewash", "Mobile Apps"],
+      color: "cyan"
+    },
+    {
+      name: "Expo Go",
+      icon: "/Expo_Go.png",
+      level: "Expert",
+      description: "Development platform for React Native applications",
+      experience: "1+ year",
+      projects: ["Ewash", "Mobile Development"],
+      color: "purple"
+    },
+    {
+      name: "Vercel",
+      icon: "/Vercel Logo.jpeg",
+      level: "Expert",
+      description: "Frontend deployment and hosting platform",
+      experience: "1+ year",
+      projects: ["HydroFlow", "Ewash"],
+      color: "black"
     },
   ];
 
@@ -209,8 +254,8 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
         {/* Stats Overview */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 lg:mb-32">
           {[
-            { label: "Technologies", value: "15+", icon: <Cpu className="w-5 h-5 text-blue-600" />, color: "blue" },
-            { label: "Expert Level", value: "6", icon: <CheckCircle2 className="w-5 h-5 text-emerald-600" />, color: "emerald" },
+            { label: "Technologies", value: "18+", icon: <Cpu className="w-5 h-5 text-blue-600" />, color: "blue" },
+            { label: "Expert Level", value: "16", icon: <CheckCircle2 className="w-5 h-5 text-emerald-600" />, color: "emerald" },
             { label: "Projects Built", value: "20+", icon: <Rocket className="w-5 h-5 text-purple-600" />, color: "purple" },
             { label: "Focus Areas", value: "3", icon: <Layout className="w-5 h-5 text-amber-600" />, color: "amber" },
           ].map((stat, index) => (
