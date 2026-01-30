@@ -870,7 +870,7 @@ const HomeContent = ({ setActiveTab }) => {
                 gradient: "from-emerald-600 to-emerald-400"
               },
               {
-                value: "0-1",
+                value: "1+",
                 label: "Year Experience",
                 icon: <Trophy className="w-6 h-6 text-amber-600" />,
                 gradient: "from-amber-600 to-amber-400"

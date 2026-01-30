@@ -319,8 +319,8 @@ const AboutMe = () => {
 
             <div className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 items-center text-center">
               {[
-                { value: "5+", label: "Strong Projects  Launched", color: "text-blue-400" },
-                { value: "16+", label: "Mastered Technologies", color: "text-purple-400" },
+                { value: "6+", label: "Strong Projects  Launched", color: "text-blue-400" },
+                { value: "18+", label: "Mastered Technologies", color: "text-purple-400" },
                 { value: "24/7", label: "Agile Learning", color: "text-amber-400" },
                 { value: "∞", label: "Cups of Passion", color: "text-pink-400" },
               ].map((fact, index) => (

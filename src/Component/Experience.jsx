@@ -121,7 +121,7 @@ const Experience = () => {
             <div className="relative grid sm:grid-cols-3 gap-12 max-w-4xl mx-auto">
               {[
                 { label: "Code Commits", value: "2,200+", icon: <Code2 className="w-8 h-8 text-blue-400" /> },
-                { label: "Production Apps", value: "12", icon: <Rocket className="w-8 h-8 text-purple-400" /> },
+                { label: "Production Apps", value: "6", icon: <Rocket className="w-8 h-8 text-purple-400" /> },
                 { label: "Hours of Focus", value: "∞", icon: <Calendar className="w-8 h-8 text-amber-400" /> },
               ].map((stat, index) => (
                 <div key={index} className="space-y-4">
