@@ -110,6 +110,18 @@ const HomeContent = ({ setActiveTab }) => {
       level: "Expert",
       description: "Versatile programming language",
     },
+    {
+      name: "Vercel",
+      icon: "/Vercel Logo.jpeg",
+      level: "Expert",
+      description: "Frontend deployment platform",
+    },
+    {
+      name: "Netlify",
+      icon: "/Netli.png",
+      level: "Expert",
+      description: "Web application hosting service",
+    },
   ];
 
   const getLevelColor = (level) => {
@@ -408,6 +420,15 @@ const HomeContent = ({ setActiveTab }) => {
                       </div>
                     </div>
 
+                    {/* Deployment Platform */}
+                    <div className="mb-6">
+                      <p className="text-sm font-semibold text-gray-700 mb-3">Deployed On:</p>
+                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-50 to-cyan-50 text-teal-700 rounded-full text-sm font-bold border border-teal-200">
+                        <img src="/Vercel Logo.jpeg" alt="Vercel" className="w-4 h-4 object-contain" />
+                        Vercel
+                      </div>
+                    </div>
+
                     {/* Action Buttons */}
                     <div className="flex flex-wrap gap-4">
                       <button
@@ -456,6 +477,15 @@ const HomeContent = ({ setActiveTab }) => {
                             {tech}
                           </span>
                         ))}
+                      </div>
+                    </div>
+
+                    {/* Deployment Platform */}
+                    <div className="mb-6">
+                      <p className="text-sm font-semibold text-gray-700 mb-3">Deployed On:</p>
+                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-50 to-teal-50 text-emerald-700 rounded-full text-sm font-bold border border-emerald-200">
+                        <img src="/Netli.png" alt="Netlify" className="w-4 h-4 object-contain" />
+                        Netlify
                       </div>
                     </div>
 
@@ -538,6 +568,15 @@ const HomeContent = ({ setActiveTab }) => {
                             {tech}
                           </span>
                         ))}
+                      </div>
+                    </div>
+
+                    {/* Deployment Platform */}
+                    <div className="mb-6">
+                      <p className="text-sm font-semibold text-gray-700 mb-3">Deployed On:</p>
+                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-sky-50 to-blue-50 text-sky-700 rounded-full text-sm font-bold border border-sky-200">
+                        <img src="/Vercel Logo.jpeg" alt="Vercel" className="w-4 h-4 object-contain" />
+                        Vercel
                       </div>
                     </div>
 
@@ -704,7 +743,7 @@ const HomeContent = ({ setActiveTab }) => {
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
             {[
               {
                 title: "Web Design",
@@ -735,6 +774,16 @@ const HomeContent = ({ setActiveTab }) => {
                 bgColor: "from-pink-500/10 to-transparent",
                 hoverBorder: "group-hover:border-pink-500/50",
                 iconBg: "bg-pink-50"
+              },
+              {
+                title: "Mobile App Development",
+                description:
+                  "Creating cross-platform mobile applications with React Native and Expo, delivering native experiences on iOS and Android.",
+                icon: "/React.png",
+                level: "Advanced",
+                bgColor: "from-emerald-500/10 to-transparent",
+                hoverBorder: "group-hover:border-emerald-500/50",
+                iconBg: "bg-emerald-50"
               },
             ].map((service, index) => (
               <div
@@ -815,7 +864,7 @@ const HomeContent = ({ setActiveTab }) => {
                 gradient: "from-purple-600 to-purple-400"
               },
               {
-                value: "25k+",
+                value: "200k+",
                 label: "Lines of Code",
                 icon: <Code2 className="w-6 h-6 text-emerald-600" />,
                 gradient: "from-emerald-600 to-emerald-400"
@@ -864,9 +913,9 @@ const HomeContent = ({ setActiveTab }) => {
                   {
                     title: "AiCE Program",
                     institution: "Current Advancement Program",
-                    period: "2024 - Present",
+                    period: "2024 - COMPLETED",
                     description:
-                      "Deepening expertise in modern web technologies, frameworks, and software development best practices through intensive training.",
+                      "Deepening expertise in modern web and mobile technologies, frameworks, and software development best practices through intensive training, with growing hands-on exposure to AI-driven tools and intelligent application features..",
                     color: "red"
                   },
                   {
@@ -915,7 +964,7 @@ const HomeContent = ({ setActiveTab }) => {
                     role: "Full Stack Developer",
                     period: "2024 - Present",
                     description:
-                      "Developing personal projects like HydroFlow and EasyProfile to demonstrate skills in React, Firebase, and modern web technologies.",
+                      "I build and explore real-world products such as HydroFlow, EasyProfile, and Ewash, using them to demonstrate strong hands-on experience with React, React Native, TypeScript, JavaScript, Node.js, Express, MongoDB, Firebase, Cloudinary and modern web and mobile technologies.",
                     icon: <Code2 className="w-5 h-5 text-white" />
                   },
                   {

@@ -20,7 +20,7 @@ const Experience = () => {
       description: "Building responsive front-end interfaces with React and Tailwind CSS, focusing on user experience and performance optimization. Contributing to backend APIs using Node.js and deploying projects on Netlify.",
       icon: <Code2 className="w-5 h-5 text-white" />,
       gradient: "from-blue-600 to-indigo-600",
-      skills: ["React", "Tailwind CSS", "Node.js", "Netlify", "UI/UX"]
+      skills: ["React", "JavaScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Firebase", "Git", "Netlify", "UI/UX"]
     },
     {
       year: "2024 - Present",
@@ -120,7 +120,7 @@ const Experience = () => {
             <h2 className="relative text-3xl sm:text-4xl lg:text-5xl font-black mb-12 tracking-tight">The Impact of Code</h2>
             <div className="relative grid sm:grid-cols-3 gap-12 max-w-4xl mx-auto">
               {[
-                { label: "Code Commits", value: "2,400+", icon: <Code2 className="w-8 h-8 text-blue-400" /> },
+                { label: "Code Commits", value: "2,200+", icon: <Code2 className="w-8 h-8 text-blue-400" /> },
                 { label: "Production Apps", value: "12", icon: <Rocket className="w-8 h-8 text-purple-400" /> },
                 { label: "Hours of Focus", value: "∞", icon: <Calendar className="w-8 h-8 text-amber-400" /> },
               ].map((stat, index) => (

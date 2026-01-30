@@ -26,7 +26,7 @@ const AboutMe = () => {
   const personalInfo = [
     { label: "Name", value: "Julius Dagana", icon: <User className="w-4 h-4" /> },
     { label: "Location", value: "Accra, Ghana", icon: <MapPin className="w-4 h-4" /> },
-    { label: "Experience", value: "(0-1) Year", icon: <Calendar className="w-4 h-4" /> },
+    { label: "Experience", value: "1+ Year", icon: <Calendar className="w-4 h-4" /> },
     { label: "Specialization", value: "Full-Stack Development", icon: <Briefcase className="w-4 h-4" /> },
     { label: "Education", value: "Software Engineering/AI", icon: <GraduationCap className="w-4 h-4" /> },
     { label: "Institute", value: "Codetrain Africa", icon: <BookOpen className="w-4 h-4" /> },
@@ -122,7 +122,7 @@ const AboutMe = () => {
       icon: <Globe2 className="w-5 h-5 text-purple-600" />,
     },
     {
-      year: "2022",
+      year: "2023",
       title: "Programming Discovery",
       description: "Discovered passion for programming and started learning the fundamentals of software engineering",
       icon: <Lightbulb className="w-5 h-5 text-amber-600" />,
@@ -239,7 +239,7 @@ const AboutMe = () => {
                         {info.icon}
                         <span className="text-sm font-bold">{info.label}</span>
                       </div>
-                      <span className="text-sm font-black text-gray-900">{info.value}</span>
+                      <span className="text-sm font-black text-gray-900 text-right">{info.value}</span>
                     </div>
                   ))}
                 </div>
@@ -319,8 +319,8 @@ const AboutMe = () => {
 
             <div className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 items-center text-center">
               {[
-                { value: "15+", label: "Projects Launched", color: "text-blue-400" },
-                { value: "13+", label: "Mastered Technologies", color: "text-purple-400" },
+                { value: "5+", label: "Strong Projects  Launched", color: "text-blue-400" },
+                { value: "16+", label: "Mastered Technologies", color: "text-purple-400" },
                 { value: "24/7", label: "Agile Learning", color: "text-amber-400" },
                 { value: "∞", label: "Cups of Passion", color: "text-pink-400" },
               ].map((fact, index) => (

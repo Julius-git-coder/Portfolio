@@ -24,7 +24,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       icon: "/React.png",
       level: "Expert",
       description: "Building dynamic user interfaces with hooks, context, and advanced patterns",
-      experience: "0-1 year",
+      experience: "1+ year",
       projects: ["HydroFlow", "EasyProfile", "Portfolio"],
       color: "blue"
     },
@@ -33,7 +33,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       icon: "/Javascript.png",
       level: "Advanced",
       description: "ES6+, async programming, and modern JavaScript patterns",
-      experience: "0-1 year",
+      experience: "1+ year",
       projects: ["All Projects"],
       color: "yellow"
     },
@@ -42,7 +42,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       icon: "/Html.png",
       level: "Expert",
       description: "Semantic markup, accessibility, and modern HTML5 features",
-      experience: "0-1 year",
+      experience: "1+ year",
       projects: ["All Web Projects"],
       color: "orange"
     },
@@ -51,7 +51,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       icon: "/CSS.png",
       level: "Advanced",
       description: "Flexbox, Grid, animations, and responsive design principles",
-      experience: "0-1 year",
+      experience: "1+ year",
       projects: ["Portfolio", "Custom Styling"],
       color: "blue"
     },
@@ -60,7 +60,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       icon: "/Tailwind.png",
       level: "Expert",
       description: "Utility-first CSS framework for rapid UI development",
-      experience: "0-1 year",
+      experience: "1+ year",
       projects: ["HydroFlow", "EasyProfile", "Portfolio"],
       color: "teal"
     },
@@ -69,7 +69,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       icon: "/Node.png",
       level: "Expert",
       description: "Server-side JavaScript runtime for building scalable applications",
-      experience: "0-1 year",
+      experience: "1+ year",
       projects: ["Backend APIs", "Server Projects"],
       color: "green"
     },
@@ -78,7 +78,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       icon: "/Express.png",
       level: "Expert",
       description: "Fast, unopinionated web framework for Node.js applications",
-      experience: "0-1 year",
+      experience: "1+ year",
       projects: ["API Development", "Backend Services"],
       color: "gray"
     },
@@ -87,7 +87,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       icon: "/Python.png",
       level: "Intermediate",
       description: "General-purpose programming language for backend, scripting, and data processing",
-      experience: "0-1 year",
+      experience: "1+ year",
       projects: ["Backend Scripts", "APIs", "Automation"],
       color: "blue"
     },
@@ -96,7 +96,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       icon: "/Render.png",
       level: "Intermediate",
       description: "Cloud platform for deploying and scaling web services and APIs",
-      experience: "0-1 year",
+      experience: "1+ year",
       projects: ["API Deployment", "Backend Services"],
       color: "indigo"
     },
@@ -105,7 +105,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       icon: "/Mogo.png",
       level: "Expert",
       description: "NoSQL database for flexible, scalable data storage solutions",
-      experience: "0-1 year",
+      experience: "1+ year",
       projects: ["Database Design", "Data Management"],
       color: "green"
     },
@@ -114,7 +114,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       icon: "/Firebase.png",
       level: "Expert",
       description: "Backend-as-a-Service platform for authentication and real-time data",
-      experience: "0-1 year",
+      experience: "1+ year",
       projects: ["HydroFlow", "EasyProfile", "Real-time Apps"],
       color: "orange"
     },
@@ -123,7 +123,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       icon: "/Git.png",
       level: "Advanced",
       description: "Version control system for tracking changes and collaboration",
-      experience: "0-1 year",
+      experience: "1+ year",
       projects: ["All Projects"],
       color: "red"
     },
@@ -132,7 +132,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       icon: "/MUI.png",
       level: "Intermediate",
       description: "React component library implementing Google's Material Design",
-      experience: "0-1 year",
+      experience: "1+ year",
       projects: ["Component Libraries", "UI Development"],
       color: "blue"
     },
@@ -141,7 +141,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       icon: "/Netli.png",
       level: "Expert",
       description: "Platform for deploying and hosting modern web applications",
-      experience: "0-1 year",
+      experience: "1+ year",
       projects: ["All Deployed Projects"],
       color: "cyan"
     },
@@ -150,7 +150,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       icon: "/Cloudinary.png",
       level: "Expert",
       description: "Cloud-based image and video management platform",
-      experience: "0-1 year",
+      experience: "1+ year",
       projects: ["EasyProfile"],
       color: "blue"
     },
