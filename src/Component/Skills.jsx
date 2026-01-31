@@ -255,7 +255,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 lg:mb-32">
           {[
             { label: "Technologies", value: "18+", icon: <Cpu className="w-5 h-5 text-blue-600" />, color: "blue" },
-            { label: "Expert Level", value: "16", icon: <CheckCircle2 className="w-5 h-5 text-emerald-600" />, color: "emerald" },
+            { label: "Expert Level", value: "18+", icon: <CheckCircle2 className="w-5 h-5 text-emerald-600" />, color: "emerald" },
             { label: "Projects Built", value: "20+", icon: <Rocket className="w-5 h-5 text-purple-600" />, color: "purple" },
             { label: "Focus Areas", value: "3", icon: <Layout className="w-5 h-5 text-amber-600" />, color: "amber" },
           ].map((stat, index) => (

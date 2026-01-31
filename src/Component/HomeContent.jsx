@@ -858,7 +858,7 @@ const HomeContent = ({ setActiveTab }) => {
                 gradient: "from-blue-600 to-blue-400"
               },
               {
-                value: "15+",
+                value: "20+",
                 label: "Projects Completed",
                 icon: <Rocket className="w-6 h-6 text-purple-600" />,
                 gradient: "from-purple-600 to-purple-400"
