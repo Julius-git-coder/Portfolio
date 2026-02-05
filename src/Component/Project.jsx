@@ -63,14 +63,14 @@ const Project = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col"
+              className="group relative bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col"
             >
               {/* Image Container */}
-              <div className="relative h-72 overflow-hidden bg-gray-50">
+              <div className="relative h-48 overflow-hidden bg-gray-50">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -97,7 +97,7 @@ const Project = () => {
               </div>
 
               {/* Content Container */}
-              <div className="p-8 flex-1 flex flex-col">
+              <div className="p-6 flex-1 flex flex-col">
                 <div className="flex items-center gap-3 mb-6 flex-wrap">
                   {project.tech.map((skill, i) => (
                     <span
@@ -109,7 +109,7 @@ const Project = () => {
                   ))}
                 </div>
 
-                <h3 className="text-2xl font-black text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-black text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                   {project.title}
                 </h3>
 
