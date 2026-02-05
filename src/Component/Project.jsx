@@ -19,7 +19,7 @@ const Project = () => {
       description: "A high-performance water tracking intelligence system designed to optimize hydration through weather-based recommendations and daily goal synchronization.",
       image: "/AquqTrack.png",
       link: "https://hydro-flow-y4rx.vercel.app/",
-      gitLink: "#",
+      gitLink: "https://github.com/Julius-git-coder/hydroFlow.git",
       tech: ["React", "Tailwind", "Vite", "Web API"],
       gradient: "from-blue-600 to-cyan-500"
     },
@@ -28,7 +28,7 @@ const Project = () => {
       description: "An advanced profile orchestration platform that enables seamless identity management and dynamic user customization with a high-tier UI/UX focus.",
       image: "/EassyP.png",
       link: "https://easy-profile-ms2l.vercel.app/",
-      gitLink: "#",
+      gitLink: "https://github.com/Julius-git-coder/EasyProfile.git",
       tech: ["Next.js", "Firebase", "TypeScript", "Framer"],
       gradient: "from-purple-600 to-indigo-500"
     },
@@ -37,7 +37,7 @@ const Project = () => {
       description: "A revolutionary mobile-first service booking ecosystem for shop owners, digitizing appointments and operational workflows to eliminate physical constraints.",
       image: "/Ewash.png",
       link: "#",
-      gitLink: "#",
+      gitLink: "https://github.com/Julius-git-coder/Ewash-On-Back.git",
       tech: ["React Native", "Expo", "Node.js", "MongoDB"],
       gradient: "from-emerald-600 to-teal-500"
     }
