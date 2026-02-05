@@ -67,65 +67,64 @@ const Project = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 overflow-hidden flex flex-col"
+              className="group relative h-[30rem] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             >
-              {/* Image Container */}
-              <div className="relative h-48 overflow-hidden bg-gray-50">
+              {/* Background Image */}
+              <div className="absolute inset-0">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                  <div className="flex gap-4">
-                    <a
-                      href={project.link}
-                      className="p-3 bg-white/20 backdrop-blur-md rounded-2xl text-white hover:bg-white hover:text-gray-900 transition-all duration-300"
-                      title="Live Demo"
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                    </a>
-                    <a
-                      href={project.gitLink}
-                      className="p-3 bg-white/20 backdrop-blur-md rounded-2xl text-white hover:bg-white hover:text-gray-900 transition-all duration-300"
-                      title="Source Code"
-                    >
-                      <Github className="w-5 h-5" />
-                    </a>
-                  </div>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent opacity-90"></div>
               </div>
 
-              {/* Content Container */}
-              <div className="p-6 flex-1 flex flex-col">
-                <div className="flex items-center gap-3 mb-6 flex-wrap">
-                  {project.tech.map((skill, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 bg-gray-50 text-gray-500 rounded-xl text-[10px] font-black uppercase tracking-widest border border-gray-100 group-hover:border-blue-100 group-hover:text-blue-600 transition-all"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-
-                <h3 className="text-xl font-black text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  {project.title}
-                </h3>
-
-                <p className="text-gray-500 font-semibold text-sm leading-relaxed mb-8 flex-1">
-                  {project.description}
-                </p>
-
-                <div className="pt-6 border-t border-gray-50 mt-auto">
+              {/* Content Overlay */}
+              <div className="relative h-full p-8 flex flex-col justify-end z-10">
+                {/* External Links - Top Right */}
+                <div className="absolute top-6 right-6 flex gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
                   <a
                     href={project.link}
-                    className="flex items-center justify-between group/btn text-gray-900 font-black text-sm hover:text-blue-600 transition-colors whitespace-nowrap"
+                    className="p-3 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-gray-900 transition-all duration-300"
+                    title="Live Demo"
                   >
-                    <span>Execute Live Site</span>
-                    <div className="w-10 h-10 rounded-full bg-gray-50 group-hover/btn:bg-blue-600 group-hover/btn:text-white flex items-center justify-center transition-all">
-                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </div>
+                    <ExternalLink className="w-5 h-5" />
+                  </a>
+                  <a
+                    href={project.gitLink}
+                    className="p-3 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-gray-900 transition-all duration-300"
+                    title="Source Code"
+                  >
+                    <Github className="w-5 h-5" />
+                  </a>
+                </div>
+
+                <div className="transform transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+                  <div className="flex items-center gap-2 mb-4 flex-wrap">
+                    {project.tech.map((skill, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 bg-white/10 backdrop-blur-md text-white/90 rounded-full text-xs font-bold border border-white/20 uppercase tracking-wider"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+
+                  <h3 className="text-3xl font-black text-white mb-3">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-gray-300 font-medium text-sm leading-relaxed mb-6 line-clamp-3">
+                    {project.description}
+                  </p>
+
+                  <a
+                    href={project.link}
+                    className="inline-flex items-center gap-2 text-white font-bold text-sm uppercase tracking-wider group/btn hover:text-blue-400 transition-colors"
+                  >
+                    <span>Execute Site</span>
+                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </a>
                 </div>
               </div>
