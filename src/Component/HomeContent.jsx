@@ -216,7 +216,7 @@ const HomeContent = ({ setActiveTab }) => {
                     <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-500"></div>
                     <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden flex items-center justify-center bg-white z-10 border-4 border-white">
                       <img
-                        src="/Codetrain.png"
+                        src="/Codetrain.jpg"
                         alt="Julius Dagana"
                         className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
                       />

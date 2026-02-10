@@ -76,14 +76,14 @@ const Navbar = ({ setActiveTab, activeTab }) => {
       >
         <div
           className={`flex justify-between items-center w-full max-w-7xl px-6 py-3 rounded-2xl transition-all duration-500 shadow-2xl ${isScrolled
-              ? "bg-white/80 backdrop-blur-xl border border-white/20 shadow-blue-500/10"
-              : "bg-white/40 backdrop-blur-md border border-white/10"
+            ? "bg-white/80 backdrop-blur-xl border border-white/20 shadow-blue-500/10"
+            : "bg-white/40 backdrop-blur-md border border-white/10"
             }`}
         >
           {/* Logo / Branding */}
           <div className="flex items-center gap-2 group cursor-pointer" onClick={() => setActiveTab("Home")}>
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:rotate-12 transition-transform duration-300">
-              J
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center overflow-hidden shadow-lg group-hover:rotate-12 transition-transform duration-300">
+              <img src="/Codetrain.jpg" alt="Julius" className="w-full h-full object-cover" />
             </div>
             <span className="text-xl font-black bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
               Julius
@@ -97,8 +97,8 @@ const Navbar = ({ setActiveTab, activeTab }) => {
                 key={tab.name}
                 onClick={() => handleTabClick(tab.name)}
                 className={`relative px-4 py-2 rounded-xl text-sm font-bold transition-all duration-300 whitespace-nowrap overflow-hidden group ${activeTab === tab.name
-                    ? "text-blue-600 bg-blue-50/50"
-                    : "text-gray-500 hover:text-gray-900 hover:bg-gray-100/50"
+                  ? "text-blue-600 bg-blue-50/50"
+                  : "text-gray-500 hover:text-gray-900 hover:bg-gray-100/50"
                   }`}
               >
                 <div className="flex items-center gap-2 relative z-10">
@@ -149,8 +149,8 @@ const Navbar = ({ setActiveTab, activeTab }) => {
                   key={tab.name}
                   onClick={() => handleTabClick(tab.name)}
                   className={`flex items-center gap-4 py-4 px-6 rounded-2xl font-black text-sm uppercase tracking-widest transition-all duration-300 whitespace-nowrap group ${activeTab === tab.name
-                      ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/20 translate-x-2"
-                      : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
+                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/20 translate-x-2"
+                    : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
                     }`}
                   style={{
                     transitionDelay: isAnimating && isMenuOpen ? `${index * 50}ms` : "0ms",
