@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Coffee, Download, Users, Rocket, Code2, Trophy, BookOpen, Briefcase, GraduationCap, Milestone, ArrowRight } from "lucide-react";
 
 const HomeContent = ({ setActiveTab }) => {
@@ -166,7 +167,12 @@ const HomeContent = ({ setActiveTab }) => {
   return (
     <div className="min-h-screen bg-[#fcfcfd]">
       {/* Hero & Orbit Section - Redesigned */}
-      <section className="relative overflow-hidden pt-12 sm:pt-16 lg:pt-24 pb-20 sm:pb-28">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative overflow-hidden pt-12 sm:pt-16 lg:pt-24 pb-20 sm:pb-28"
+      >
         {/* Abstract Background Elements */}
         <div className="absolute top-0 right-0 -m-24 w-[40rem] h-[40rem] bg-blue-50 rounded-full blur-[120px] opacity-20 -z-10"></div>
         <div className="absolute bottom-0 left-0 -m-24 w-[30rem] h-[30rem] bg-purple-50 rounded-full blur-[120px] opacity-20 -z-10"></div>
@@ -246,7 +252,7 @@ const HomeContent = ({ setActiveTab }) => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       <style>
         {`
@@ -288,7 +294,13 @@ const HomeContent = ({ setActiveTab }) => {
       </style>
 
       {/* Intro Section - Redesigned into High-Tier Card */}
-      <section className="bg-[#fcfcfd] pb-16 sm:pb-24 lg:pb-32 px-4 sm:px-6 lg:px-8">
+      <motion.section
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8 }}
+        className="bg-[#fcfcfd] pb-16 sm:pb-24 lg:pb-32 px-4 sm:px-6 lg:px-8"
+      >
         <div className="max-w-5xl mx-auto">
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-[3rem] blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
@@ -353,10 +365,12 @@ const HomeContent = ({ setActiveTab }) => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Personal Projects Section - Redesigned */}
-      <section className="bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50 py-16 sm:py-20 lg:py-24">
+      <section
+        className="bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50 py-16 sm:py-20 lg:py-24"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -375,7 +389,13 @@ const HomeContent = ({ setActiveTab }) => {
           {/* Projects Grid */}
           <div className="space-y-20">
             {/* HydroFlow Project */}
-            <div className="group relative">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8 }}
+              className="group relative"
+            >
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
               <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
                 <div className="grid md:grid-cols-2 gap-8 p-8 lg:p-12">
@@ -447,10 +467,16 @@ const HomeContent = ({ setActiveTab }) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* EasyProfile Project */}
-            <div className="group relative">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8 }}
+              className="group relative"
+            >
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
               <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
                 <div className="grid md:grid-cols-2 gap-8 p-8 lg:p-12">
@@ -522,10 +548,16 @@ const HomeContent = ({ setActiveTab }) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Ewash Project */}
-            <div className="group relative">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8 }}
+              className="group relative"
+            >
               <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
               <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
                 <div className="grid md:grid-cols-2 gap-8 p-8 lg:p-12">
@@ -598,11 +630,16 @@ const HomeContent = ({ setActiveTab }) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* View All Projects CTA */}
-          <div className="text-center mt-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-16"
+          >
             <button
               onClick={handleViewAllClick}
               className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 whitespace-nowrap"
@@ -612,11 +649,13 @@ const HomeContent = ({ setActiveTab }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </button>
-          </div>
+          </motion.div>
         </div>
       </section>
       {/* Enhanced Skills Section - Redesigned */}
-      <section className="bg-gradient-to-br from-white via-gray-50 to-white py-16 sm:py-20 lg:py-24">
+      <section
+        className="bg-gradient-to-br from-white via-gray-50 to-white py-16 sm:py-20 lg:py-24"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -637,8 +676,12 @@ const HomeContent = ({ setActiveTab }) => {
           {/* Skills Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
             {skills.map((skill, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
                 className="group relative"
               >
                 {/* Glow Effect on Hover */}
@@ -689,12 +732,17 @@ const HomeContent = ({ setActiveTab }) => {
                     </button>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* Bottom CTA */}
-          <div className="mt-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-20 text-center"
+          >
             <div className="relative inline-block group">
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-100 transition duration-500"></div>
               <div className="relative bg-white border border-blue-100 rounded-3xl p-8 sm:p-10 shadow-xl max-w-4xl mx-auto">
@@ -721,11 +769,13 @@ const HomeContent = ({ setActiveTab }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
       {/* Featured Services Section - Redesigned */}
-      <section className="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-16 sm:py-20 lg:py-24">
+      <section
+        className="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-16 sm:py-20 lg:py-24"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -786,8 +836,12 @@ const HomeContent = ({ setActiveTab }) => {
                 iconBg: "bg-emerald-50"
               },
             ].map((service, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
                 className="group relative h-full transition-all duration-300"
               >
                 {/* Background Decoration */}
@@ -826,12 +880,17 @@ const HomeContent = ({ setActiveTab }) => {
                     </a>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* Get Started CTA */}
-          <div className="mt-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-20 text-center"
+          >
             <button
               onClick={() => setActiveTab("Contact")}
               className="group relative inline-flex items-center gap-4 px-10 py-5 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 text-white rounded-2xl font-bold text-lg shadow-xl hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden whitespace-nowrap"
@@ -843,11 +902,13 @@ const HomeContent = ({ setActiveTab }) => {
               </svg>
             </button>
             <p className="text-gray-500 mt-6 font-medium">Let's build something exceptional together.</p>
-          </div>
+          </motion.div>
         </div>
       </section>
       {/* Stats Section - Redesigned */}
-      <section className="bg-white py-16 sm:py-20">
+      <section
+        className="bg-white py-16 sm:py-20"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
             {[
@@ -876,8 +937,12 @@ const HomeContent = ({ setActiveTab }) => {
                 gradient: "from-amber-600 to-amber-400"
               },
             ].map((stat, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group relative p-8 bg-gray-50/50 rounded-3xl border border-gray-100 hover:border-blue-200 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 transform hover:-translate-y-2 text-center"
               >
                 <div className="inline-flex items-center justify-center p-4 bg-white rounded-2xl shadow-sm mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -887,14 +952,16 @@ const HomeContent = ({ setActiveTab }) => {
                   {stat.value}
                 </h3>
                 <p className="text-gray-600 font-bold text-sm tracking-wide uppercase">{stat.label}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Education & Journey Section - Redesigned */}
-      <section className="bg-gray-50/50 py-16 sm:py-20 lg:py-24 border-t border-gray-100">
+      <section
+        className="bg-gray-50/50 py-16 sm:py-20 lg:py-24 border-t border-gray-100"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Education Column */}
@@ -927,7 +994,14 @@ const HomeContent = ({ setActiveTab }) => {
                     color: "red"
                   },
                 ].map((edu, index) => (
-                  <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group"
+                  >
                     {/* Icon/Dot */}
                     <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-red-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                       <BookOpen className="w-5 h-5 text-white" />
@@ -941,7 +1015,7 @@ const HomeContent = ({ setActiveTab }) => {
                       <p className="text-blue-600 font-bold text-sm mb-3">{edu.institution}</p>
                       <p className="text-gray-600 text-sm leading-relaxed font-semibold">{edu.description}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -976,7 +1050,14 @@ const HomeContent = ({ setActiveTab }) => {
                     icon: <Rocket className="w-5 h-5 text-white" />
                   },
                 ].map((exp, index) => (
-                  <div key={index} className="flex gap-6 group">
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    className="flex gap-6 group"
+                  >
                     <div className="flex flex-col items-center">
                       <div className="flex items-center justify-center w-10 h-10 rounded-full bg-blue-600 shadow-lg group-hover:scale-110 transition-transform duration-300">
                         {exp.icon}
@@ -993,7 +1074,7 @@ const HomeContent = ({ setActiveTab }) => {
                         <p className="text-gray-600 text-sm leading-relaxed font-semibold">{exp.description}</p>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -1002,7 +1083,13 @@ const HomeContent = ({ setActiveTab }) => {
       </section>
 
       {/* Contact CTA Section */}
-      <section className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 py-16 sm:py-20  relative overflow-hidden">
+      <motion.section
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 py-16 sm:py-20  relative overflow-hidden"
+      >
         {/* Background decorative elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-20 h-20 bg-white rounded-full animate-pulse"></div>
@@ -1069,7 +1156,7 @@ const HomeContent = ({ setActiveTab }) => {
             />
           </svg>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };
