@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   ExternalLink,
   Github,
@@ -65,8 +66,12 @@ const Project = () => {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
               className="group relative h-[30rem] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             >
               {/* Background Image */}
@@ -128,12 +133,18 @@ const Project = () => {
                   </a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Global Project CTA */}
-        <div className="mt-24 lg:mt-32 text-center bg-gray-900 rounded-[3rem] p-12 lg:p-20 relative overflow-hidden group">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-24 lg:mt-32 text-center bg-gray-900 rounded-[3rem] p-12 lg:p-20 relative overflow-hidden group"
+        >
           <div className="absolute top-0 right-0 -m-20 w-80 h-80 bg-blue-600 rounded-full blur-[120px] opacity-20"></div>
           <div className="absolute bottom-0 left-0 -m-20 w-80 h-80 bg-purple-600 rounded-full blur-[120px] opacity-20"></div>
 
@@ -157,7 +168,7 @@ const Project = () => {
               View Lab Space
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

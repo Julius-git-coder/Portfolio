@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import {
   User,
   MapPin,
@@ -131,7 +132,13 @@ const AboutMe = () => {
 
   const tabContent = {
     story: (
-      <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500"
+      >
         <div className="prose prose-lg max-w-none">
           <p className="text-gray-600 leading-relaxed text-lg mb-6">
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Hello!</span> I'm a passionate <span className="text-gray-900 font-extrabold uppercase tracking-tight">full-stack developer</span> based in Accra, Ghana. My journey into programming began with simple curiosity and has evolved into a dedicated mission to build digital experiences that matter.
@@ -145,13 +152,26 @@ const AboutMe = () => {
             I thrive at the intersection of <span className="font-bold text-gray-900">logic and creativity</span>. Whether it's architecting a robust backend with Node.js or crafting pixel-perfect interfaces with Tailwind CSS, I approach every project with a commitment to clean code and exceptional user experience.
           </p>
         </div>
-      </div>
+      </motion.div>
     ),
     journey: (
-      <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500"
+      >
         <div className="relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
           {timeline.map((item, index) => (
-            <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-8 last:mb-0">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+              className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-8 last:mb-0"
+            >
               <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-blue-50 text-blue-600 shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                 {item.icon}
               </div>
@@ -164,16 +184,26 @@ const AboutMe = () => {
                   {item.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     ),
     values: (
-      <div className="grid md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="grid md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500"
+      >
         {values.map((value, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
             className="group relative h-full"
           >
             <div className={`absolute -inset-1 bg-gradient-to-r ${value.gradient} rounded-3xl blur opacity-0 group-hover:opacity-10 transition duration-500`}></div>
@@ -186,9 +216,9 @@ const AboutMe = () => {
               </div>
               <p className="text-gray-600 leading-relaxed font-semibold">{value.description}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     ),
   };
 
@@ -212,7 +242,13 @@ const AboutMe = () => {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Profile Card Sidebar */}
           <div className="lg:col-span-4 sticky top-24">
-            <div className="relative group">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative group"
+            >
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[3rem] blur-2xl opacity-10 group-hover:opacity-20 transition duration-700"></div>
               <div className="relative bg-white/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl p-10 border border-white text-center">
                 <div className="relative w-40 h-40 mx-auto mb-8">
@@ -253,7 +289,7 @@ const AboutMe = () => {
                   <span className="relative">Download Resume</span>
                 </button>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Main Content Area */}
@@ -292,8 +328,12 @@ const AboutMe = () => {
               </div>
               <div className="grid sm:grid-cols-2 gap-6">
                 {interests.map((interest, index) => (
-                  <div
+                  <motion.div
                     key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
                     className="p-8 bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-gray-200 transition-all duration-500 group"
                   >
                     <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 text-gray-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 transform group-hover:rotate-12">
@@ -303,7 +343,7 @@ const AboutMe = () => {
                     <p className="text-gray-500 leading-relaxed font-semibold text-sm">
                       {interest.description}
                     </p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -311,7 +351,13 @@ const AboutMe = () => {
         </div>
 
         {/* Dynamic Fun Facts */}
-        <div className="mt-20 lg:mt-32 relative group">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-20 lg:mt-32 relative group"
+        >
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-[3rem] blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
           <div className="relative bg-gray-900 rounded-[3rem] p-12 lg:p-20 text-white overflow-hidden">
             <div className="absolute top-0 right-0 -m-20 w-80 h-80 bg-blue-600 rounded-full blur-[120px] opacity-20"></div>
@@ -331,7 +377,7 @@ const AboutMe = () => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

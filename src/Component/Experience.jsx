@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Briefcase,
   MapPin,
@@ -62,80 +63,99 @@ const Experience = () => {
 
         {/* Experience Timeline */}
         <div className="max-w-5xl mx-auto">
-          <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                {/* Dot/Icon */}
-                <div className={`flex items-center justify-center w-12 h-12 rounded-2xl border-4 border-white bg-gradient-to-br ${exp.gradient} shadow-xl shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transform group-hover:scale-110 transition-transform duration-300`}>
-                  {exp.icon}
-                </div>
+          <div className="relative">
+            {/* Vertical Line */}
+            <div className="absolute left-0 top-0 bottom-0 w-px bg-gray-200 md:left-1/2 md:-ml-px"></div>
 
-                {/* Content Card */}
-                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3.5rem)] p-8 rounded-[2.5rem] bg-white border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 overflow-hidden relative group">
-                  <div className="absolute top-0 right-0 p-10 opacity-5 -m-12 group-hover:scale-110 transition-transform duration-500">
-                    <Briefcase className="w-32 h-32 text-gray-900" />
+            <div className="space-y-12">
+              {experiences.map((exp, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className={`relative flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? "md:flex-row-reverse" : ""
+                    }`}
+                >
+                  {/* Icon Marker */}
+                  <div className="absolute left-0 w-8 h-8 rounded-full border-4 border-white bg-blue-600 shadow-sm -translate-x-[15px] md:left-1/2 md:-translate-x-1/2 flex items-center justify-center z-10">
+                    <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
                   </div>
 
-                  <div className="flex flex-wrap items-center justify-between gap-4 mb-4 relative">
-                    <span className={`font-black text-xs uppercase tracking-widest bg-gradient-to-r ${exp.gradient} bg-clip-text text-transparent`}>{exp.year}</span>
-                    <div className="flex items-center gap-2 text-gray-400">
-                      <MapPin className="w-3 h-3" />
-                      <span className="text-[10px] font-bold uppercase">Accra, Ghana</span>
+                  {/* Content Card */}
+                  <div className="ml-12 md:ml-0 md:w-1/2 px-4">
+                    <div className={`p-8 bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group ${index % 2 === 0 ? "md:text-left" : "md:text-right"
+                      }`}>
+                      <div className={`flex items-center gap-3 mb-4 ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"
+                        }`}>
+                        <Briefcase className="w-5 h-5 text-blue-600" />
+                        <span className="text-sm font-black text-blue-600 uppercase tracking-widest">{exp.company}</span>
+                      </div>
+
+                      <h3 className="text-2xl font-black text-gray-900 mb-2">{exp.title}</h3>
+                      <div className={`flex items-center gap-2 mb-6 text-gray-500 font-semibold text-sm ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"
+                        }`}>
+                        <Calendar className="w-4 h-4" />
+                        {exp.year}
+                      </div>
+
+                      <p className="text-gray-600 leading-relaxed font-medium mb-6">
+                        {exp.description}
+                      </p>
+
+                      <div className={`flex flex-wrap gap-2 ${index % 2 === 0 ? "md:justify-start" : "md:justify-end"
+                        }`}>
+                        {exp.skills.map((skill, i) => (
+                          <span key={i} className="px-3 py-1 bg-gray-50 text-gray-600 text-xs font-bold rounded-lg border border-gray-100">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-black text-gray-900 mb-2 relative group-hover:text-blue-600 transition-colors">{exp.title}</h3>
-                  <div className="flex items-center gap-2 mb-6 relative">
-                    <div className={`w-6 h-0.5 bg-gradient-to-r ${exp.gradient}`}></div>
-                    <p className="text-gray-500 font-bold text-sm tracking-tight">{exp.company}</p>
-                  </div>
-
-                  <p className="text-gray-500 font-semibold text-sm leading-relaxed mb-8 relative">
-                    {exp.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 relative">
-                    {exp.skills.map((skill, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1.5 bg-gray-50 text-gray-600 rounded-xl text-xs font-bold border border-gray-100 hover:border-blue-200 hover:bg-white hover:text-blue-600 transition-all cursor-default"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Closing Highlight */}
-        <div className="mt-24 lg:mt-32 relative group">
-          <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-[3rem] blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
-          <div className="relative bg-gray-900 rounded-[3rem] p-12 lg:p-20 text-white overflow-hidden text-center">
-            <div className="absolute top-0 right-0 -m-20 w-80 h-80 bg-blue-600 rounded-full blur-[120px] opacity-20"></div>
-            <div className="absolute bottom-0 left-0 -m-20 w-80 h-80 bg-purple-600 rounded-full blur-[120px] opacity-20"></div>
-
-            <h2 className="relative text-3xl sm:text-4xl lg:text-5xl font-black mb-12 tracking-tight">The Impact of Code</h2>
-            <div className="relative grid sm:grid-cols-3 gap-12 max-w-4xl mx-auto">
-              {[
-                { label: "Code Commits", value: "2,200+", icon: <Code2 className="w-8 h-8 text-blue-400" /> },
-                { label: "Production Apps", value: "6", icon: <Rocket className="w-8 h-8 text-purple-400" /> },
-                { label: "Hours of Focus", value: "∞", icon: <Calendar className="w-8 h-8 text-amber-400" /> },
-              ].map((stat, index) => (
-                <div key={index} className="space-y-4">
-                  <div className="flex justify-center">{stat.icon}</div>
-                  <div className="text-4xl font-black tracking-tighter">{stat.value}</div>
-                  <div className="text-gray-500 font-bold uppercase tracking-[0.2em] text-[10px]">{stat.label}</div>
-                </div>
+                  {/* Empty Space for Timeline Alignment */}
+                  <div className="hidden md:block md:w-1/2"></div>
+                </motion.div>
               ))}
             </div>
-
-            <p className="relative text-gray-400 text-lg mt-16 max-w-2xl mx-auto font-semibold">
-              Leveraging code to solve real-world problems. Currently open to new technological frontiers.
-            </p>
           </div>
+
+          {/* Closing Highlight */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mt-24 lg:mt-32 relative group"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-[3rem] blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
+            <div className="relative bg-gray-900 rounded-[3rem] p-12 lg:p-20 text-white overflow-hidden">
+              <div className="absolute top-0 right-0 -m-20 w-80 h-80 bg-blue-600 rounded-full blur-[120px] opacity-20"></div>
+              <div className="absolute bottom-0 left-0 -m-20 w-80 h-80 bg-purple-600 rounded-full blur-[120px] opacity-20"></div>
+
+              <div className="relative z-10 text-center mb-12">
+                <h2 className="text-3xl sm:text-4xl font-black mb-6 tracking-tight">Impact of Code</h2>
+                <p className="text-gray-400 font-semibold max-w-2xl mx-auto">
+                  Every line of code written contributes to a larger ecosystem of solutions, driving efficiency and innovation.
+                </p>
+              </div>
+
+              <div className="relative grid sm:grid-cols-3 gap-8 text-center border-t border-white/10 pt-12">
+                {[
+                  { label: "Code Commits", value: "2.5k+", color: "text-blue-400" },
+                  { label: "Projects Completed", value: "20+", color: "text-purple-400" },
+                  { label: "Hours of Coding", value: "1200+", color: "text-emerald-400" },
+                ].map((stat, index) => (
+                  <div key={index}>
+                    <div className={`text-4xl sm:text-5xl font-black ${stat.color} mb-2 tracking-tighter`}>{stat.value}</div>
+                    <div className="text-gray-500 font-bold uppercase tracking-widest text-xs">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>

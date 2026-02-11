@@ -1,5 +1,6 @@
 
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Code2,
   Terminal,
@@ -259,20 +260,34 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
             { label: "Projects Built", value: "20+", icon: <Rocket className="w-5 h-5 text-purple-600" />, color: "purple" },
             { label: "Focus Areas", value: "3", icon: <Layout className="w-5 h-5 text-amber-600" />, color: "amber" },
           ].map((stat, index) => (
-            <div key={index} className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 text-center group">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 text-center group"
+            >
               <div className="inline-flex p-3 bg-gray-50 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
                 {stat.icon}
               </div>
               <div className="text-3xl font-black text-gray-900 mb-1 tracking-tighter">{stat.value}</div>
               <div className="text-gray-500 text-xs font-bold uppercase tracking-widest">{stat.label}</div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Categorized Skills */}
         <div className="space-y-24 lg:space-y-32">
           {categories.map((category) => (
-            <div key={category.id} className="relative">
+            <motion.div
+              key={category.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
               <div className="flex items-center gap-6 mb-12">
                 <div className={`p-4 rounded-2xl bg-gradient-to-br ${category.gradient} text-white shadow-lg shadow-blue-500/10`}>
                   {category.icon}
@@ -287,9 +302,13 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {allSkills
                   .filter((skill) => category.skills.includes(skill.name))
-                  .map((skill) => (
-                    <div
+                  .map((skill, index) => (
+                    <motion.div
                       key={skill.name}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
                       className="group relative bg-white rounded-[2.5rem] p-8 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden"
                     >
                       <div className="absolute top-0 right-0 -m-4 w-24 h-24 bg-gray-50 rounded-full opacity-50 transition-all duration-500 group-hover:scale-150 group-hover:bg-blue-50"></div>
@@ -325,15 +344,21 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
                           ))}
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Dynamic CTA */}
-        <div className="mt-24 lg:mt-32 relative group">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-24 lg:mt-32 relative group"
+        >
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-[3rem] blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
           <div className="relative bg-gray-900 rounded-[3rem] p-12 lg:p-20 text-white overflow-hidden text-center">
             <div className="absolute top-0 left-0 -m-20 w-80 h-80 bg-blue-600 rounded-full blur-[120px] opacity-20"></div>
@@ -361,7 +386,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

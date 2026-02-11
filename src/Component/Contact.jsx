@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Mail,
   Phone,
@@ -91,7 +92,13 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-20 items-stretch">
           {/* Contact Information & Socials */}
           <div className="space-y-8 lg:space-y-12">
-            <div className="relative group">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative group"
+            >
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[2.5rem] blur opacity-5 group-hover:opacity-10 transition duration-1000"></div>
               <div className="relative bg-white rounded-[2.5rem] p-6 sm:p-8 lg:p-10 border border-gray-100 shadow-sm overflow-hidden">
                 <div className="absolute top-0 right-0 p-8 text-gray-50">
@@ -130,10 +137,16 @@ const Contact = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Social Connectivity */}
-            <div className="bg-gray-900 rounded-[2.5rem] p-6 sm:p-8 lg:p-10 text-white relative overflow-hidden group">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-gray-900 rounded-[2.5rem] p-6 sm:p-8 lg:p-10 text-white relative overflow-hidden group"
+            >
               <div className="absolute top-0 left-0 -m-10 w-40 h-40 bg-blue-600 rounded-full blur-[80px] opacity-20"></div>
               <h3 className="text-lg sm:text-xl font-black mb-6 sm:mb-8 tracking-tight relative">Digital Footprint</h3>
               <div className="grid grid-cols-3 gap-4 sm:gap-6 relative">
@@ -154,11 +167,17 @@ const Contact = () => {
                   </a>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Contact Form Container */}
-          <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
             <div className="absolute -inset-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[3rem] blur-2xl opacity-5"></div>
             <div className="relative bg-white rounded-[2.5rem] shadow-2xl p-6 sm:p-8 lg:p-12 border border-gray-50">
               <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mb-6 sm:mb-8 tracking-tight">Initiate Project</h2>
@@ -229,11 +248,17 @@ const Contact = () => {
                 </button>
               </form>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Global CTA Section */}
-        <div className="mt-16 sm:mt-24 lg:mt-32 text-center bg-white rounded-[3rem] p-8 sm:p-12 lg:p-20 border border-gray-100 shadow-sm relative group overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mt-16 sm:mt-24 lg:mt-32 text-center bg-white rounded-[3rem] p-8 sm:p-12 lg:p-20 border border-gray-100 shadow-sm relative group overflow-hidden"
+        >
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600"></div>
           <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 mb-4 sm:mb-6 tracking-tight">Need a Comprehensive Review?</h3>
           <p className="text-gray-500 text-base sm:text-lg lg:text-xl font-semibold mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -256,7 +281,7 @@ const Contact = () => {
               Capture Resume
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
