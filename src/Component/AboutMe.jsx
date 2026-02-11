@@ -36,7 +36,7 @@ const AboutMe = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/Resume.pdf";
+    link.href = "/JULIUS DAGANA – Full Stack Software Engineer (SWE).pdf";
     link.download = "Julius_Dagana_Resume.pdf";
     document.body.appendChild(link);
     link.click();
