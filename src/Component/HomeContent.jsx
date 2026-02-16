@@ -631,6 +631,87 @@ const HomeContent = ({ setActiveTab }) => {
                 </div>
               </div>
             </motion.div>
+
+
+            {/* Grade-A Project */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8 }}
+              className="group relative"
+            >
+              <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+              <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
+                <div className="grid md:grid-cols-2 gap-8 p-8 lg:p-12">
+                  {/* Project Image */}
+                  <div className="relative order-2 md:order-1">
+                    <div className="absolute -inset-4 bg-gradient-to-br from-orange-400/20 to-red-400/20 rounded-2xl blur-2xl"></div>
+                    <div className="relative bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 flex items-center justify-center aspect-square">
+                      <img
+                        src="/Grade.png"
+                        alt="Grade-A Project"
+                        className="w-full h-full object-contain rounded-xl transform group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="absolute -bottom-4 -right-4 bg-orange-600 text-white px-6 py-3 rounded-full font-bold shadow-lg">
+                      Web App
+                    </div>
+                  </div>
+
+                  {/* Project Details */}
+                  <div className="flex flex-col justify-center order-1 md:order-2">
+                    <div className="inline-flex items-center gap-2 text-orange-600 font-semibold mb-4">
+                      <div className="w-12 h-1 bg-orange-600 rounded-full"></div>
+                      <span className="text-sm uppercase tracking-wider">Personal Project</span>
+                    </div>
+                    <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                      Grade-A
+                    </h3>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                      A comprehensive educational management system features an administrator dashboard for tracking students, assignments, and roadmaps.
+                    </p>
+
+                    {/* Tech Stack */}
+                    <div className="mb-6">
+                      <p className="text-sm font-semibold text-gray-700 mb-3">Technologies Used:</p>
+                      <div className="flex flex-wrap gap-2">
+                        {["React", "Tailwind CSS", "Vercel"].map((tech) => (
+                          <span key={tech} className="px-4 py-2 bg-gradient-to-r from-orange-50 to-red-50 text-orange-700 rounded-full text-sm font-medium border border-orange-200 hover:border-orange-400 transition-colors">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Deployment Platform */}
+                    <div className="mb-6">
+                      <p className="text-sm font-semibold text-gray-700 mb-3">Deployed On:</p>
+                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-sky-50 to-blue-50 text-sky-700 rounded-full text-sm font-bold border border-sky-200">
+                        <img src="/Vercel Logo.jpeg" alt="Vercel" className="w-4 h-4 object-contain" />
+                        Vercel
+                      </div>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="flex flex-wrap gap-4">
+                      <button
+                        onClick={handleViewAllClick}
+                        className="px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
+                      >
+                        View Details
+                      </button>
+                      <button
+                        onClick={handleContactClick}
+                        className="px-6 py-3 border-2 border-orange-600 text-orange-600 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-300 whitespace-nowrap"
+                      >
+                        Get In Touch
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
 
           {/* View All Projects CTA */}
@@ -651,9 +732,9 @@ const HomeContent = ({ setActiveTab }) => {
             </button>
           </motion.div>
         </div>
-      </section>
+      </section >
       {/* Enhanced Skills Section - Redesigned */}
-      <section
+      < section
         className="bg-gradient-to-br from-white via-gray-50 to-white py-16 sm:py-20 lg:py-24"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -771,9 +852,9 @@ const HomeContent = ({ setActiveTab }) => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section >
       {/* Featured Services Section - Redesigned */}
-      <section
+      < section
         className="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-16 sm:py-20 lg:py-24"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -904,9 +985,9 @@ const HomeContent = ({ setActiveTab }) => {
             <p className="text-gray-500 mt-6 font-medium">Let's build something exceptional together.</p>
           </motion.div>
         </div>
-      </section>
+      </section >
       {/* Stats Section - Redesigned */}
-      <section
+      < section
         className="bg-white py-16 sm:py-20"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -956,10 +1037,10 @@ const HomeContent = ({ setActiveTab }) => {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Education & Journey Section - Redesigned */}
-      <section
+      < section
         className="bg-gray-50/50 py-16 sm:py-20 lg:py-24 border-t border-gray-100"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1080,10 +1161,10 @@ const HomeContent = ({ setActiveTab }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Contact CTA Section */}
-      <motion.section
+      < motion.section
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -1091,11 +1172,11 @@ const HomeContent = ({ setActiveTab }) => {
         className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 py-16 sm:py-20  relative overflow-hidden"
       >
         {/* Background decorative elements */}
-        <div className="absolute inset-0 opacity-10">
+        < div className="absolute inset-0 opacity-10" >
           <div className="absolute top-10 left-10 w-20 h-20 bg-white rounded-full animate-pulse"></div>
           <div className="absolute top-32 right-20 w-16 h-16 bg-white rounded-full animate-pulse delay-1000"></div>
           <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white rounded-full animate-pulse delay-500"></div>
-        </div>
+        </div >
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
@@ -1156,8 +1237,8 @@ const HomeContent = ({ setActiveTab }) => {
             />
           </svg>
         </div>
-      </motion.section>
-    </div>
+      </motion.section >
+    </div >
   );
 };
 

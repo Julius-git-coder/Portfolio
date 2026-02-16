@@ -41,6 +41,15 @@ const Project = () => {
       gitLink: "https://github.com/Julius-git-coder/Ewash-On-Back.git",
       tech: ["React Native", "Expo", "Node.js", "MongoDB"],
       gradient: "from-emerald-600 to-teal-500"
+    },
+    {
+      title: "Grade-A",
+      description: "A comprehensive educational management system features an administrator dashboard for tracking students, assignments, and roadmaps.",
+      image: "/Grade.png",
+      link: "https://grade-a-s1sm.vercel.app/",
+      gitLink: "https://github.com/Julius-git-coder/Grade-A",
+      tech: ["React", "Tailwind", "Vercel"],
+      gradient: "from-orange-600 to-red-500"
     }
   ];
 
