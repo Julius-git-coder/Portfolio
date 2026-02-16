@@ -23,6 +23,7 @@ const HomeContent = ({ setActiveTab }) => {
     { type: "image", src: "/Expo_Go.png", alt: "Expo Go icon" },
     { type: "image", src: "/Typescript Logo.jpeg", alt: "TypeScript icon" },
     { type: "image", src: "/Python.png", alt: "Python icon" },
+    { type: "image", src: "/Redis.jpeg", alt: "Redis icon" },
   ];
 
   // Skills data for the enhanced skills section (showing first 8 only)
@@ -122,6 +123,12 @@ const HomeContent = ({ setActiveTab }) => {
       icon: "/Netli.png",
       level: "Expert",
       description: "Web application hosting service",
+    },
+    {
+      name: "Redis",
+      icon: "/Redis.jpeg",
+      level: "Advanced",
+      description: "In-memory data structure store",
     },
   ];
 

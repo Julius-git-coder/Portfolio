@@ -200,6 +200,15 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       projects: ["HydroFlow", "Ewash"],
       color: "black"
     },
+    {
+      name: "Redis",
+      icon: "/Redis.jpeg",
+      level: "Advanced",
+      description: "In-memory data structure store, used as a database, cache, and message broker",
+      experience: "1+ year",
+      projects: ["Backend Architectures"],
+      color: "red"
+    },
   ];
 
   const categories = [
@@ -214,7 +223,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       id: "backend",
       name: "Backend & Systems",
       icon: <Database className="w-6 h-6" />,
-      skills: ["Node.js", "Express.js", "MongoDB", "Firebase", "Python"],
+      skills: ["Node.js", "Express.js", "MongoDB", "Firebase", "Python", "Redis"],
       gradient: "from-purple-600 to-indigo-500"
     },
     {
