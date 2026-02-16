@@ -47,7 +47,7 @@ const Project = () => {
       description: "A comprehensive educational management system features an administrator dashboard for tracking students, assignments, and roadmaps.",
       image: "/Grade.png",
       link: "https://grade-a-s1sm.vercel.app/",
-      gitLink: "https://github.com/Julius-git-coder/Grade-A",
+      gitLink: "https://github.com/Julius-git-coder/Grade-A-",
       tech: ["React", "Tailwind", "Vercel"],
       gradient: "from-orange-600 to-red-500"
     }
