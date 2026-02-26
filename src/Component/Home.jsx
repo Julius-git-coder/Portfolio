@@ -99,7 +99,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden bg-gray-50">
+    <div className="min-h-screen relative overflow-x-clip bg-gray-50">
       <Navbar setActiveTab={setActiveTab} activeTab={activeTab} />
 
       {/* AI Robot Vector Art - Fixed at the bottom-right with full 360° rotation */}
