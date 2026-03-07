@@ -196,7 +196,7 @@ const HomeContent = ({ setActiveTab }) => {
                 <br />
                 I'm <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Julius Dagana</span>
                 <br />
-                <span className="text-gray-900">an Architect of Code.</span>
+                <span className="text-gray-900 whitespace-nowrap">an Architect of Code.</span>
               </h1>
               <p className="text-gray-500 text-lg sm:text-xl font-semibold mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 Specializing in high-performance Full-Stack development and intelligent AI orchestration.
