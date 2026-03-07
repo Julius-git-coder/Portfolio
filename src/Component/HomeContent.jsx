@@ -191,7 +191,7 @@ const HomeContent = ({ setActiveTab }) => {
               <div className="inline-block mb-4">
                 <span className="text-blue-600 font-bold text-sm uppercase tracking-[0.2em] px-4 py-2 bg-blue-50 rounded-full">Available for Projects</span>
               </div>
-              <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-gray-900 mb-8 tracking-tight leading-[1.05]">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 mb-8 tracking-tight leading-[1.05]">
                 Hello <span className="inline-block animate-bounce-slow">👋</span>
                 <br />
                 I'm <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Julius Dagana</span>
