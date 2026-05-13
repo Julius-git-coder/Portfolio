@@ -26,7 +26,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       level: "Expert",
       description: "Building dynamic user interfaces with hooks, context, and advanced patterns",
       experience: "1+ year",
-      projects: ["HydroFlow", "EasyProfile", "Portfolio"],
+      projects: ["HydroFlow", "EasyProfile", "eWorld", "Portfolio"],
       color: "blue"
     },
     {
@@ -63,7 +63,6 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       description: "Utility-first CSS framework for rapid UI development",
       experience: "1+ year",
       projects: ["HydroFlow", "EasyProfile", "Portfolio"],
-      color: "teal"
     },
     {
       name: "Node.js",
@@ -71,7 +70,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       level: "Expert",
       description: "Server-side JavaScript runtime for building scalable applications",
       experience: "1+ year",
-      projects: ["Backend APIs", "Server Projects"],
+      projects: ["Backend APIs", "Server Projects", "eWorld API"],
       color: "green"
     },
     {
@@ -80,7 +79,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       level: "Expert",
       description: "Fast, unopinionated web framework for Node.js applications",
       experience: "1+ year",
-      projects: ["API Development", "Backend Services"],
+      projects: ["API Development", "Backend Services", "eWorld API"],
       color: "gray"
     },
     {
@@ -120,12 +119,12 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       color: "orange"
     },
     {
-      name: "Git",
-      icon: "/Git.png",
+      name: "GitLab & Sentry",
+      icon: "/GitLab-Sentry.png",
       level: "Expert",
-      description: "Version control system for tracking changes and collaboration",
+      description: "GitLab for repos and CI/CD workflows; Sentry for error monitoring and production observability",
       experience: "1+ year",
-      projects: ["All Projects"],
+      projects: ["eWorld", "Portfolio", "All Projects"],
       color: "red"
     },
     {
@@ -170,7 +169,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       level: "Expert",
       description: "Typed superset of JavaScript for scalable applications",
       experience: "1+ year",
-      projects: ["Ewash", "Type-Safe Apps"],
+      projects: ["eWorld", "Type-Safe Apps"],
       color: "blue"
     },
     {
@@ -179,7 +178,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       level: "Expert",
       description: "Cross-platform mobile app development framework",
       experience: "1+ year",
-      projects: ["Ewash", "Mobile Apps"],
+      projects: ["eWorld", "Mobile Apps"],
       color: "cyan"
     },
     {
@@ -188,7 +187,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       level: "Expert",
       description: "Development platform for React Native applications",
       experience: "1+ year",
-      projects: ["Ewash", "Mobile Development"],
+      projects: ["eWorld", "Mobile Development"],
       color: "purple"
     },
     {
@@ -197,7 +196,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       level: "Expert",
       description: "Frontend deployment and hosting platform",
       experience: "1+ year",
-      projects: ["HydroFlow", "Ewash"],
+      projects: ["HydroFlow", "eWorld"],
       color: "black"
     },
     {
@@ -208,6 +207,24 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       experience: "1+ year",
       projects: ["Backend Architectures"],
       color: "red"
+    },
+    {
+      name: "Jest",
+      icon: "/Jest.svg",
+      level: "Advanced",
+      description: "JavaScript testing with matchers, mocks, and async flows to keep features safe to ship",
+      experience: "Recent",
+      projects: ["eWorld", "Unit & integration tests"],
+      color: "emerald"
+    },
+    {
+      name: "Docker",
+      icon: "/Docker.png",
+      level: "Advanced",
+      description: "Container images and compose workflows for reproducible dev, test, and deploy environments",
+      experience: "Recent",
+      projects: ["eWorld", "Environment parity"],
+      color: "cyan"
     },
   ];
 
@@ -223,14 +240,14 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
       id: "backend",
       name: "Backend & Systems",
       icon: <Database className="w-6 h-6" />,
-      skills: ["Node.js", "Express.js", "MongoDB", "Firebase", "Python", "Redis"],
+      skills: ["Node.js", "Express.js", "MongoDB", "Firebase", "Python", "Redis", "GitLab & Sentry"],
       gradient: "from-purple-600 to-indigo-500"
     },
     {
       id: "devops",
-      name: "Tools & Deployment",
+      name: "Tools, Testing & Deployment",
       icon: <Cloud className="w-6 h-6" />,
-      skills: ["Git", "Netlify", "Cloudinary", "Render"],
+      skills: ["GitLab & Sentry", "Netlify", "Cloudinary", "Render", "Jest", "Docker"],
       gradient: "from-emerald-600 to-teal-500"
     }
   ];
@@ -245,10 +262,10 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fcfcfd] py-16 sm:py-20 lg:py-24">
+    <div className="min-h-screen bg-[#fcfcfd] py-16 sm:py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-16 lg:mb-24">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="inline-block">
             <span className="text-blue-600 font-bold text-sm uppercase tracking-[0.2em] mb-3 block">Technical Arsenal</span>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 mb-6 tracking-tight">
@@ -264,7 +281,7 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
         {/* Stats Overview */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 lg:mb-32">
           {[
-            { label: "Technologies", value: "18+", icon: <Cpu className="w-5 h-5 text-blue-600" />, color: "blue" },
+            { label: "Technologies", value: "20+", icon: <Cpu className="w-5 h-5 text-blue-600" />, color: "blue" },
             { label: "Expert Level", value: "18+", icon: <CheckCircle2 className="w-5 h-5 text-emerald-600" />, color: "emerald" },
             { label: "Projects Built", value: "20+", icon: <Rocket className="w-5 h-5 text-purple-600" />, color: "purple" },
             { label: "Focus Areas", value: "3", icon: <Layout className="w-5 h-5 text-amber-600" />, color: "amber" },

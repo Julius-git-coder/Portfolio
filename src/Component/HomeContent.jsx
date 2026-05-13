@@ -8,7 +8,7 @@ const HomeContent = ({ setActiveTab }) => {
     { type: "image", src: "/CSS.png", alt: "CSS icon" },
     { type: "image", src: "/Firebase.png", alt: "Firebase icon" },
     { type: "image", src: "/Html.png", alt: "HTML icon" },
-    { type: "image", src: "/Git.png", alt: "Git icon" },
+    { type: "image", src: "/GitLab-Sentry.png", alt: "GitLab and Sentry" },
     { type: "image", src: "/Javascript.png", alt: "JavaScript icon" },
     { type: "image", src: "/MUI.png", alt: "MUI icon" },
     { type: "image", src: "/Tailwind.png", alt: "Tailwind icon" },
@@ -24,7 +24,12 @@ const HomeContent = ({ setActiveTab }) => {
     { type: "image", src: "/Typescript Logo.jpeg", alt: "TypeScript icon" },
     { type: "image", src: "/Python.png", alt: "Python icon" },
     { type: "image", src: "/Redis.jpeg", alt: "Redis icon" },
+    { type: "image", src: "/Jest.svg", alt: "Jest icon" },
+    { type: "image", src: "/Docker.png", alt: "Docker icon" },
   ];
+
+  /** Hero orbit period (seconds); longer = slower. Was 20s, then ~33s; now slower still. */
+  const orbitDurationSec = 60;
 
   // Skills data for the enhanced skills section (showing first 8 only)
   const skills = [
@@ -130,6 +135,24 @@ const HomeContent = ({ setActiveTab }) => {
       level: "Advanced",
       description: "In-memory data structure store",
     },
+    {
+      name: "Jest",
+      icon: "/Jest.svg",
+      level: "Advanced",
+      description: "Automated testing for stable releases",
+    },
+    {
+      name: "Docker",
+      icon: "/Docker.png",
+      level: "Advanced",
+      description: "Reproducible environments with containers",
+    },
+    {
+      name: "GitLab & Sentry",
+      icon: "/GitLab-Sentry.png",
+      level: "Expert",
+      description: "GitLab for repos and CI/CD; Sentry for error monitoring in production",
+    },
   ];
 
   const getLevelColor = (level) => {
@@ -172,37 +195,37 @@ const HomeContent = ({ setActiveTab }) => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fcfcfd]">
+    <div className="min-h-screen bg-[#fcfcfd] pb-8 sm:pb-12">
       {/* Hero & Orbit Section - Redesigned */}
       <motion.section
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative overflow-hidden pt-12 sm:pt-16 lg:pt-24 pb-20 sm:pb-28"
+        className="relative overflow-hidden pt-6 sm:pt-8 lg:pt-10 pb-16 sm:pb-20 lg:pb-24"
       >
         {/* Abstract Background Elements */}
         <div className="absolute top-0 right-0 -m-24 w-[40rem] h-[40rem] bg-blue-50 rounded-full blur-[120px] opacity-20 -z-10"></div>
         <div className="absolute bottom-0 left-0 -m-24 w-[30rem] h-[30rem] bg-purple-50 rounded-full blur-[120px] opacity-20 -z-10"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-32 lg:gap-64">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-28 lg:gap-48 xl:gap-64">
             {/* Hero Text */}
-            <div className="flex-1 text-center lg:text-left relative z-10 max-w-2xl px-4 lg:px-0">
-              <div className="inline-block mb-4">
-                <span className="text-blue-600 font-bold text-sm uppercase tracking-[0.2em] px-4 py-2 bg-blue-50 rounded-full">Available for Projects</span>
+            <div className="flex-1 text-center lg:text-left relative z-10 max-w-xl lg:max-w-2xl w-full lg:px-0">
+              <div className="inline-block mb-3 sm:mb-4">
+                <span className="text-blue-600 font-semibold text-xs sm:text-sm uppercase tracking-[0.18em] px-3 py-1.5 sm:px-4 sm:py-2 bg-blue-50 rounded-full">Available for Projects</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 mb-8 tracking-tight leading-[1.05]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 mb-5 sm:mb-6 tracking-tight leading-[1.12] sm:leading-[1.1]">
                 Hello <span className="inline-block animate-bounce-slow">👋</span>
                 <br />
                 I'm <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Julius Dagana</span>
                 <br />
-                <span className="text-gray-900 whitespace-nowrap">an Architect of Code.</span>
+                <span className="text-gray-900 sm:whitespace-nowrap">an Architect of Code.</span>
               </h1>
-              <p className="text-gray-500 text-lg sm:text-xl font-semibold mb-12 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-gray-500 text-base sm:text-lg font-medium mb-8 sm:mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 Specializing in high-performance Full-Stack development and intelligent AI orchestration.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 justify-center lg:justify-start">
                 <button
                   onClick={handleDownloadCV}
                   className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-gray-900 text-white rounded-2xl font-black transition-all duration-300 hover:scale-[1.05] active:scale-95 shadow-2xl overflow-hidden whitespace-nowrap"
@@ -221,15 +244,15 @@ const HomeContent = ({ setActiveTab }) => {
             </div>
 
             {/* Orbiting Tech Section */}
-            <div className="flex-1 flex justify-center lg:justify-end relative">
-              <div className="relative w-72 h-72 sm:w-96 sm:h-96 lg:w-[32rem] lg:h-[32rem]">
+            <div className="flex-1 flex justify-center lg:justify-end relative mt-6 lg:mt-0 min-w-0">
+              <div className="relative w-[17rem] h-[17rem] sm:w-[21rem] sm:h-[21rem] lg:w-[27.5rem] lg:h-[27.5rem] xl:w-[29.5rem] xl:h-[29.5rem]">
                 {/* Central Profile Orb */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="relative group p-2 rounded-full bg-white shadow-2xl">
                     <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-500"></div>
-                    <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-72 lg:h-72 rounded-full overflow-hidden flex items-center justify-center bg-white z-10 border-4 border-white">
+                    <div className="relative w-40 h-40 sm:w-48 sm:h-48 lg:w-60 lg:h-60 xl:w-64 xl:h-64 rounded-full overflow-hidden flex items-center justify-center bg-white z-10 border-4 border-white">
                       <img
-                        src="/Codetrain.jpg"
+                        src="/hero-portrait.png"
                         alt="Julius Dagana"
                         className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
                       />
@@ -245,7 +268,7 @@ const HomeContent = ({ setActiveTab }) => {
                     style={{
                       top: "50%",
                       left: "50%",
-                      animationDelay: `${(index / techIcons.length) * -20}s`,
+                      animationDelay: `${(index / techIcons.length) * -orbitDurationSec}s`,
                     }}
                   >
                     <img
@@ -265,27 +288,27 @@ const HomeContent = ({ setActiveTab }) => {
         {`
           .floating-icon {
             position: absolute;
-            animation: orbit 20s linear infinite;
+            animation: orbit ${orbitDurationSec}s linear infinite;
           }
 
           @keyframes orbit {
-            from { transform: translate(-50%, -50%) rotate(0deg) translate(9rem) rotate(0deg); }
-            to { transform: translate(-50%, -50%) rotate(360deg) translate(9rem) rotate(-360deg); }
+            from { transform: translate(-50%, -50%) rotate(0deg) translate(7.75rem) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg) translate(7.75rem) rotate(-360deg); }
           }
 
           @media (min-width: 640px) {
             .floating-icon { animation-name: orbit-sm; }
             @keyframes orbit-sm {
-              from { transform: translate(-50%, -50%) rotate(0deg) translate(13rem) rotate(0deg); }
-              to { transform: translate(-50%, -50%) rotate(360deg) translate(13rem) rotate(-360deg); }
+              from { transform: translate(-50%, -50%) rotate(0deg) translate(9.875rem) rotate(0deg); }
+              to { transform: translate(-50%, -50%) rotate(360deg) translate(9.875rem) rotate(-360deg); }
             }
           }
 
           @media (min-width: 1024px) {
             .floating-icon { animation-name: orbit-lg; }
             @keyframes orbit-lg {
-              from { transform: translate(-50%, -50%) rotate(0deg) translate(18rem) rotate(0deg); }
-              to { transform: translate(-50%, -50%) rotate(360deg) translate(18rem) rotate(-360deg); }
+              from { transform: translate(-50%, -50%) rotate(0deg) translate(11.75rem) rotate(0deg); }
+              to { transform: translate(-50%, -50%) rotate(360deg) translate(11.75rem) rotate(-360deg); }
             }
           }
 
@@ -306,7 +329,7 @@ const HomeContent = ({ setActiveTab }) => {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.8 }}
-        className="bg-[#fcfcfd] pb-16 sm:pb-24 lg:pb-32 px-4 sm:px-6 lg:px-8"
+        className="bg-[#fcfcfd] pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-5xl mx-auto">
           <div className="relative group">
@@ -328,7 +351,7 @@ const HomeContent = ({ setActiveTab }) => {
                   <span className="text-blue-600 font-black"> Artificial Intelligence</span> and modern software architecture.
                 </p>
 
-                <div className="grid sm:grid-cols-2 gap-12 lg:gap-20">
+                <div className="grid sm:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
                   <div className="space-y-6">
                     <h3 className="text-gray-900 font-black text-lg tracking-tight flex items-center gap-3">
                       <Rocket className="w-5 h-5 text-blue-600" />
@@ -376,11 +399,11 @@ const HomeContent = ({ setActiveTab }) => {
 
       {/* Personal Projects Section - Redesigned */}
       <section
-        className="bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50 py-16 sm:py-20 lg:py-24"
+        className="bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50 py-16 sm:py-20 lg:py-28"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 lg:mb-16">
             <div className="inline-block">
               <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block">Portfolio</span>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
@@ -394,20 +417,20 @@ const HomeContent = ({ setActiveTab }) => {
           </div>
 
           {/* Projects Grid */}
-          <div className="space-y-20">
+          <div className="space-y-14 lg:space-y-20">
             {/* HydroFlow Project */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8 }}
-              className="group sticky top-24 z-10"
+              className="group sticky top-28 z-10 scroll-mt-28"
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
               <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
-                <div className="grid md:grid-cols-2 gap-8 p-8 lg:p-12">
+                <div className="grid md:grid-cols-2 md:items-start gap-6 md:gap-8 p-6 sm:p-8 lg:p-10 pb-8 sm:pb-10">
                   {/* Project Image */}
-                  <div className="relative order-2 md:order-1">
+                  <div className="relative order-2 md:order-1 pb-14">
                     <div className="absolute -inset-4 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-2xl blur-2xl"></div>
                     <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 flex items-center justify-center aspect-square">
                       <img
@@ -422,7 +445,7 @@ const HomeContent = ({ setActiveTab }) => {
                   </div>
 
                   {/* Project Details */}
-                  <div className="flex flex-col justify-center order-1 md:order-2">
+                  <div className="flex flex-col justify-start order-1 md:order-2">
                     <div className="inline-flex items-center gap-2 text-blue-600 font-semibold mb-4">
                       <div className="w-12 h-1 bg-blue-600 rounded-full"></div>
                       <span className="text-sm uppercase tracking-wider">Personal Project</span>
@@ -482,13 +505,13 @@ const HomeContent = ({ setActiveTab }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8 }}
-              className="group sticky top-24 z-20"
+              className="group sticky top-28 z-20 scroll-mt-28"
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
               <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
-                <div className="grid md:grid-cols-2 gap-8 p-8 lg:p-12">
+                <div className="grid md:grid-cols-2 md:items-start gap-6 md:gap-8 p-6 sm:p-8 lg:p-10 pb-8 sm:pb-10">
                   {/* Project Details */}
-                  <div className="flex flex-col justify-center">
+                  <div className="flex flex-col justify-start">
                     <div className="inline-flex items-center gap-2 text-purple-600 font-semibold mb-4">
                       <div className="w-12 h-1 bg-purple-600 rounded-full"></div>
                       <span className="text-sm uppercase tracking-wider">Personal Project</span>
@@ -505,7 +528,7 @@ const HomeContent = ({ setActiveTab }) => {
                     <div className="mb-6">
                       <p className="text-sm font-semibold text-gray-700 mb-3">Technologies Used:</p>
                       <div className="flex flex-wrap gap-2">
-                        {["React", "Tailwind CSS", "Firebase", "Cloudinary", "JavaScript", "HTML", "CSS"].map((tech) => (
+                        {["React", "Tailwind CSS", "Firebase", "Cloudinary", "JavaScript", "HTML", "CSS", "GitLab"].map((tech) => (
                           <span key={tech} className="px-4 py-2 bg-gradient-to-r from-purple-50 to-pink-50 text-purple-700 rounded-full text-sm font-medium border border-purple-200 hover:border-purple-400 transition-colors">
                             {tech}
                           </span>
@@ -540,7 +563,7 @@ const HomeContent = ({ setActiveTab }) => {
                   </div>
 
                   {/* Project Image */}
-                  <div className="relative">
+                  <div className="relative pb-14">
                     <div className="absolute -inset-4 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-2xl blur-2xl"></div>
                     <div className="relative bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 flex items-center justify-center aspect-square">
                       <img
@@ -557,65 +580,101 @@ const HomeContent = ({ setActiveTab }) => {
               </div>
             </motion.div>
 
-            {/* Ewash Project */}
+            {/* eWorld — mobile service booking */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8 }}
-              className="group sticky top-24 z-30"
+              className="group sticky top-28 z-30 scroll-mt-28"
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
               <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
-                <div className="grid md:grid-cols-2 gap-8 p-8 lg:p-12">
+                <div className="grid md:grid-cols-2 md:items-start gap-6 md:gap-8 p-6 sm:p-8 lg:p-10 pb-8 sm:pb-10">
                   {/* Project Image */}
-                  <div className="relative order-2 md:order-1">
+                  <div className="relative order-1 pb-14">
                     <div className="absolute -inset-4 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-2xl blur-2xl"></div>
                     <div className="relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 flex items-center justify-center aspect-square">
                       <img
                         src="/Ewash.png"
-                        alt="Ewash Project"
+                        alt="eWorld"
                         className="w-full h-full object-contain rounded-xl transform group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                     <div className="absolute -bottom-4 -right-4 bg-emerald-600 text-white px-6 py-3 rounded-full font-bold shadow-lg">
-                      Mobile App
+                      Mobile + API
                     </div>
                   </div>
 
                   {/* Project Details */}
-                  <div className="flex flex-col justify-center order-1 md:order-2">
+                  <div className="flex flex-col justify-start order-2">
                     <div className="inline-flex items-center gap-2 text-emerald-600 font-semibold mb-4">
                       <div className="w-12 h-1 bg-emerald-600 rounded-full"></div>
                       <span className="text-sm uppercase tracking-wider">Personal Project</span>
                     </div>
-                    <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                      Ewash
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
+                      eWorld
                     </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                      A mobile application designed for shop owners to easily showcase their services online.
-                      Ewash allows users to post their shops, make services available, and let customers book
-                      appointments seamlessly, reducing time wastage and operational challenges.
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-3">
+                      Shop and customer booking with maps and live Socket.io updates—React Native (Expo) on the client, Express on the server.
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4 text-gray-600/95">
+                      <span className="font-semibold text-gray-800">eWorld API:</span> MongoDB, Redis, JWT, hardened middleware, ImageKit, Docker, GitLab CI/CD, and Sentry for production monitoring. Tests: Jest/Maestro/Sentry on mobile; Jest/Supertest on the API.
                     </p>
 
                     {/* Tech Stack */}
-                    <div className="mb-6">
-                      <p className="text-sm font-semibold text-gray-700 mb-3">Technologies Used:</p>
-                      <div className="flex flex-wrap gap-2">
-                        {["TypeScript", "React Native", "MongoDB", "Express", "Tailwind CSS", "Cloudinary", "Expo Go"].map((tech) => (
-                          <span key={tech} className="px-4 py-2 bg-gradient-to-r from-emerald-50 to-teal-50 text-emerald-700 rounded-full text-sm font-medium border border-emerald-200 hover:border-emerald-400 transition-colors">
-                            {tech}
-                          </span>
-                        ))}
+                    <div className="mb-4 space-y-3">
+                      <div>
+                        <p className="text-xs font-semibold text-gray-700 mb-1.5">Mobile · eWorld</p>
+                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                          {[
+                            "React Native",
+                            "Expo",
+                            "TypeScript",
+                            "Navigation · maps · gestures",
+                            "TanStack Query · Socket.io",
+                            "Jest · Maestro · Sentry",
+                            "i18n · Google Sign-in",
+                          ].map((tech) => (
+                            <span key={tech} className="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gradient-to-r from-emerald-50 to-teal-50 text-emerald-800 rounded-full text-xs font-medium border border-emerald-200 hover:border-emerald-400 transition-colors">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold text-gray-700 mb-1.5">Backend · eWorld API</p>
+                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                          {[
+                            "Node.js · Express",
+                            "MongoDB · Mongoose",
+                            "Redis · Socket.io",
+                            "JWT · bcrypt · security stack",
+                            "Cron · Pino · email · SMS",
+                            "ImageKit · Multer",
+                            "Jest · Supertest · memory DB",
+                            "Docker",
+                            "GitLab · CI/CD",
+                            "Sentry",
+                          ].map((tech) => (
+                            <span key={tech} className="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gradient-to-r from-teal-50 to-cyan-50 text-teal-900 rounded-full text-xs font-medium border border-teal-200 hover:border-teal-400 transition-colors">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
 
-                    {/* Deployment Platform */}
-                    <div className="mb-6">
-                      <p className="text-sm font-semibold text-gray-700 mb-3">Deployed On:</p>
-                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-sky-50 to-blue-50 text-sky-700 rounded-full text-sm font-bold border border-sky-200">
-                        <img src="/Vercel Logo.jpeg" alt="Vercel" className="w-4 h-4 object-contain" />
-                        Vercel
+                    {/* Delivery */}
+                    <div className="mb-4">
+                      <p className="text-xs font-semibold text-gray-700 mb-2">Delivery</p>
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                        <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gradient-to-r from-slate-50 to-gray-50 text-slate-800 rounded-full text-xs font-semibold border border-slate-200">
+                          Expo (mobile)
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gradient-to-r from-sky-50 to-blue-50 text-sky-800 rounded-full text-xs font-semibold border border-sky-200">
+                          Docker (API)
+                        </span>
                       </div>
                     </div>
 
@@ -646,13 +705,13 @@ const HomeContent = ({ setActiveTab }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8 }}
-              className="group sticky top-24 z-40"
+              className="group sticky top-28 z-40 scroll-mt-28"
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
               <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
-                <div className="grid md:grid-cols-2 gap-8 p-8 lg:p-12">
+                <div className="grid md:grid-cols-2 md:items-start gap-6 md:gap-8 p-6 sm:p-8 lg:p-10 pb-8 sm:pb-10">
                   {/* Project Image */}
-                  <div className="relative order-2 md:order-1">
+                  <div className="relative order-2 md:order-1 pb-14">
                     <div className="absolute -inset-4 bg-gradient-to-br from-orange-400/20 to-red-400/20 rounded-2xl blur-2xl"></div>
                     <div className="relative bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 flex items-center justify-center aspect-square">
                       <img
@@ -667,7 +726,7 @@ const HomeContent = ({ setActiveTab }) => {
                   </div>
 
                   {/* Project Details */}
-                  <div className="flex flex-col justify-center order-1 md:order-2">
+                  <div className="flex flex-col justify-start order-1 md:order-2">
                     <div className="inline-flex items-center gap-2 text-orange-600 font-semibold mb-4">
                       <div className="w-12 h-1 bg-orange-600 rounded-full"></div>
                       <span className="text-sm uppercase tracking-wider">Personal Project</span>
@@ -683,7 +742,7 @@ const HomeContent = ({ setActiveTab }) => {
                     <div className="mb-6">
                       <p className="text-sm font-semibold text-gray-700 mb-3">Technologies Used:</p>
                       <div className="flex flex-wrap gap-2">
-                        {["React", "Tailwind CSS", "Vercel"].map((tech) => (
+                        {["React", "Tailwind CSS", "Vercel", "GitLab"].map((tech) => (
                           <span key={tech} className="px-4 py-2 bg-gradient-to-r from-orange-50 to-red-50 text-orange-700 rounded-full text-sm font-medium border border-orange-200 hover:border-orange-400 transition-colors">
                             {tech}
                           </span>
@@ -739,14 +798,14 @@ const HomeContent = ({ setActiveTab }) => {
             </button>
           </motion.div>
         </div>
-      </section >
+      </section>
       {/* Enhanced Skills Section - Redesigned */}
-      < section
-        className="bg-gradient-to-br from-white via-gray-50 to-white py-16 sm:py-20 lg:py-24"
+      <section
+        className="bg-gradient-to-br from-white via-gray-50 to-white py-16 sm:py-20 lg:py-28"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 lg:mb-16">
             <div className="inline-block">
               <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block text-center">Expertise</span>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 text-center">
@@ -859,14 +918,14 @@ const HomeContent = ({ setActiveTab }) => {
             </div>
           </motion.div>
         </div>
-      </section >
+      </section>
       {/* Featured Services Section - Redesigned */}
-      < section
-        className="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-16 sm:py-20 lg:py-24"
+      <section
+        className="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-16 sm:py-20 lg:py-28"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 lg:mb-16">
             <div className="inline-block">
               <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block text-center">Solutions</span>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 text-center">
@@ -992,9 +1051,9 @@ const HomeContent = ({ setActiveTab }) => {
             <p className="text-gray-500 mt-6 font-medium">Let's build something exceptional together.</p>
           </motion.div>
         </div>
-      </section >
+      </section>
       {/* Stats Section - Redesigned */}
-      < section
+      <section
         className="bg-white py-16 sm:py-20"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1044,11 +1103,11 @@ const HomeContent = ({ setActiveTab }) => {
             ))}
           </div>
         </div>
-      </section >
+      </section>
 
       {/* Education & Journey Section - Redesigned */}
-      < section
-        className="bg-gray-50/50 py-16 sm:py-20 lg:py-24 border-t border-gray-100"
+      <section
+        className="bg-gray-50/50 py-16 sm:py-20 lg:py-28 border-t border-gray-100"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -1126,7 +1185,7 @@ const HomeContent = ({ setActiveTab }) => {
                     role: "Full Stack Developer",
                     period: "2024 - Present",
                     description:
-                      "I build and explore real-world products such as HydroFlow, EasyProfile, and Ewash, using them to demonstrate strong hands-on experience with React, React Native, TypeScript, JavaScript, Node.js, Express, MongoDB, Firebase, Cloudinary and modern web and mobile technologies.",
+                      "I build and explore real-world products such as HydroFlow, EasyProfile, and eWorld, using them to demonstrate strong hands-on experience with React, React Native, TypeScript, JavaScript, Node.js, Express, MongoDB, Firebase, Cloudinary, GitLab, testing, containers, and modern web and mobile technologies.",
                     icon: <Code2 className="w-5 h-5 text-white" />
                   },
                   {
@@ -1134,7 +1193,7 @@ const HomeContent = ({ setActiveTab }) => {
                     role: "Continuous Development",
                     period: "2023 - Present",
                     description:
-                      "Consistently learning new technologies, building projects, and improving coding practices through hands-on experience and community involvement.",
+                      "Consistently learning new technologies—including GitLab pipelines and Sentry for production-grade apps—building projects, and improving coding practices through hands-on experience and community involvement.",
                     icon: <Rocket className="w-5 h-5 text-white" />
                   },
                 ].map((exp, index) => (
@@ -1168,22 +1227,22 @@ const HomeContent = ({ setActiveTab }) => {
             </div>
           </div>
         </div>
-      </section >
+      </section>
 
       {/* Contact CTA Section */}
-      < motion.section
+      <motion.section
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 py-16 sm:py-20  relative overflow-hidden"
+        className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 py-16 sm:py-20 pb-28 sm:pb-32 relative overflow-hidden"
       >
         {/* Background decorative elements */}
-        < div className="absolute inset-0 opacity-10" >
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-20 h-20 bg-white rounded-full animate-pulse"></div>
           <div className="absolute top-32 right-20 w-16 h-16 bg-white rounded-full animate-pulse delay-1000"></div>
           <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white rounded-full animate-pulse delay-500"></div>
-        </div >
+        </div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
@@ -1204,7 +1263,7 @@ const HomeContent = ({ setActiveTab }) => {
             </button>
             <button
               onClick={handleDownloadCV}
-              className="bg-transparent border-2 md:mb-[6rem] border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 min-w-[200px] whitespace-nowrap"
+              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 min-w-[200px] whitespace-nowrap"
             >
               Download Resume
             </button>
@@ -1244,8 +1303,8 @@ const HomeContent = ({ setActiveTab }) => {
             />
           </svg>
         </div>
-      </motion.section >
-    </div >
+      </motion.section>
+    </div>
   );
 };
 

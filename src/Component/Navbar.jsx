@@ -71,11 +71,10 @@ const Navbar = ({ setActiveTab, activeTab }) => {
     <>
       {/* Desktop & Main Navbar Container */}
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out px-4 py-4 sm:px-6 md:px-12 flex justify-center ${isScrolled ? "sm:py-4" : "sm:py-8"
-          }`}
+        className="fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex justify-center"
       >
         <div
-          className={`flex justify-between items-center w-full max-w-7xl px-6 py-3 rounded-2xl transition-all duration-500 shadow-2xl ${isScrolled
+          className={`flex justify-between items-center w-full max-w-7xl px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl transition-all duration-500 shadow-2xl ${isScrolled
             ? "bg-white/80 backdrop-blur-xl border border-white/20 shadow-blue-500/10"
             : "bg-white/40 backdrop-blur-md border border-white/10"
             }`}
@@ -91,7 +90,7 @@ const Navbar = ({ setActiveTab, activeTab }) => {
           </div>
 
           {/* Desktop Navigation Link */}
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-1 lg:gap-2">
             {tabs.map((tab) => (
               <button
                 key={tab.name}
@@ -139,7 +138,7 @@ const Navbar = ({ setActiveTab, activeTab }) => {
 
           {/* Side Drawer */}
           <div
-            className={`mobile-menu-container absolute top-0 right-0 h-full w-[80%] max-w-sm bg-white shadow-2xl border-l border-gray-100 transition-transform duration-500 ease-in-out pt-24 px-8 ${isAnimating && isMenuOpen ? "translate-x-0" : "translate-x-full"
+            className={`mobile-menu-container absolute top-0 right-0 h-full w-[80%] max-w-sm bg-white shadow-2xl border-l border-gray-100 transition-transform duration-500 ease-in-out pt-28 px-6 sm:px-8 ${isAnimating && isMenuOpen ? "translate-x-0" : "translate-x-full"
               }`}
           >
             <div className="flex flex-col gap-4">

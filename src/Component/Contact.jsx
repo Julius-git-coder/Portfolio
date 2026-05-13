@@ -72,10 +72,10 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#fcfcfd] py-12 sm:py-16 lg:py-24">
+    <div className="min-h-screen bg-[#fcfcfd] py-16 sm:py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-12 sm:mb-16 lg:mb-24">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="inline-block relative">
             <Sparkles className="absolute -top-8 -right-8 w-10 h-10 text-blue-600 animate-pulse opacity-20" />
             <span className="text-blue-600 font-bold text-sm uppercase tracking-[0.2em] mb-3 block">Available for Hire</span>

@@ -1,4 +1,4 @@
-import React, { useState, Suspense, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { AnimatePresence, motion, useSpring, useMotionValue } from "framer-motion";
 import Navbar from "./Navbar";
@@ -11,6 +11,11 @@ import Contact from "./Contact";
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState("Home");
+
+  // Tab switches reuse the same document scroll position; reset to top so each view starts at its header.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeTab]);
 
   // Mouse tracking for interaction
   const mouseX = useMotionValue(0);
@@ -103,7 +108,7 @@ const Home = () => {
       <Navbar setActiveTab={setActiveTab} activeTab={activeTab} />
 
       {/* AI Robot Vector Art - Fixed at the bottom-right with full 360° rotation */}
-      <div className="fixed bottom-2 right-2 w-32 h-32 sm:w-40 sm:h-40 lg:w-56 lg:h-56 z-[9999] pointer-events-none select-none flex items-center justify-center p-4">
+      <div className="fixed bottom-4 right-3 sm:bottom-6 sm:right-5 w-28 h-28 sm:w-36 sm:h-36 lg:w-52 lg:h-52 z-40 pointer-events-none select-none flex items-center justify-center p-2 sm:p-3">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -132,7 +137,7 @@ const Home = () => {
         </motion.div>
       </div>
 
-      <div className="pt-[3.5rem]">
+      <div className="pt-20 md:pt-24 pb-24 sm:pb-28 md:pb-32">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}

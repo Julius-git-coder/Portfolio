@@ -21,7 +21,7 @@ const Project = () => {
       image: "/AquqTrack.png",
       link: "https://hydro-flow-y4rx.vercel.app/",
       gitLink: "https://github.com/Julius-git-coder/hydroFlow.git",
-      tech: ["React", "Tailwind", "Vite", "Web API"],
+      tech: ["React", "Tailwind", "Vite", "Web API", "GitLab"],
       gradient: "from-blue-600 to-cyan-500"
     },
     {
@@ -30,16 +30,33 @@ const Project = () => {
       image: "/EassyP.png",
       link: "https://easy-profile-ms2l.vercel.app/",
       gitLink: "https://github.com/Julius-git-coder/EasyProfile.git",
-      tech: ["Next.js", "Firebase", "TypeScript", "Framer"],
+      tech: ["Next.js", "Firebase", "TypeScript", "Framer", "GitLab"],
       gradient: "from-purple-600 to-indigo-500"
     },
     {
-      title: "Ewash",
-      description: "A revolutionary mobile-first service booking ecosystem for shop owners, digitizing appointments and operational workflows to eliminate physical constraints.",
+      title: "eWorld",
+      description:
+        "React Native (Expo) booking app with maps and Socket.io. eWorld API: Express, MongoDB, Redis, JWT, hardened middleware, ImageKit, GitLab CI/CD, cron/email/SMS, Docker—tested with Jest, Supertest, Maestro, and Sentry.",
       image: "/Ewash.png",
       link: "#",
       gitLink: "https://github.com/Julius-git-coder/Ewash-On-Back.git",
-      tech: ["React Native", "Expo", "Node.js", "MongoDB"],
+      tech: [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "TanStack Query",
+        "React Navigation",
+        "Socket.io",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Redis",
+        "Jest",
+        "Maestro",
+        "Docker",
+        "GitLab",
+        "Sentry"
+      ],
       gradient: "from-emerald-600 to-teal-500"
     },
     {
@@ -48,17 +65,17 @@ const Project = () => {
       image: "/Grade.png",
       link: "https://grade-a-s1sm.vercel.app/",
       gitLink: "https://github.com/Julius-git-coder/Grade-A-",
-      tech: ["React", "Tailwind", "Vercel"],
+      tech: ["React", "Tailwind", "Vercel", "GitLab"],
       gradient: "from-orange-600 to-red-500"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-[#fcfcfd] py-16 sm:py-20 lg:py-24">
+    <div className="min-h-screen bg-[#fcfcfd] py-16 sm:py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header Section */}
-        <div className="text-center mb-16 lg:mb-24">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="inline-block relative">
             <Sparkles className="absolute -top-8 -right-8 w-10 h-10 text-blue-600 animate-pulse opacity-20" />
             <span className="text-blue-600 font-bold text-sm uppercase tracking-[0.2em] mb-3 block">Digital Portfolio</span>
@@ -73,7 +90,7 @@ const Project = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -94,7 +111,7 @@ const Project = () => {
               </div>
 
               {/* Content Overlay */}
-              <div className="relative h-full p-8 flex flex-col justify-end z-10">
+              <div className="relative h-full p-6 sm:p-8 flex flex-col justify-end z-10">
                 {/* External Links - Top Right */}
                 <div className="absolute top-6 right-6 flex gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
                   <a

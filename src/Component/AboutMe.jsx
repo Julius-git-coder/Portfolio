@@ -113,7 +113,7 @@ const AboutMe = () => {
     {
       year: "2024",
       title: "Full-Stack Developer Journey",
-      description: "Started focusing on full-stack development, mastering React, Node.js, and modern web technologies",
+      description: "Started focusing on full-stack development, mastering React, Node.js, and modern web technologies—including GitLab workflows and Sentry for monitoring shipped features",
       icon: <Code2 className="w-5 h-5 text-blue-600" />,
     },
     {
@@ -145,7 +145,7 @@ const AboutMe = () => {
           </p>
           <div className="bg-blue-50/50 rounded-2xl p-6 border border-blue-100 mb-6">
             <p className="text-gray-700 leading-relaxed font-semibold italic">
-              "I specialize in the MERN stack—mastering the interplay between MongoDB, Express.js, React, and Node.js to create seamless, performance-driven applications."
+              "I specialize in the MERN stack—mastering the interplay between MongoDB, Express.js, React, and Node.js to create seamless, performance-driven applications—paired with GitLab for collaboration and pipelines and Sentry for production observability."
             </p>
           </div>
           <p className="text-gray-600 leading-relaxed text-lg">
@@ -223,10 +223,10 @@ const AboutMe = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#fcfcfd] py-16 sm:py-20 lg:py-24">
+    <div className="min-h-screen bg-[#fcfcfd] py-16 sm:py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-16 lg:mb-20">
+        <div className="text-center mb-12 lg:mb-16">
           <div className="inline-block">
             <span className="text-blue-600 font-bold text-sm uppercase tracking-[0.2em] mb-3 block">My Identity</span>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-black text-gray-900 mb-6 tracking-tight">
@@ -241,7 +241,7 @@ const AboutMe = () => {
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Profile Card Sidebar */}
-          <div className="lg:col-span-4 sticky top-24">
+          <div className="lg:col-span-4 sticky top-28">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -365,8 +365,8 @@ const AboutMe = () => {
 
             <div className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 items-center text-center">
               {[
-                { value: "6+", label: "Strong Projects  Launched", color: "text-blue-400" },
-                { value: "18+", label: "Mastered Technologies", color: "text-purple-400" },
+                { value: "7+", label: "Strong Projects Launched", color: "text-blue-400" },
+                { value: "20+", label: "Mastered Technologies", color: "text-purple-400" },
                 { value: "24/7", label: "Agile Learning", color: "text-amber-400" },
                 { value: "∞", label: "Cups of Passion", color: "text-pink-400" },
               ].map((fact, index) => (

@@ -4,7 +4,7 @@ import SparklingCursor from "./Component/SparklingCursor";
 
 const App = () => {
   return (
-    <div className="bg-white/4">
+    <div className="min-h-dvh bg-gray-50">
       <SparklingCursor />
       <Home />
     </div>

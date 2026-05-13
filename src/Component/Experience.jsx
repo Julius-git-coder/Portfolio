@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import {
   Briefcase,
   MapPin,
-  Rocket,
   Code2,
   Terminal,
   Layers,
@@ -18,36 +17,52 @@ const Experience = () => {
       year: "2025 - Present",
       title: "Junior Web Developer",
       company: "Jnard IT Consultancy, Accra, Ghana",
-      description: "Building responsive front-end interfaces with React and Tailwind CSS, focusing on user experience and performance optimization. Contributing to backend APIs using Node.js and deploying projects on Netlify.",
+      description: "Building responsive front-end interfaces with React and Tailwind CSS, focusing on user experience and performance optimization. Contributing to backend APIs using Node.js and deploying projects on Netlify. Using Git, GitLab, and Sentry alongside the team where projects require them.",
       icon: <Code2 className="w-5 h-5 text-white" />,
       gradient: "from-blue-600 to-indigo-600",
-      skills: ["React", "JavaScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Firebase", "Git", "Netlify", "UI/UX"]
+      skills: ["React", "JavaScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Firebase", "Git", "GitLab", "Sentry", "Netlify", "UI/UX"]
     },
     {
       year: "2024 - Present",
       title: "Full-Stack Developer",
       company: "Codetrain Africa, Accra, Ghana",
-      description: "Developing and maintaining web applications using the MERN stack. Collaborated with cross-functional teams to deliver scalable solutions, integrating Firebase and Tailwind CSS for enhanced functionality and design.",
+      description: "Developing and maintaining web applications using the MERN stack. Collaborated with cross-functional teams to deliver scalable solutions, integrating Firebase and Tailwind CSS for enhanced functionality and design. Adopting GitLab and Sentry where applicable for collaboration and error visibility.",
       icon: <Terminal className="w-5 h-5 text-white" />,
       gradient: "from-purple-600 to-pink-600",
-      skills: ["MERN Stack", "Firebase", "Tailwind CSS", "Scalable Solutions", "Collaboration"]
+      skills: ["MERN Stack", "Firebase", "Tailwind CSS", "GitLab", "Sentry", "Scalable Solutions", "Collaboration"]
     },
     {
-      year: "2024",
-      title: "Ewash - Mobile Service Booking Platform",
-      company: "Lead Developer (Personal Project)",
-      description: "Architected a mobile platform for shop owners to digitize their services. Reduced operational challenges and streamlined appointment booking. Successfully integrated complex features like cloud storage and real-time data.",
+      year: "2024 - Present",
+      title: "eWorld — Mobile platform & API",
+      company: "Lead Developer · Personal product",
+      description:
+        "End-to-end eWorld: React Native (Expo) with maps and live Socket.io, TanStack Query, Jest/Maestro/Sentry, i18n, Google Sign-in. eWorld API: Express, MongoDB, Redis, JWT, security middleware, ImageKit, GitLab CI/CD, Sentry observability, Jest/Supertest, Docker.",
       icon: <Layers className="w-5 h-5 text-white" />,
       gradient: "from-emerald-600 to-teal-600",
-      skills: ["TypeScript", "React Native", "Expo", "MongoDB", "Cloudinary"]
+      skills: [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "TanStack Query",
+        "Socket.io",
+        "Jest",
+        "Maestro",
+        "Sentry",
+        "GitLab",
+        "Express",
+        "MongoDB",
+        "Redis",
+        "Docker",
+        "Security stack"
+      ]
     },
   ];
 
   return (
-    <div className="min-h-screen bg-[#fcfcfd] py-16 sm:py-20 lg:py-24">
+    <div className="min-h-screen bg-[#fcfcfd] py-16 sm:py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-16 lg:mb-24">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="inline-block relative">
             <Sparkles className="absolute -top-8 -right-8 w-10 h-10 text-blue-600 animate-pulse opacity-20" />
             <span className="text-blue-600 font-bold text-sm uppercase tracking-[0.2em] mb-3 block">Professional Roadmap</span>
