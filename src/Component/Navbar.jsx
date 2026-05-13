@@ -1,25 +1,38 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { IoHomeOutline } from "react-icons/io5";
 import { MdRoundaboutRight } from "react-icons/md";
 import { GrProjects } from "react-icons/gr";
 import { MdRateReview } from "react-icons/md";
 import { GiSkills } from "react-icons/gi";
 import { IoMdContacts } from "react-icons/io";
+import { NAV_TABS } from "../config/nav";
 
-const Navbar = ({ setActiveTab, activeTab }) => {
+const Navbar = () => {
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const tabs = [
-    { icon: <IoHomeOutline />, name: "Home" },
-    { icon: <MdRoundaboutRight />, name: "About Me" },
-    { icon: <GrProjects />, name: "Project" },
-    { icon: <MdRateReview />, name: "Experience" },
-    { icon: <GiSkills />, name: "Skills" },
-    { icon: <IoMdContacts />, name: "Contact" },
-  ];
+  const tabs = NAV_TABS.map((t) => {
+    const icon =
+      t.name === "Home" ? (
+        <IoHomeOutline />
+      ) : t.name === "About Me" ? (
+        <MdRoundaboutRight />
+      ) : t.name === "Project" ? (
+        <GrProjects />
+      ) : t.name === "Experience" ? (
+        <MdRateReview />
+      ) : t.name === "Skills" ? (
+        <GiSkills />
+      ) : (
+        <IoMdContacts />
+      );
+    return { ...t, icon };
+  });
 
   // Handle scroll effect
   useEffect(() => {
@@ -47,8 +60,8 @@ const Navbar = ({ setActiveTab, activeTab }) => {
     }
   }, [isMenuOpen]);
 
-  const handleTabClick = (tabName) => {
-    setActiveTab(tabName);
+  const handleTabClick = (path) => {
+    navigate(path);
     if (isMenuOpen) {
       toggleMenu();
     }
@@ -80,7 +93,7 @@ const Navbar = ({ setActiveTab, activeTab }) => {
             }`}
         >
           {/* Logo / Branding */}
-          <div className="flex items-center gap-2 group cursor-pointer" onClick={() => setActiveTab("Home")}>
+          <div className="flex items-center gap-2 group cursor-pointer" onClick={() => handleTabClick("/")}>
             <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center overflow-hidden shadow-lg group-hover:rotate-12 transition-transform duration-300">
               <img src="/Codetrain.jpg" alt="Julius" className="w-full h-full object-cover" />
             </div>
@@ -93,20 +106,21 @@ const Navbar = ({ setActiveTab, activeTab }) => {
           <div className="hidden md:flex items-center gap-1 lg:gap-2">
             {tabs.map((tab) => (
               <button
-                key={tab.name}
-                onClick={() => handleTabClick(tab.name)}
-                className={`relative px-4 py-2 rounded-xl text-sm font-bold transition-all duration-300 whitespace-nowrap overflow-hidden group ${activeTab === tab.name
+                key={tab.path}
+                type="button"
+                onClick={() => handleTabClick(tab.path)}
+                className={`relative px-4 py-2 rounded-xl text-sm font-bold transition-all duration-300 whitespace-nowrap overflow-hidden group ${pathname === tab.path
                   ? "text-blue-600 bg-blue-50/50"
                   : "text-gray-500 hover:text-gray-900 hover:bg-gray-100/50"
                   }`}
               >
                 <div className="flex items-center gap-2 relative z-10">
-                  <span className={`transition-transform duration-300 ${activeTab === tab.name ? "scale-110" : "group-hover:scale-110"}`}>
+                  <span className={`transition-transform duration-300 ${pathname === tab.path ? "scale-110" : "group-hover:scale-110"}`}>
                     {tab.icon}
                   </span>
                   {tab.name}
                 </div>
-                {activeTab === tab.name && (
+                {pathname === tab.path && (
                   <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-purple-600" />
                 )}
               </button>
@@ -145,9 +159,10 @@ const Navbar = ({ setActiveTab, activeTab }) => {
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mb-2">Navigation Node</span>
               {tabs.map((tab, index) => (
                 <button
-                  key={tab.name}
-                  onClick={() => handleTabClick(tab.name)}
-                  className={`flex items-center gap-4 py-4 px-6 rounded-2xl font-black text-sm uppercase tracking-widest transition-all duration-300 whitespace-nowrap group ${activeTab === tab.name
+                  key={tab.path}
+                  type="button"
+                  onClick={() => handleTabClick(tab.path)}
+                  className={`flex items-center gap-4 py-4 px-6 rounded-2xl font-black text-sm uppercase tracking-widest transition-all duration-300 whitespace-nowrap group ${pathname === tab.path
                     ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/20 translate-x-2"
                     : "text-gray-500 hover:bg-gray-50 hover:text-gray-900"
                     }`}
@@ -155,7 +170,7 @@ const Navbar = ({ setActiveTab, activeTab }) => {
                     transitionDelay: isAnimating && isMenuOpen ? `${index * 50}ms` : "0ms",
                   }}
                 >
-                  <span className={`text-lg ${activeTab === tab.name ? "text-white" : "text-blue-600"}`}>
+                  <span className={`text-lg ${pathname === tab.path ? "text-white" : "text-blue-600"}`}>
                     {tab.icon}
                   </span>
                   {tab.name}

@@ -2,14 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   Briefcase,
-  MapPin,
   Code2,
   Terminal,
   Layers,
   Calendar,
   Sparkles,
-  ChevronRight
 } from "lucide-react";
+import { eWorldExperience } from "../data/eWorld";
 
 const Experience = () => {
   const experiences = [
@@ -32,29 +31,8 @@ const Experience = () => {
       skills: ["MERN Stack", "Firebase", "Tailwind CSS", "GitLab", "Sentry", "Scalable Solutions", "Collaboration"]
     },
     {
-      year: "2024 - Present",
-      title: "eWorld — Mobile platform & API",
-      company: "Lead Developer · Personal product",
-      description:
-        "End-to-end eWorld: React Native (Expo) with maps and live Socket.io, TanStack Query, Jest/Maestro/Sentry, i18n, Google Sign-in. eWorld API: Express, MongoDB, Redis, JWT, security middleware, ImageKit, GitLab CI/CD, Sentry observability, Jest/Supertest, Docker.",
+      ...eWorldExperience,
       icon: <Layers className="w-5 h-5 text-white" />,
-      gradient: "from-emerald-600 to-teal-600",
-      skills: [
-        "React Native",
-        "Expo",
-        "TypeScript",
-        "TanStack Query",
-        "Socket.io",
-        "Jest",
-        "Maestro",
-        "Sentry",
-        "GitLab",
-        "Express",
-        "MongoDB",
-        "Redis",
-        "Docker",
-        "Security stack"
-      ]
     },
   ];
 
@@ -85,7 +63,7 @@ const Experience = () => {
             <div className="space-y-12">
               {experiences.map((exp, index) => (
                 <motion.div
-                  key={index}
+                  key={`${exp.company}-${exp.year}`}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}

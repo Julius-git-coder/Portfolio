@@ -1,28 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Coffee, Download, Users, Rocket, Code2, Trophy, BookOpen, Briefcase, GraduationCap, Milestone, ArrowRight } from "lucide-react";
+import { Download, Users, Rocket, Code2, Trophy, BookOpen, Briefcase, GraduationCap, Milestone, ArrowRight } from "lucide-react";
+import { eWorldProject } from "../data/eWorld";
+import { tabPath } from "../config/nav";
 
-const HomeContent = ({ setActiveTab }) => {
-  // Array of icons (images and Coffee SVG) and their alt texts for the floating icons
+const HomeContent = () => {
+  const navigate = useNavigate();
+  // Hero orbit icons (subset for lighter paint / animation cost)
   const techIcons = [
-    { type: "image", src: "/CSS.png", alt: "CSS icon" },
-    { type: "image", src: "/Firebase.png", alt: "Firebase icon" },
-    { type: "image", src: "/Html.png", alt: "HTML icon" },
     { type: "image", src: "/GitLab-Sentry.png", alt: "GitLab and Sentry" },
     { type: "image", src: "/Javascript.png", alt: "JavaScript icon" },
-    { type: "image", src: "/MUI.png", alt: "MUI icon" },
     { type: "image", src: "/Tailwind.png", alt: "Tailwind icon" },
     { type: "image", src: "/Mogo.png", alt: "MongoDB icon" },
-    { type: "image", src: "/Netli.png", alt: "Netlify icon" },
     { type: "image", src: "/Node.png", alt: "Node.js icon" },
     { type: "image", src: "/Express.png", alt: "Express icon" },
-    { type: "image", src: "/Cloudinary.png", alt: "Cloudinary icon" },
-    { type: "image", src: "/Nextjs.png", alt: "Next.js icon" },
     { type: "image", src: "/ReactNative.png", alt: "React Native icon" },
-    { type: "image", src: "/Render.png", alt: "Render icon" },
     { type: "image", src: "/Expo_Go.png", alt: "Expo Go icon" },
     { type: "image", src: "/Typescript Logo.jpeg", alt: "TypeScript icon" },
-    { type: "image", src: "/Python.png", alt: "Python icon" },
     { type: "image", src: "/Redis.jpeg", alt: "Redis icon" },
     { type: "image", src: "/Jest.svg", alt: "Jest icon" },
     { type: "image", src: "/Docker.png", alt: "Docker icon" },
@@ -179,19 +174,19 @@ const HomeContent = ({ setActiveTab }) => {
   };
 
   const handleContactClick = () => {
-    setActiveTab("Contact");
+    navigate(tabPath("Contact"));
   };
 
   const handleSkillsClick = () => {
-    setActiveTab("Skills");
+    navigate(tabPath("Skills"));
   };
 
   const handleAboutMeClick = () => {
-    setActiveTab("About Me");
+    navigate(tabPath("About Me"));
   };
 
   const handleViewAllClick = () => {
-    setActiveTab("Project");
+    navigate(tabPath("Project"));
   };
 
   return (
@@ -275,6 +270,8 @@ const HomeContent = ({ setActiveTab }) => {
                       src={icon.src}
                       alt={icon.alt}
                       className="w-6 sm:w-8 lg:w-10 opacity-80 group-hover/icon:opacity-100 group-hover/icon:drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 ))}
@@ -424,7 +421,7 @@ const HomeContent = ({ setActiveTab }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8 }}
-              className="group sticky top-28 z-10 scroll-mt-28"
+              className="group relative z-10"
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
               <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
@@ -505,7 +502,7 @@ const HomeContent = ({ setActiveTab }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8 }}
-              className="group sticky top-28 z-20 scroll-mt-28"
+              className="group relative z-20"
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
               <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
@@ -586,7 +583,7 @@ const HomeContent = ({ setActiveTab }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8 }}
-              className="group sticky top-28 z-30 scroll-mt-28"
+              className="group relative z-30"
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
               <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
@@ -597,7 +594,7 @@ const HomeContent = ({ setActiveTab }) => {
                     <div className="relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 flex items-center justify-center aspect-square">
                       <img
                         src="/Ewash.png"
-                        alt="eWorld"
+                        alt={eWorldProject.title}
                         className="w-full h-full object-contain rounded-xl transform group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
@@ -613,13 +610,13 @@ const HomeContent = ({ setActiveTab }) => {
                       <span className="text-sm uppercase tracking-wider">Personal Project</span>
                     </div>
                     <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
-                      eWorld
+                      {eWorldProject.title}
                     </h3>
                     <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-3">
-                      Shop and customer booking with maps and live Socket.io updates—React Native (Expo) on the client, Express on the server.
+                      {eWorldProject.homeSummaryClient}
                     </p>
                     <p className="text-gray-600 text-sm leading-relaxed mb-4 text-gray-600/95">
-                      <span className="font-semibold text-gray-800">eWorld API:</span> MongoDB, Redis, JWT, hardened middleware, ImageKit, Docker, GitLab CI/CD, and Sentry for production monitoring. Tests: Jest/Maestro/Sentry on mobile; Jest/Supertest on the API.
+                      <span className="font-semibold text-gray-800">eWorld API:</span> {eWorldProject.homeSummaryApi}
                     </p>
 
                     {/* Tech Stack */}
@@ -627,15 +624,7 @@ const HomeContent = ({ setActiveTab }) => {
                       <div>
                         <p className="text-xs font-semibold text-gray-700 mb-1.5">Mobile · eWorld</p>
                         <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                          {[
-                            "React Native",
-                            "Expo",
-                            "TypeScript",
-                            "Navigation · maps · gestures",
-                            "TanStack Query · Socket.io",
-                            "Jest · Maestro · Sentry",
-                            "i18n · Google Sign-in",
-                          ].map((tech) => (
+                          {eWorldProject.homeTechMobile.map((tech) => (
                             <span key={tech} className="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gradient-to-r from-emerald-50 to-teal-50 text-emerald-800 rounded-full text-xs font-medium border border-emerald-200 hover:border-emerald-400 transition-colors">
                               {tech}
                             </span>
@@ -645,18 +634,7 @@ const HomeContent = ({ setActiveTab }) => {
                       <div>
                         <p className="text-xs font-semibold text-gray-700 mb-1.5">Backend · eWorld API</p>
                         <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                          {[
-                            "Node.js · Express",
-                            "MongoDB · Mongoose",
-                            "Redis · Socket.io",
-                            "JWT · bcrypt · security stack",
-                            "Cron · Pino · email · SMS",
-                            "ImageKit · Multer",
-                            "Jest · Supertest · memory DB",
-                            "Docker",
-                            "GitLab · CI/CD",
-                            "Sentry",
-                          ].map((tech) => (
+                          {eWorldProject.homeTechBackend.map((tech) => (
                             <span key={tech} className="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gradient-to-r from-teal-50 to-cyan-50 text-teal-900 rounded-full text-xs font-medium border border-teal-200 hover:border-teal-400 transition-colors">
                               {tech}
                             </span>
@@ -705,7 +683,7 @@ const HomeContent = ({ setActiveTab }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8 }}
-              className="group sticky top-28 z-40 scroll-mt-28"
+              className="group relative z-40"
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
               <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
@@ -1039,7 +1017,7 @@ const HomeContent = ({ setActiveTab }) => {
             className="mt-20 text-center"
           >
             <button
-              onClick={() => setActiveTab("Contact")}
+              onClick={handleContactClick}
               className="group relative inline-flex items-center gap-4 px-10 py-5 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 text-white rounded-2xl font-bold text-lg shadow-xl hover:shadow-blue-500/40 hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden whitespace-nowrap"
             >
               <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>

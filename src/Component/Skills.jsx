@@ -1,5 +1,5 @@
-
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   Code2,
@@ -17,7 +17,8 @@ import {
   ChevronRight
 } from "lucide-react";
 
-const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
+const Skills = () => {
+  const navigate = useNavigate();
   // Complete skills data
   const allSkills = [
     {
@@ -397,14 +398,14 @@ const Skills = ({ onSwitchToContact, onSwitchToProjects }) => {
 
             <div className="relative flex flex-col sm:flex-row gap-6 justify-center">
               <button
-                onClick={onSwitchToProjects}
+                onClick={() => navigate("/projects")}
                 className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-white text-gray-900 rounded-2xl font-black transition-all duration-300 hover:scale-[1.05] active:scale-95 shadow-xl whitespace-nowrap"
               >
                 <span>View My Portfolio</span>
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button
-                onClick={onSwitchToContact}
+                onClick={() => navigate("/contact")}
                 className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-white/10 text-white rounded-2xl font-black border border-white/20 transition-all duration-300 hover:bg-white/20 active:scale-95 whitespace-nowrap"
               >
                 <span>Consultation</span>
