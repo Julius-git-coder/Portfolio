@@ -12,6 +12,77 @@ import {
 import { projects } from "../data/projects";
 import { eWorldCaseStudy } from "../data/eWorld";
 
+const RenderProjectCard = ({ project, index }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, delay: index * 0.2 }}
+    className="group relative h-[30rem] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+  >
+    <div className="absolute inset-0">
+      <img
+        src={project.image}
+        alt={project.title}
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        loading="lazy"
+        decoding="async"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent opacity-90"></div>
+    </div>
+
+    <div className="relative h-full p-6 sm:p-8 flex flex-col justify-end z-10">
+      <div className="absolute top-6 right-6 flex gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+        <a
+          href={project.link}
+          className="p-3 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-gray-900 transition-all duration-300"
+          title="Live Demo"
+        >
+          <ExternalLink className="w-5 h-5" />
+        </a>
+        <a
+          href={project.gitLink}
+          className="p-3 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-gray-900 transition-all duration-300"
+          title="Source Code"
+        >
+          <Github className="w-5 h-5" />
+        </a>
+      </div>
+
+      <div className="transform transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+        <div className="flex items-center gap-2 mb-2 flex-wrap">
+          {project.tech.map((skill, i) => (
+            <span
+              key={`${project.title}-${skill}-${i}`}
+              className="px-3 py-1 bg-white/10 backdrop-blur-md text-white/90 rounded-full text-xs font-bold border border-white/20 uppercase tracking-wider"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+
+        {project.type && (
+          <span className="inline-block px-3 py-1 mb-2 bg-white/15 backdrop-blur-md text-white rounded-full text-xs font-bold border border-white/20 w-fit">
+            {project.type}
+          </span>
+        )}
+
+        <h3 className="text-3xl font-black text-white mb-3">{project.title}</h3>
+
+        <p className="text-gray-300 font-medium text-sm leading-relaxed mb-6 line-clamp-3">{project.description}</p>
+
+        <a
+          href={project.link}
+          className="inline-flex items-center gap-2 text-white font-bold text-sm uppercase tracking-wider group/btn hover:text-blue-400 transition-colors"
+        >
+          <span>Execute Site</span>
+          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+        </a>
+      </div>
+    </div>
+  </motion.div>
+);
+
 const Project = () => {
   return (
     <div className="min-h-screen bg-[#fcfcfd] py-16 sm:py-20 lg:py-28">
@@ -30,72 +101,37 @@ const Project = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="group relative h-[30rem] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-            >
-              <div className="absolute inset-0">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent opacity-90"></div>
-              </div>
+        {/* Personal Projects */}
+        <div className="mb-16 lg:mb-20">
+          <div className="text-center mb-10">
+            <span className="text-blue-600 font-bold text-xs uppercase tracking-[0.2em]">Personal Work</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mt-2 tracking-tight">
+              Personal <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
+            </h2>
+            <div className="h-1 w-20 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mt-4"></div>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+            {projects.filter(p => p.category === "featured").map((project, index) => (
+              <RenderProjectCard key={project.title} project={project} index={index} />
+            ))}
+          </div>
+        </div>
 
-              <div className="relative h-full p-6 sm:p-8 flex flex-col justify-end z-10">
-                <div className="absolute top-6 right-6 flex gap-3 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                  <a
-                    href={project.link}
-                    className="p-3 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-gray-900 transition-all duration-300"
-                    title="Live Demo"
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={project.gitLink}
-                    className="p-3 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-gray-900 transition-all duration-300"
-                    title="Source Code"
-                  >
-                    <Github className="w-5 h-5" />
-                  </a>
-                </div>
-
-                <div className="transform transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-                  <div className="flex items-center gap-2 mb-4 flex-wrap">
-                    {project.tech.map((skill, i) => (
-                      <span
-                        key={`${project.title}-${skill}-${i}`}
-                        className="px-3 py-1 bg-white/10 backdrop-blur-md text-white/90 rounded-full text-xs font-bold border border-white/20 uppercase tracking-wider"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-
-                  <h3 className="text-3xl font-black text-white mb-3">{project.title}</h3>
-
-                  <p className="text-gray-300 font-medium text-sm leading-relaxed mb-6 line-clamp-3">{project.description}</p>
-
-                  <a
-                    href={project.link}
-                    className="inline-flex items-center gap-2 text-white font-bold text-sm uppercase tracking-wider group/btn hover:text-blue-400 transition-colors"
-                  >
-                    <span>Execute Site</span>
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+        {/* Client Work */}
+        <div className="mb-16 lg:mb-20">
+          <div className="text-center mb-10">
+            <span className="text-emerald-600 font-bold text-xs uppercase tracking-[0.2em]">Professional Work</span>
+            <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mt-2 tracking-tight">
+              Client <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Work</span>
+            </h2>
+            <p className="text-gray-500 font-semibold text-sm mt-2">Companies &amp; commercial projects</p>
+            <div className="h-1 w-20 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto rounded-full mt-4"></div>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+            {projects.filter(p => p.category === "client").map((project, index) => (
+              <RenderProjectCard key={project.title} project={project} index={index} />
+            ))}
+          </div>
         </div>
 
         <motion.section

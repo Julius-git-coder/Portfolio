@@ -28,7 +28,7 @@ const AboutMe = () => {
     { label: "Name", value: "Julius Dagana", icon: <User className="w-4 h-4" /> },
     { label: "Location", value: "Accra, Ghana", icon: <MapPin className="w-4 h-4" /> },
     { label: "Experience", value: "1+ Year", icon: <Calendar className="w-4 h-4" /> },
-    { label: "Specialization", value: "Full-Stack Development", icon: <Briefcase className="w-4 h-4" /> },
+    { label: "Specialization", value: "Full-Stack & AI Engineering", icon: <Briefcase className="w-4 h-4" /> },
     { label: "Education", value: "Software Engineering/AI", icon: <GraduationCap className="w-4 h-4" /> },
     { label: "Institute", value: "Codetrain Africa", icon: <BookOpen className="w-4 h-4" /> },
     { label: "Languages", value: "English, Local Languages", icon: <Globe2 className="w-4 h-4" /> },
@@ -111,8 +111,14 @@ const AboutMe = () => {
 
   const timeline = [
     {
+      year: "2025",
+      title: "AI Engineering — RAG & LLM Systems",
+      description: "Built an offline AI Website Auditor with LangChain RAG pipelines, ChromaDB vector store (12K+ vectors), Ollama local LLM inference, and Flask backend — combining rule-based analysis with retrieval-augmented intelligence",
+      icon: <Cpu className="w-5 h-5 text-indigo-600" />,
+    },
+    {
       year: "2024",
-      title: "Full-Stack Developer Journey",
+      title: "Full-Stack Software Engineer Journey",
       description: "Started focusing on full-stack development, mastering React, Node.js, and modern web technologies—including GitLab workflows and Sentry for monitoring shipped features",
       icon: <Code2 className="w-5 h-5 text-blue-600" />,
     },
@@ -141,15 +147,15 @@ const AboutMe = () => {
       >
         <div className="prose prose-lg max-w-none">
           <p className="text-gray-600 leading-relaxed text-lg mb-6">
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Hello!</span> I'm a passionate <span className="text-gray-900 font-extrabold uppercase tracking-tight">full-stack developer</span> based in Accra, Ghana. My journey into programming began with simple curiosity and has evolved into a dedicated mission to build digital experiences that matter.
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Hello!</span> I'm a passionate <span className="text-gray-900 font-extrabold uppercase tracking-tight">full-stack software engineer</span> based in Accra, Ghana. My journey into programming began with simple curiosity and has evolved into a dedicated mission to build digital experiences that matter.
           </p>
           <div className="bg-blue-50/50 rounded-2xl p-6 border border-blue-100 mb-6">
             <p className="text-gray-700 leading-relaxed font-semibold italic">
-              "I specialize in the MERN stack—mastering the interplay between MongoDB, Express.js, React, and Node.js to create seamless, performance-driven applications—paired with GitLab for collaboration and pipelines and Sentry for production observability."
+              "I specialize across the full stack—MongoDB, Express.js, React, Node.js, Next.js, and React Native—and now extend into AI engineering with LangChain, ChromaDB vector stores, local LLM inference via Ollama, and Flask-based RAG pipelines. Paired with GitLab CI/CD and Sentry observability for production-grade delivery."
             </p>
           </div>
           <p className="text-gray-600 leading-relaxed text-lg">
-            I thrive at the intersection of <span className="font-bold text-gray-900">logic and creativity</span>. Whether it's architecting a robust backend with Node.js or crafting pixel-perfect interfaces with Tailwind CSS, I approach every project with a commitment to clean code and exceptional user experience.
+            I thrive at the intersection of <span className="font-bold text-gray-900">logic, creativity, and artificial intelligence</span>. Whether it's architecting a robust backend with Node.js, crafting pixel-perfect interfaces with Tailwind CSS, or building RAG-powered AI systems with LangChain and local LLMs, I approach every project with a commitment to clean code and exceptional user experience.
           </p>
         </div>
       </motion.div>
@@ -264,7 +270,7 @@ const AboutMe = () => {
 
                 <h2 className="text-3xl font-black text-gray-900 mb-2 tracking-tight">Julius Dagana</h2>
                 <p className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-sm font-bold mb-8">
-                  Full-Stack Developer
+                  Full-Stack Software Engineer
                 </p>
 
                 {/* Info List */}

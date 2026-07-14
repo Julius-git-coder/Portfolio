@@ -2,8 +2,65 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Download, Users, Rocket, Code2, Trophy, BookOpen, Briefcase, GraduationCap, Milestone, ArrowRight } from "lucide-react";
-import { eWorldProject } from "../data/eWorld";
+import { projects } from "../data/projects";
 import { tabPath } from "../config/nav";
+
+const HomeProjectCard = ({ project, index, handleViewAllClick, handleContactClick }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.2 }}
+    transition={{ duration: 0.6, delay: (index % 3) * 0.15 }}
+    className="group relative z-10"
+  >
+    <div className={`absolute -inset-1 bg-gradient-to-r ${project.gradient} rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500`}></div>
+    <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 h-full">
+      <div className="flex flex-col h-full">
+        <div className="relative h-52 overflow-hidden">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent"></div>
+          <div className={`absolute bottom-4 left-4 bg-gradient-to-r ${project.gradient} text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg`}>
+            {project.type || "Project"}
+          </div>
+        </div>
+        <div className="p-6 flex-1 flex flex-col">
+          <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+            {project.title}
+          </h3>
+          <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2 flex-1">
+            {project.description}
+          </p>
+          <div className="flex flex-wrap gap-1.5 mb-5">
+            {project.tech.map((tech) => (
+              <span key={tech} className="px-2.5 py-1 bg-gray-50 text-gray-600 rounded-full text-xs font-medium border border-gray-100">
+                {tech}
+              </span>
+            ))}
+          </div>
+          <div className="flex gap-3 mt-auto">
+            <button
+              onClick={handleViewAllClick}
+              className={`flex-1 px-4 py-2.5 bg-gradient-to-r ${project.gradient} text-white rounded-xl text-sm font-bold hover:shadow-lg hover:scale-105 transition-all duration-300`}
+            >
+              View Details
+            </button>
+            <button
+              onClick={handleContactClick}
+              className="flex-1 px-4 py-2.5 border-2 border-gray-200 text-gray-700 rounded-xl text-sm font-bold hover:border-gray-400 transition-all duration-300"
+            >
+              Get In Touch
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </motion.div>
+);
 
 const HomeContent = () => {
   const navigate = useNavigate();
@@ -21,6 +78,7 @@ const HomeContent = () => {
     { type: "image", src: "/Redis.jpeg", alt: "Redis icon" },
     { type: "image", src: "/Jest.svg", alt: "Jest icon" },
     { type: "image", src: "/Docker.png", alt: "Docker icon" },
+    { type: "image", src: "/Python.png", alt: "Python icon" },
   ];
 
   /** Hero orbit period (seconds); longer = slower. Was 20s, then ~33s; now slower still. */
@@ -111,6 +169,30 @@ const HomeContent = () => {
       icon: "/Python.png",
       level: "Expert",
       description: "Versatile programming language",
+    },
+    {
+      name: "LangChain",
+      icon: "/AI.png",
+      level: "Advanced",
+      description: "LLM orchestration framework for building RAG pipelines, chain composition, and agent-based AI workflows",
+    },
+    {
+      name: "ChromaDB",
+      icon: "/Rag-Langchain.png",
+      level: "Advanced",
+      description: "Open-source vector database for semantic search, embedding storage, and RAG-powered knowledge retrieval",
+    },
+    {
+      name: "Ollama",
+      icon: "/AI.png",
+      level: "Advanced",
+      description: "Local LLM runtime for running open-source models offline with custom prompt engineering and inference",
+    },
+    {
+      name: "Flask",
+      icon: "/Python.png",
+      level: "Advanced",
+      description: "Lightweight Python web framework for building REST APIs, rule engines, and backend services",
     },
     {
       name: "Vercel",
@@ -217,7 +299,7 @@ const HomeContent = () => {
                 <span className="text-gray-900 sm:whitespace-nowrap">an Architect of Code.</span>
               </h1>
               <p className="text-gray-500 text-base sm:text-lg font-medium mb-8 sm:mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Specializing in high-performance Full-Stack development and intelligent AI orchestration.
+                Engineering high-performance Full-Stack applications and AI-powered RAG systems with local LLMs.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 justify-center lg:justify-start">
@@ -394,12 +476,11 @@ const HomeContent = () => {
         </div>
       </motion.section>
 
-      {/* Personal Projects Section - Redesigned */}
+      {/* Personal Projects Section */}
       <section
         className="bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50 py-16 sm:py-20 lg:py-28"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header */}
           <div className="text-center mb-12 lg:mb-16">
             <div className="inline-block">
               <span className="text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2 block">Portfolio</span>
@@ -409,353 +490,35 @@ const HomeContent = () => {
               <div className="h-1 w-24 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
             </div>
             <p className="text-gray-600 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
-              Showcasing my expertise in full-stack development through real-world applications
+              Flagship projects showcasing my expertise in full-stack development, AI, and modern application architecture
             </p>
           </div>
 
-          {/* Projects Grid */}
-          <div className="space-y-14 lg:space-y-20">
-            {/* HydroFlow Project */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.8 }}
-              className="group relative z-10"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
-              <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
-                <div className="grid md:grid-cols-2 md:items-start gap-6 md:gap-8 p-6 sm:p-8 lg:p-10 pb-8 sm:pb-10">
-                  {/* Project Image */}
-                  <div className="relative order-2 md:order-1 pb-14">
-                    <div className="absolute -inset-4 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-2xl blur-2xl"></div>
-                    <div className="relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6 flex items-center justify-center aspect-square">
-                      <img
-                        src="/AquqTrack.png"
-                        alt="HydroFlow Project"
-                        className="w-full h-full object-contain rounded-xl transform group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white px-6 py-3 rounded-full font-bold shadow-lg">
-                      Web App
-                    </div>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {projects.filter(p => p.category === "featured").map((project, index) => (
+              <HomeProjectCard key={project.title} project={project} index={index} handleViewAllClick={handleViewAllClick} handleContactClick={handleContactClick} />
+            ))}
+          </div>
 
-                  {/* Project Details */}
-                  <div className="flex flex-col justify-start order-1 md:order-2">
-                    <div className="inline-flex items-center gap-2 text-blue-600 font-semibold mb-4">
-                      <div className="w-12 h-1 bg-blue-600 rounded-full"></div>
-                      <span className="text-sm uppercase tracking-wider">Personal Project</span>
-                    </div>
-                    <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                      HydroFlow
-                    </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                      A water tracking app designed to help users stay healthy, hydrated, and consistent with their
-                      daily goals. Built with modern tools for optimal performance and user experience.
-                    </p>
-
-                    {/* Tech Stack */}
-                    <div className="mb-6">
-                      <p className="text-sm font-semibold text-gray-700 mb-3">Technologies Used:</p>
-                      <div className="flex flex-wrap gap-2">
-                        {["React", "Tailwind CSS", "Firebase", "JavaScript", "HTML", "CSS", "MUI"].map((tech) => (
-                          <span key={tech} className="px-4 py-2 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 rounded-full text-sm font-medium border border-blue-200 hover:border-blue-400 transition-colors">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Deployment Platform */}
-                    <div className="mb-6">
-                      <p className="text-sm font-semibold text-gray-700 mb-3">Deployed On:</p>
-                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-50 to-cyan-50 text-teal-700 rounded-full text-sm font-bold border border-teal-200">
-                        <img src="/Vercel Logo.jpeg" alt="Vercel" className="w-4 h-4 object-contain" />
-                        Vercel
-                      </div>
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="flex flex-wrap gap-4">
-                      <button
-                        onClick={handleViewAllClick}
-                        className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
-                      >
-                        View Details
-                      </button>
-                      <button
-                        onClick={handleContactClick}
-                        className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 whitespace-nowrap"
-                      >
-                        Get In Touch
-                      </button>
-                    </div>
-                  </div>
-                </div>
+          {/* Client Work */}
+          <div className="mt-16 lg:mt-20">
+            <div className="text-center mb-12 lg:mb-16">
+              <div className="inline-block">
+                <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider mb-2 block">Professional</span>
+                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+                  Client <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Work</span>
+                </h2>
+                <div className="h-1 w-24 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto rounded-full"></div>
               </div>
-            </motion.div>
-
-            {/* EasyProfile Project */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.8 }}
-              className="group relative z-20"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
-              <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
-                <div className="grid md:grid-cols-2 md:items-start gap-6 md:gap-8 p-6 sm:p-8 lg:p-10 pb-8 sm:pb-10">
-                  {/* Project Details */}
-                  <div className="flex flex-col justify-start">
-                    <div className="inline-flex items-center gap-2 text-purple-600 font-semibold mb-4">
-                      <div className="w-12 h-1 bg-purple-600 rounded-full"></div>
-                      <span className="text-sm uppercase tracking-wider">Personal Project</span>
-                    </div>
-                    <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                      EasyProfile
-                    </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                      A profile management application designed to help users create, customize, and manage
-                      their personal information with ease using modern web technologies.
-                    </p>
-
-                    {/* Tech Stack */}
-                    <div className="mb-6">
-                      <p className="text-sm font-semibold text-gray-700 mb-3">Technologies Used:</p>
-                      <div className="flex flex-wrap gap-2">
-                        {["React", "Tailwind CSS", "Firebase", "Cloudinary", "JavaScript", "HTML", "CSS", "GitLab"].map((tech) => (
-                          <span key={tech} className="px-4 py-2 bg-gradient-to-r from-purple-50 to-pink-50 text-purple-700 rounded-full text-sm font-medium border border-purple-200 hover:border-purple-400 transition-colors">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Deployment Platform */}
-                    <div className="mb-6">
-                      <p className="text-sm font-semibold text-gray-700 mb-3">Deployed On:</p>
-                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-50 to-teal-50 text-emerald-700 rounded-full text-sm font-bold border border-emerald-200">
-                        <img src="/Netli.png" alt="Netlify" className="w-4 h-4 object-contain" />
-                        Netlify
-                      </div>
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="flex flex-wrap gap-4">
-                      <button
-                        onClick={handleViewAllClick}
-                        className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
-                      >
-                        View Details
-                      </button>
-                      <button
-                        onClick={handleContactClick}
-                        className="px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-xl font-semibold hover:bg-purple-50 transition-all duration-300 whitespace-nowrap"
-                      >
-                        Get In Touch
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Project Image */}
-                  <div className="relative pb-14">
-                    <div className="absolute -inset-4 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-2xl blur-2xl"></div>
-                    <div className="relative bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 flex items-center justify-center aspect-square">
-                      <img
-                        src="/EassyP.png"
-                        alt="EasyProfile Project"
-                        className="w-full h-full object-contain rounded-xl transform group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="absolute -bottom-4 -right-4 bg-purple-600 text-white px-6 py-3 rounded-full font-bold shadow-lg">
-                      Web App
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* eWorld — mobile service booking */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.8 }}
-              className="group relative z-30"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
-              <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
-                <div className="grid md:grid-cols-2 md:items-start gap-6 md:gap-8 p-6 sm:p-8 lg:p-10 pb-8 sm:pb-10">
-                  {/* Project Image */}
-                  <div className="relative order-1 pb-14">
-                    <div className="absolute -inset-4 bg-gradient-to-br from-emerald-400/20 to-teal-400/20 rounded-2xl blur-2xl"></div>
-                    <div className="relative bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 flex items-center justify-center aspect-square">
-                      <img
-                        src="/Ewash.png"
-                        alt={eWorldProject.title}
-                        className="w-full h-full object-contain rounded-xl transform group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="absolute -bottom-4 -right-4 bg-emerald-600 text-white px-6 py-3 rounded-full font-bold shadow-lg">
-                      Mobile + API
-                    </div>
-                  </div>
-
-                  {/* Project Details */}
-                  <div className="flex flex-col justify-start order-2">
-                    <div className="inline-flex items-center gap-2 text-emerald-600 font-semibold mb-4">
-                      <div className="w-12 h-1 bg-emerald-600 rounded-full"></div>
-                      <span className="text-sm uppercase tracking-wider">Personal Project</span>
-                    </div>
-                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
-                      {eWorldProject.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-3">
-                      {eWorldProject.homeSummaryClient}
-                    </p>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4 text-gray-600/95">
-                      <span className="font-semibold text-gray-800">eWorld API:</span> {eWorldProject.homeSummaryApi}
-                    </p>
-
-                    {/* Tech Stack */}
-                    <div className="mb-4 space-y-3">
-                      <div>
-                        <p className="text-xs font-semibold text-gray-700 mb-1.5">Mobile · eWorld</p>
-                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                          {eWorldProject.homeTechMobile.map((tech) => (
-                            <span key={tech} className="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gradient-to-r from-emerald-50 to-teal-50 text-emerald-800 rounded-full text-xs font-medium border border-emerald-200 hover:border-emerald-400 transition-colors">
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold text-gray-700 mb-1.5">Backend · eWorld API</p>
-                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                          {eWorldProject.homeTechBackend.map((tech) => (
-                            <span key={tech} className="px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gradient-to-r from-teal-50 to-cyan-50 text-teal-900 rounded-full text-xs font-medium border border-teal-200 hover:border-teal-400 transition-colors">
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Delivery */}
-                    <div className="mb-4">
-                      <p className="text-xs font-semibold text-gray-700 mb-2">Delivery</p>
-                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                        <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gradient-to-r from-slate-50 to-gray-50 text-slate-800 rounded-full text-xs font-semibold border border-slate-200">
-                          Expo (mobile)
-                        </span>
-                        <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-gradient-to-r from-sky-50 to-blue-50 text-sky-800 rounded-full text-xs font-semibold border border-sky-200">
-                          Docker (API)
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="flex flex-wrap gap-4">
-                      <button
-                        onClick={handleViewAllClick}
-                        className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
-                      >
-                        View Details
-                      </button>
-                      <button
-                        onClick={handleContactClick}
-                        className="px-6 py-3 border-2 border-emerald-600 text-emerald-600 rounded-xl font-semibold hover:bg-emerald-50 transition-all duration-300 whitespace-nowrap"
-                      >
-                        Get In Touch
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-
-            {/* Grade-A Project */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.8 }}
-              className="group relative z-40"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
-              <div className="relative bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500">
-                <div className="grid md:grid-cols-2 md:items-start gap-6 md:gap-8 p-6 sm:p-8 lg:p-10 pb-8 sm:pb-10">
-                  {/* Project Image */}
-                  <div className="relative order-2 md:order-1 pb-14">
-                    <div className="absolute -inset-4 bg-gradient-to-br from-orange-400/20 to-red-400/20 rounded-2xl blur-2xl"></div>
-                    <div className="relative bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 flex items-center justify-center aspect-square">
-                      <img
-                        src="/Grade.png"
-                        alt="Grade-A Project"
-                        className="w-full h-full object-contain rounded-xl transform group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="absolute -bottom-4 -right-4 bg-orange-600 text-white px-6 py-3 rounded-full font-bold shadow-lg">
-                      Web App
-                    </div>
-                  </div>
-
-                  {/* Project Details */}
-                  <div className="flex flex-col justify-start order-1 md:order-2">
-                    <div className="inline-flex items-center gap-2 text-orange-600 font-semibold mb-4">
-                      <div className="w-12 h-1 bg-orange-600 rounded-full"></div>
-                      <span className="text-sm uppercase tracking-wider">Personal Project</span>
-                    </div>
-                    <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                      Grade-A
-                    </h3>
-                    <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                      A comprehensive educational management system features an administrator dashboard for tracking students, assignments, and roadmaps.
-                    </p>
-
-                    {/* Tech Stack */}
-                    <div className="mb-6">
-                      <p className="text-sm font-semibold text-gray-700 mb-3">Technologies Used:</p>
-                      <div className="flex flex-wrap gap-2">
-                        {["React", "Tailwind CSS", "Vercel", "GitLab"].map((tech) => (
-                          <span key={tech} className="px-4 py-2 bg-gradient-to-r from-orange-50 to-red-50 text-orange-700 rounded-full text-sm font-medium border border-orange-200 hover:border-orange-400 transition-colors">
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Deployment Platform */}
-                    <div className="mb-6">
-                      <p className="text-sm font-semibold text-gray-700 mb-3">Deployed On:</p>
-                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-sky-50 to-blue-50 text-sky-700 rounded-full text-sm font-bold border border-sky-200">
-                        <img src="/Vercel Logo.jpeg" alt="Vercel" className="w-4 h-4 object-contain" />
-                        Vercel
-                      </div>
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="flex flex-wrap gap-4">
-                      <button
-                        onClick={handleViewAllClick}
-                        className="px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 whitespace-nowrap"
-                      >
-                        View Details
-                      </button>
-                      <button
-                        onClick={handleContactClick}
-                        className="px-6 py-3 border-2 border-orange-600 text-orange-600 rounded-xl font-semibold hover:bg-orange-50 transition-all duration-300 whitespace-nowrap"
-                      >
-                        Get In Touch
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+              <p className="text-gray-600 text-lg mt-6 max-w-2xl mx-auto leading-relaxed">
+                Companies &amp; commercial projects delivered for clients and organizations
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {projects.filter(p => p.category === "client").map((project, index) => (
+                <HomeProjectCard key={project.title} project={project} index={index} handleViewAllClick={handleViewAllClick} handleContactClick={handleContactClick} />
+              ))}
+            </div>
           </div>
 
           {/* View All Projects CTA */}
@@ -793,8 +556,8 @@ const HomeContent = () => {
             </div>
             <p className="text-gray-600 text-lg mt-6 max-w-2xl mx-auto leading-relaxed md:font-bold">
               I bring expertise across the full stack of modern web development
-              technologies, from frontend frameworks to backend services and
-              deployment platforms.
+              and AI engineering, from frontend frameworks to backend services,
+              vector databases, and local LLM orchestration.
             </p>
           </div>
 

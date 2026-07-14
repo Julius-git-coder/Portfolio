@@ -86,11 +86,47 @@ const Skills = () => {
     {
       name: "Python",
       icon: "/Python.png",
-      level: "Intermediate",
-      description: "General-purpose programming language for backend, scripting, and data processing",
+      level: "Advanced",
+      description: "General-purpose language used for Flask APIs, LangChain pipelines, and AI/ML data processing",
       experience: "1+ year",
-      projects: ["Backend Scripts", "APIs", "Automation"],
+      projects: ["AI Website Auditor", "Backend Scripts", "APIs", "RAG Pipelines"],
       color: "blue"
+    },
+    {
+      name: "LangChain",
+      icon: "/AI.png",
+      level: "Advanced",
+      description: "LLM orchestration framework for building RAG pipelines, chain composition, and agent-based AI workflows",
+      experience: "Recent",
+      projects: ["AI Website Auditor", "RAG Knowledge Base"],
+      color: "blue"
+    },
+    {
+      name: "ChromaDB",
+      icon: "/Rag-Langchain.png",
+      level: "Advanced",
+      description: "Open-source vector database for semantic search, embedding storage, and RAG-powered knowledge retrieval",
+      experience: "Recent",
+      projects: ["AI Website Auditor", "12K+ Vector Store"],
+      color: "green"
+    },
+    {
+      name: "Ollama",
+      icon: "/AI.png",
+      level: "Advanced",
+      description: "Local LLM runtime for running open-source models offline with custom prompt engineering and inference",
+      experience: "Recent",
+      projects: ["AI Website Auditor", "Local LLM Chatbot"],
+      color: "amber"
+    },
+    {
+      name: "Flask",
+      icon: "/Python.png",
+      level: "Advanced",
+      description: "Lightweight Python web framework for building REST APIs, rule engines, and backend services",
+      experience: "Recent",
+      projects: ["AI Website Auditor", "60+ Rule Engine"],
+      color: "gray"
     },
     {
       name: "Render",
@@ -245,6 +281,13 @@ const Skills = () => {
       gradient: "from-purple-600 to-indigo-500"
     },
     {
+      id: "ai",
+      name: "AI & Machine Learning",
+      icon: <Cpu className="w-6 h-6" />,
+      skills: ["Python", "LangChain", "ChromaDB", "Ollama", "Flask"],
+      gradient: "from-blue-700 to-indigo-600"
+    },
+    {
       id: "devops",
       name: "Tools, Testing & Deployment",
       icon: <Cloud className="w-6 h-6" />,
@@ -282,10 +325,10 @@ const Skills = () => {
         {/* Stats Overview */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 lg:mb-32">
           {[
-            { label: "Technologies", value: "20+", icon: <Cpu className="w-5 h-5 text-blue-600" />, color: "blue" },
-            { label: "Expert Level", value: "18+", icon: <CheckCircle2 className="w-5 h-5 text-emerald-600" />, color: "emerald" },
+            { label: "Technologies", value: "25+", icon: <Cpu className="w-5 h-5 text-blue-600" />, color: "blue" },
+            { label: "Expert Level", value: "22+", icon: <CheckCircle2 className="w-5 h-5 text-emerald-600" />, color: "emerald" },
             { label: "Projects Built", value: "20+", icon: <Rocket className="w-5 h-5 text-purple-600" />, color: "purple" },
-            { label: "Focus Areas", value: "3", icon: <Layout className="w-5 h-5 text-amber-600" />, color: "amber" },
+            { label: "Focus Areas", value: "4", icon: <Layout className="w-5 h-5 text-amber-600" />, color: "amber" },
           ].map((stat, index) => (
             <motion.div
               key={index}

@@ -66,7 +66,7 @@ export const eWorldCaseStudy = {
 export const eWorldExperience = {
   year: "2024 - Present",
   title: "eWorld — Mobile platform & API",
-  company: "Lead Developer · Personal product",
+  company: "Lead Engineer · Personal product",
   description:
     "End-to-end eWorld: React Native (Expo) with maps and live Socket.io, TanStack Query, Jest/Maestro/Sentry, i18n, Google Sign-in. eWorld API: Express, MongoDB, Redis, JWT, security middleware, ImageKit, GitLab CI/CD, Sentry observability, Jest/Supertest, Docker.",
   gradient: "from-emerald-600 to-teal-600",

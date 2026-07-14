@@ -1,26 +1,33 @@
 import { eWorldProject } from "./eWorld";
+import { sonturkProject } from "./sonturk";
+import { geeksflowProject } from "./geeksflow";
+import { ggtPrintProject } from "./ggt-print";
+import { churchProject } from "./church";
+import { rorepProject } from "./rorep";
+import { ragLangchainProject } from "./rag-langchain";
 
-/** Portfolio projects grid (Projects page + shared metadata) */
 export const projects = [
   {
-    title: "HydroFlow",
-    description:
-      "A high-performance water tracking intelligence system designed to optimize hydration through weather-based recommendations and daily goal synchronization.",
-    image: "/AquqTrack.png",
-    link: "https://hydro-flow-y4rx.vercel.app/",
-    gitLink: "https://github.com/Julius-git-coder/hydroFlow.git",
-    tech: ["React", "Tailwind", "Vite", "Web API", "GitLab"],
-    gradient: "from-blue-600 to-cyan-500",
+    title: ragLangchainProject.title,
+    description: ragLangchainProject.projectDescription,
+    image: ragLangchainProject.image,
+    link: ragLangchainProject.link,
+    gitLink: ragLangchainProject.gitLink,
+    tech: ragLangchainProject.projectTech,
+    gradient: ragLangchainProject.gradient,
+    type: "AI Platform",
+    category: "featured",
   },
   {
-    title: "EasyProfile",
-    description:
-      "An advanced profile orchestration platform that enables seamless identity management and dynamic user customization with a high-tier UI/UX focus.",
-    image: "/EassyP.png",
-    link: "https://easy-profile-ms2l.vercel.app/",
-    gitLink: "https://github.com/Julius-git-coder/EasyProfile.git",
-    tech: ["Next.js", "Firebase", "TypeScript", "Framer", "GitLab"],
-    gradient: "from-purple-600 to-indigo-500",
+    title: rorepProject.title,
+    description: rorepProject.projectDescription,
+    image: rorepProject.image,
+    link: rorepProject.link,
+    gitLink: rorepProject.gitLink,
+    tech: rorepProject.projectTech,
+    gradient: rorepProject.gradient,
+    type: "Web App",
+    category: "featured",
   },
   {
     title: eWorldProject.title,
@@ -30,6 +37,20 @@ export const projects = [
     gitLink: eWorldProject.gitLink,
     tech: eWorldProject.projectTech,
     gradient: eWorldProject.gradient,
+    type: "Mobile + API",
+    category: "featured",
+  },
+  {
+    title: "HydroFlow",
+    description:
+      "A high-performance water tracking intelligence system designed to optimize hydration through weather-based recommendations and daily goal synchronization.",
+    image: "/AquqTrack.png",
+    link: "https://hydro-flow-y4rx.vercel.app/",
+    gitLink: "https://github.com/Julius-git-coder/hydroFlow.git",
+    tech: ["React", "Tailwind", "Vite", "Web API", "GitLab"],
+    gradient: "from-blue-600 to-cyan-500",
+    type: "Web App",
+    category: "featured",
   },
   {
     title: "Grade-A",
@@ -40,5 +61,99 @@ export const projects = [
     gitLink: "https://github.com/Julius-git-coder/Grade-A-",
     tech: ["React", "Tailwind", "Vercel", "GitLab"],
     gradient: "from-orange-600 to-red-500",
+    type: "Web App",
+    category: "featured",
+  },
+  {
+    title: "Healthe",
+    description:
+      "A health and wellness mobile application built with React Native and Expo, designed to help users track fitness goals, monitor health metrics, and maintain a healthier lifestyle.",
+    image: "/Healthe.png",
+    link: "#",
+    gitLink: "https://github.com/Julius-git-coder/Healthe.git",
+    tech: ["React Native", "Expo", "TypeScript", "NativeWind", "React Navigation"],
+    gradient: "from-rose-600 to-pink-500",
+    type: "Mobile App",
+    category: "featured",
+  },
+  {
+    title: "EasyProfile",
+    description:
+      "An advanced profile orchestration platform that enables seamless identity management and dynamic user customization with a high-tier UI/UX focus.",
+    image: "/EassyP.png",
+    link: "https://easy-profile-ms2l.vercel.app/",
+    gitLink: "https://github.com/Julius-git-coder/EasyProfile.git",
+    tech: ["Next.js", "Firebase", "TypeScript", "Framer", "GitLab"],
+    gradient: "from-purple-600 to-indigo-500",
+    type: "Web App",
+    category: "featured",
+  },
+  {
+    title: sonturkProject.title,
+    description: sonturkProject.projectDescription,
+    image: sonturkProject.image,
+    link: sonturkProject.link,
+    gitLink: sonturkProject.gitLink,
+    tech: sonturkProject.projectTech,
+    gradient: sonturkProject.gradient,
+    type: "Ecosystem",
+    category: "client",
+  },
+  {
+    title: geeksflowProject.title,
+    description: geeksflowProject.projectDescription,
+    image: geeksflowProject.image,
+    link: geeksflowProject.link,
+    gitLink: geeksflowProject.gitLink,
+    tech: geeksflowProject.projectTech,
+    gradient: geeksflowProject.gradient,
+    type: "Ecosystem",
+    category: "client",
+  },
+  {
+    title: ggtPrintProject.title,
+    description: ggtPrintProject.projectDescription,
+    image: ggtPrintProject.image,
+    link: ggtPrintProject.link,
+    gitLink: ggtPrintProject.gitLink,
+    tech: ggtPrintProject.projectTech,
+    gradient: ggtPrintProject.gradient,
+    type: "POS System",
+    category: "client",
+  },
+  {
+    title: "Student Management",
+    description:
+      "A comprehensive school management dashboard featuring student records, attendance tracking, assignments, grading, and class scheduling with interactive data visualizations.",
+    image: "/Student-Mgmt.png",
+    link: "#",
+    gitLink: "https://github.com/TARIQQ-coder/Student-Management-Proj.git",
+    tech: ["React", "Vite", "Tailwind", "Recharts", "Zustand", "Headless UI"],
+    gradient: "from-teal-600 to-cyan-500",
+    type: "Web App",
+    category: "client",
+  },
+  {
+    title: churchProject.title,
+    description: churchProject.projectDescription,
+    image: churchProject.image,
+    link: churchProject.link,
+    gitLink: churchProject.gitLink,
+    tech: churchProject.projectTech,
+    gradient: churchProject.gradient,
+    type: "Ecosystem",
+    category: "client",
+  },
+  {
+    title: "ShopMart",
+    description:
+      "A modern shopping web application with a clean React interface, offering product browsing, cart management, and seamless checkout for an intuitive e-commerce experience.",
+    image: "/ShopMart.png",
+    link: "#",
+    gitLink: "https://github.com/Julius-git-coder/shortmart-main.git",
+    tech: ["React", "Vite", "Tailwind", "React Router"],
+    gradient: "from-sky-600 to-indigo-500",
+    type: "Web App",
+    category: "client",
   },
 ];

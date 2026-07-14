@@ -7,8 +7,19 @@ import {
   Layers,
   Calendar,
   Sparkles,
+  Building2,
+  Store,
+  Globe,
+  Trees,
+  Brain,
 } from "lucide-react";
 import { eWorldExperience } from "../data/eWorld";
+import { sonturkExperience } from "../data/sonturk";
+import { geeksflowExperience } from "../data/geeksflow";
+import { ggtPrintExperience } from "../data/ggt-print";
+import { churchExperience } from "../data/church";
+import { rorepExperience } from "../data/rorep";
+import { ragLangchainExperience } from "../data/rag-langchain";
 
 const Experience = () => {
   const experiences = [
@@ -23,7 +34,7 @@ const Experience = () => {
     },
     {
       year: "2024 - Present",
-      title: "Full-Stack Developer",
+      title: "Software Engineer (Full Stack)",
       company: "Codetrain Africa, Accra, Ghana",
       description: "Developing and maintaining web applications using the MERN stack. Collaborated with cross-functional teams to deliver scalable solutions, integrating Firebase and Tailwind CSS for enhanced functionality and design. Adopting GitLab and Sentry where applicable for collaboration and error visibility.",
       icon: <Terminal className="w-5 h-5 text-white" />,
@@ -31,8 +42,41 @@ const Experience = () => {
       skills: ["MERN Stack", "Firebase", "Tailwind CSS", "GitLab", "Sentry", "Scalable Solutions", "Collaboration"]
     },
     {
+      year: "2025 - Present",
+      title: "Software Engineer",
+      company: "GEEKS Global Tech Solutions, Accra, Ghana",
+      description: "Architecting full-stack web and mobile solutions at an award-winning IT firm (Best Digital Solutions Provider 2024) serving clients across Ghana, Canada, USA, and Europe. Engineer cross-platform mobile applications with React Native and Flutter, develop robust Laravel APIs and Next.js frontends, and deploy cloud infrastructure on AWS. Lead end-to-end project delivery — from system architecture and database design to CI/CD pipelines and production monitoring — ensuring scalable, performant, and maintainable software for diverse industry verticals including healthcare, e-commerce, and fintech.",
+      icon: <Globe className="w-5 h-5 text-white" />,
+      gradient: "from-sky-600 to-cyan-600",
+      skills: ["React Native", "Flutter", "Next.js", "Laravel", "Node.js", "AWS", "PostgreSQL", "Firebase", "React", "TypeScript", "Tailwind", "CI/CD", "System Architecture", "REST API Design"]
+    },
+    {
       ...eWorldExperience,
       icon: <Layers className="w-5 h-5 text-white" />,
+    },
+    {
+      ...sonturkExperience,
+      icon: <Store className="w-5 h-5 text-white" />,
+    },
+    {
+      ...churchExperience,
+      icon: <Building2 className="w-5 h-5 text-white" />,
+    },
+    {
+      ...rorepExperience,
+      icon: <Trees className="w-5 h-5 text-white" />,
+    },
+    {
+      ...geeksflowExperience,
+      icon: <Layers className="w-5 h-5 text-white" />,
+    },
+    {
+      ...ggtPrintExperience,
+      icon: <Terminal className="w-5 h-5 text-white" />,
+    },
+    {
+      ...ragLangchainExperience,
+      icon: <Brain className="w-5 h-5 text-white" />,
     },
   ];
 
