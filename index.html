@@ -15,6 +15,24 @@
     window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
     plausible.init()
   </script>
+  <script>
+    (function(){
+      var api = 'https://laravel-production-7e1c.up.railway.app/api/track/visit';
+      var data = {
+        page_url: window.location.href,
+        referrer: document.referrer || '',
+        screen_resolution: screen.width + 'x' + screen.height
+      };
+      try {
+        var payload = JSON.stringify(data);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', api, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(payload);
+      } catch(e) {}
+    })();
+  </script>
 </head>
 
 <body>

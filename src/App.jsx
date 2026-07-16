@@ -8,6 +8,7 @@ import Project from "./Component/Project";
 import Experience from "./Component/Experience";
 import Skills from "./Component/Skills";
 import Contact from "./Component/Contact";
+import Insights from "./Component/Insights";
 
 const App = () => {
   return (
@@ -15,9 +16,10 @@ const App = () => {
       <div className="min-h-dvh bg-gray-50">
         <SparklingCursor />
         <Routes>
+          <Route path="/insights" element={<Insights />} />
           <Route element={<SiteLayout />}>
             <Route path="/" element={<HomeContent />} />
-            <Route path="/about" element={<AboutMe />} />
+            <Route path="/about" element={<Project />} />
             <Route path="/projects" element={<Project />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/skills" element={<Skills />} />
