@@ -67,7 +67,7 @@ const Insights = () => {
 
       const visitsData = await visitsRes.json();
       const statsData = await statsRes.json();
-      setVisits(visitsData.data || []);
+      setVisits(visitsData.data?.data || []);
       setStats(statsData);
     } catch {
       //
