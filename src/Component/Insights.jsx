@@ -8,6 +8,8 @@ import {
   Users,
   Activity,
   Calendar,
+  Trash2,
+  AlertTriangle,
 } from "lucide-react";
 
 const API_BASE = "https://laravel-production-7e1c.up.railway.app/api";
@@ -17,6 +19,7 @@ const Insights = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [confirmClear, setConfirmClear] = useState(false);
   const [visits, setVisits] = useState([]);
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -79,6 +82,25 @@ const Insights = () => {
   useEffect(() => {
     if (token) fetchData();
   }, [token, fetchData]);
+
+  const handleClear = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(`${API_BASE}/audit/visits`, {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (res.ok) {
+        setVisits([]);
+        setStats(null);
+      }
+    } catch {
+      //
+    } finally {
+      setLoading(false);
+      setConfirmClear(false);
+    }
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("audit_token");
@@ -167,13 +189,22 @@ const Insights = () => {
             <h1 className="text-3xl font-black text-white tracking-tight">Insights</h1>
             <p className="text-gray-500 text-sm font-semibold mt-1">Visitor Analytics</p>
           </div>
-          <button
-            onClick={handleLogout}
-            className="flex items-center gap-2 px-4 py-2 bg-[#1e1e2a] hover:bg-[#2a2a3a] text-gray-400 rounded-xl transition-all duration-300 text-sm font-bold"
-          >
-            <LogOut className="w-4 h-4" />
-            Exit
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setConfirmClear(true)}
+              className="flex items-center gap-2 px-4 py-2 bg-[#1e1e2a] hover:bg-red-500/10 text-gray-400 hover:text-red-400 rounded-xl transition-all duration-300 text-sm font-bold"
+            >
+              <Trash2 className="w-4 h-4" />
+              Clear Data
+            </button>
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 px-4 py-2 bg-[#1e1e2a] hover:bg-[#2a2a3a] text-gray-400 rounded-xl transition-all duration-300 text-sm font-bold"
+            >
+              <LogOut className="w-4 h-4" />
+              Exit
+            </button>
+          </div>
         </div>
 
         {stats && (
@@ -286,6 +317,40 @@ const Insights = () => {
           </div>
         </div>
       </div>
+
+      {confirmClear && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-[#12121a] border border-[#1e1e2a] rounded-3xl p-8 max-w-sm w-full shadow-2xl"
+          >
+            <div className="flex items-center justify-center w-16 h-16 bg-red-500/10 rounded-2xl mx-auto mb-6">
+              <AlertTriangle className="w-8 h-8 text-red-500" />
+            </div>
+            <h3 className="text-xl font-black text-white text-center mb-2">Clear All Data?</h3>
+            <p className="text-gray-500 text-sm text-center mb-8 font-semibold">
+              This will permanently delete all visitor records. This action cannot be undone.
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={() => setConfirmClear(false)}
+                disabled={loading}
+                className="flex-1 py-3 bg-[#1e1e2a] hover:bg-[#2a2a3a] text-gray-400 rounded-xl font-bold transition-all duration-300 text-sm disabled:opacity-50"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleClear}
+                disabled={loading}
+                className="flex-1 py-3 bg-red-600 hover:bg-red-700 text-white rounded-xl font-bold transition-all duration-300 text-sm disabled:opacity-50"
+              >
+                {loading ? "Clearing..." : "Delete All"}
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 };
