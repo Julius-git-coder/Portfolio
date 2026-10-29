@@ -263,6 +263,87 @@ const Skills = () => {
       projects: ["eWorld", "Environment parity"],
       color: "cyan"
     },
+    {
+      name: "Flutter",
+      icon: "/ Flutter.jpeg",
+      level: "Expert",
+      description: "Cross-platform mobile and web UI framework for high-performance applications",
+      experience: "1+ year",
+      projects: ["Mobile Apps", "Cross-Platform"],
+      color: "cyan"
+    },
+    {
+      name: "Dart",
+      icon: "/Dart.jpeg",
+      level: "Expert",
+      description: "Type-safe programming language optimized for client-side development and Flutter",
+      experience: "1+ year",
+      projects: ["Flutter Projects"],
+      color: "blue"
+    },
+    {
+      name: "NoSQL",
+      icon: "/NoSQL.jpeg",
+      level: "Expert",
+      description: "Document-oriented database design and flexible schema modeling",
+      experience: "1+ year",
+      projects: ["Data Architecture", "Scalable Storage"],
+      color: "green"
+    },
+    {
+      name: "MySQL",
+      icon: "/MySQL.jpeg",
+      level: "Advanced",
+      description: "Relational database management with structured queries and optimized indexing",
+      experience: "1+ year",
+      projects: ["Backend Systems", "Data Management"],
+      color: "blue"
+    },
+    {
+      name: "PHP",
+      icon: "/PHP.jpeg",
+      level: "Advanced",
+      description: "Server-side scripting for dynamic web applications, APIs, and CMS integrations",
+      experience: "1+ year",
+      projects: ["Backend Services", "Web Platforms"],
+      color: "indigo"
+    },
+    {
+      name: "SQLite",
+      icon: "/SQLite.jpeg",
+      level: "Advanced",
+      description: "Lightweight embedded relational database for local and mobile data persistence",
+      experience: "Recent",
+      projects: ["Local Storage", "Mobile Database"],
+      color: "gray"
+    },
+    {
+      name: "Coolify",
+      icon: "/Coolify.jpeg",
+      level: "Advanced",
+      description: "Self-hosted deployment platform for containerized applications and CI/CD automation",
+      experience: "Recent",
+      projects: ["Deployment Pipelines", "Self-Hosted"],
+      color: "amber"
+    },
+    {
+      name: "cPanel",
+      icon: "/cPanel",
+      level: "Advanced",
+      description: "Web hosting control panel for server management, domain, and database administration",
+      experience: "1+ year",
+      projects: ["Server Management", "Hosting Setup"],
+      color: "orange"
+    },
+    {
+      name: "Laravel",
+      icon: "/laravel.jpeg",
+      level: "Advanced",
+      description: "PHP web framework for elegant backend APIs, MVC architecture, and scalable applications",
+      experience: "1+ year",
+      projects: ["Backend Services", "Web Platforms"],
+      color: "red"
+    },
   ];
 
   const categories = [
@@ -270,14 +351,14 @@ const Skills = () => {
       id: "frontend",
       name: "Frontend Development",
       icon: <Layout className="w-6 h-6" />,
-      skills: ["React", "Next.js", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS", "Material-UI", "React Native", "Expo Go", "Vercel"],
+      skills: ["React", "Next.js", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS", "Material-UI", "React Native", "Expo Go", "Flutter", "Dart", "Vercel"],
       gradient: "from-blue-600 to-cyan-500"
     },
     {
       id: "backend",
       name: "Backend & Systems",
       icon: <Database className="w-6 h-6" />,
-      skills: ["Node.js", "Express.js", "MongoDB", "Firebase", "Python", "Redis", "GitLab & Sentry"],
+      skills: ["Node.js", "Express.js", "MongoDB", "Firebase", "Python", "Redis", "GitLab & Sentry", "NoSQL", "MySQL", "PHP", "SQLite", "Laravel"],
       gradient: "from-purple-600 to-indigo-500"
     },
     {
@@ -291,7 +372,7 @@ const Skills = () => {
       id: "devops",
       name: "Tools, Testing & Deployment",
       icon: <Cloud className="w-6 h-6" />,
-      skills: ["GitLab & Sentry", "Netlify", "Cloudinary", "Render", "Jest", "Docker"],
+      skills: ["GitLab & Sentry", "Netlify", "Cloudinary", "Render", "Jest", "Docker", "Coolify", "cPanel"],
       gradient: "from-emerald-600 to-teal-500"
     }
   ];

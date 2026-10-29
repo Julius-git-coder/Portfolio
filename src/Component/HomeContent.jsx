@@ -230,6 +230,60 @@ const HomeContent = () => {
       level: "Expert",
       description: "GitLab for repos and CI/CD; Sentry for error monitoring in production",
     },
+    {
+      name: "Flutter",
+      icon: "/ Flutter.jpeg",
+      level: "Expert",
+      description: "Cross-platform mobile framework",
+    },
+    {
+      name: "Dart",
+      icon: "/Dart.jpeg",
+      level: "Expert",
+      description: "Type-safe language for Flutter",
+    },
+    {
+      name: "NoSQL",
+      icon: "/NoSQL.jpeg",
+      level: "Expert",
+      description: "Flexible schema database design",
+    },
+    {
+      name: "MySQL",
+      icon: "/MySQL.jpeg",
+      level: "Advanced",
+      description: "Relational database management",
+    },
+    {
+      name: "PHP",
+      icon: "/PHP.jpeg",
+      level: "Advanced",
+      description: "Server-side scripting and APIs",
+    },
+    {
+      name: "SQLite",
+      icon: "/SQLite.jpeg",
+      level: "Advanced",
+      description: "Embedded relational database",
+    },
+    {
+      name: "Coolify",
+      icon: "/Coolify.jpeg",
+      level: "Advanced",
+      description: "Self-hosted deployment platform",
+    },
+    {
+      name: "cPanel",
+      icon: "/cPanel",
+      level: "Advanced",
+      description: "Web hosting control panel",
+    },
+    {
+      name: "Laravel",
+      icon: "/laravel.jpeg",
+      level: "Advanced",
+      description: "PHP framework for backend APIs",
+    },
   ];
 
   const getLevelColor = (level) => {
@@ -299,7 +353,7 @@ const HomeContent = () => {
                 <span className="text-gray-900 sm:whitespace-nowrap">an Architect of Code.</span>
               </h1>
               <p className="text-gray-500 text-base sm:text-lg font-medium mb-8 sm:mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                Engineering high-performance Full-Stack applications and AI-powered RAG systems with local LLMs.
+                Architecting full-stack platforms and production-grade RAG pipelines with locally-hosted, fine-tuned LLMs.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 justify-center lg:justify-start">
