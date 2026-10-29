@@ -1,7 +1,6 @@
 /** Primary navigation: label shown in UI → URL path */
 export const NAV_TABS = [
   { name: "Home", path: "/" },
-  { name: "About Me", path: "/about" },
   { name: "Project", path: "/projects" },
   { name: "Experience", path: "/experience" },
   { name: "Skills", path: "/skills" },

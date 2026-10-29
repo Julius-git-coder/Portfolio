@@ -302,8 +302,8 @@ const HomeContent = () => {
   // Function to handle CV download
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/JULIUS DAGANA – Full Stack Software Engineer (SWE).pdf";
-    link.download = "Julius_Dagana_Resume.pdf";
+    link.href = "/JULIUS DAGANA FULL STACK SWE RESUME.pdf";
+    link.download = "Julius_Dagana_Full_Stack_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -363,7 +363,7 @@ const HomeContent = () => {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <Download className="relative w-5 h-5 group-hover:-translate-y-1 transition-transform" />
-                  <span className="relative uppercase tracking-widest text-xs">Capture Resume</span>
+                  <span className="relative uppercase tracking-widest text-xs">Capture Full-Stack CV</span>
                 </button>
                 <button
                   onClick={handleContactClick}
@@ -1060,7 +1060,7 @@ const HomeContent = () => {
               onClick={handleDownloadCV}
               className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-blue-600 text-base sm:text-lg font-semibold transition-all duration-300 transform hover:scale-105 min-w-[200px] whitespace-nowrap"
             >
-              Download Resume
+              Download Full-Stack CV
             </button>
           </div>
         </div>

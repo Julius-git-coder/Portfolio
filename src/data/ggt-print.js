@@ -26,8 +26,8 @@ export const ggtPrintCaseStudy = {
 };
 
 export const ggtPrintExperience = {
-  year: "2025",
-  title: "GGT Print POS — Point-of-sale system",
+  year: "2026",
+  title: "GGT Print POS Point-of-sale system",
   company: "Lead Engineer (Solo) · Client project",
   description:
     "Built a print shop POS system with Next.js frontend and Laravel API, featuring order management, job tracking, and payment processing for GGT Print.",

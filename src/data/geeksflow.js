@@ -19,7 +19,7 @@ export const geeksflowProject = {
 
 export const geeksflowCaseStudy = {
   problem:
-    "Organizations needed a unified project management platform with separate admin and customer interfaces, workflow automation, payment handling, and real-time communication — without juggling multiple disconnected tools.",
+    "Organizations needed a unified project management platform with separate admin and customer interfaces, workflow automation, payment handling, and real-time communication without juggling multiple disconnected tools.",
   approach:
     "Designed a three-tier architecture: React Native admin app with dashboard, customers, projects, tasks, payments, and meetings modules; React Native customer app for project participation; and a Laravel API backend with workflow engine, notifications, PostgreSQL, and comprehensive reporting.",
   outcome:
@@ -27,8 +27,8 @@ export const geeksflowCaseStudy = {
 };
 
 export const geeksflowExperience = {
-  year: "2025 - Present",
-  title: "GeeksFlow — Project management ecosystem",
+  year: "",
+  title: "GeeksFlow Project management ecosystem",
   company: "Engineered · Client project",
   description:
     "Built a project management platform with React Native admin and customer apps, Laravel API with workflow engine, task management, payment processing, PostgreSQL, and real-time notifications via Socket.io.",

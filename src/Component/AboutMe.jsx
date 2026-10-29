@@ -36,8 +36,8 @@ const AboutMe = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/JULIUS DAGANA – Full Stack Software Engineer (SWE).pdf";
-    link.download = "Julius_Dagana_Resume.pdf";
+    link.href = "/JULIUS DAGANA FULL STACK SWE RESUME.pdf";
+    link.download = "Julius_Dagana_Full_Stack_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -112,8 +112,8 @@ const AboutMe = () => {
   const timeline = [
     {
       year: "2025",
-      title: "AI Engineering — RAG & LLM Systems",
-      description: "Built an offline AI Website Auditor with LangChain RAG pipelines, ChromaDB vector store (12K+ vectors), Ollama local LLM inference, and Flask backend — combining rule-based analysis with retrieval-augmented intelligence",
+      title: "AI Engineering RAG & LLM Systems",
+      description: "Built an offline AI Website Auditor with LangChain RAG pipelines, ChromaDB vector store (12K+ vectors), Ollama local LLM inference, and Flask backend combining rule-based analysis with retrieval-augmented intelligence",
       icon: <Cpu className="w-5 h-5 text-indigo-600" />,
     },
     {
@@ -292,7 +292,7 @@ const AboutMe = () => {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <Download className="relative w-5 h-5" />
-                  <span className="relative">Download Resume</span>
+                  <span className="relative">Download Full-Stack CV</span>
                 </button>
               </div>
             </motion.div>

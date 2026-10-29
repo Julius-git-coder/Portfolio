@@ -25,12 +25,12 @@ const Experience = () => {
   const experiences = [
     {
       year: "2025 - Present",
-      title: "Junior Web Developer",
-      company: "Jnard IT Consultancy, Accra, Ghana",
-      description: "Building responsive front-end interfaces with React and Tailwind CSS, focusing on user experience and performance optimization. Contributing to backend APIs using Node.js and deploying projects on Netlify. Using Git, GitLab, and Sentry alongside the team where projects require them.",
-      icon: <Code2 className="w-5 h-5 text-white" />,
-      gradient: "from-blue-600 to-indigo-600",
-      skills: ["React", "JavaScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Firebase", "Git", "GitLab", "Sentry", "Netlify", "UI/UX"]
+      title: "Full stack Software Engineer",
+      company: "GEEKS Global Tech Solutions, Accra, Ghana",
+      description: "Architecting full-stack web and mobile solutions at an award-winning IT firm (Best Digital Solutions Provider 2024) serving clients across Ghana, Canada, USA, and Europe. Engineer cross-platform mobile applications with React Native and Flutter, develop robust Laravel APIs and Next.js frontends, and deploy cloud infrastructure on AWS. Lead end-to-end project delivery from system architecture and database design to CI/CD pipelines and production monitoring ensuring scalable, performant, and maintainable software for diverse industry verticals including healthcare, e-commerce, and fintech.",
+      icon: <Globe className="w-5 h-5 text-white" />,
+      gradient: "from-sky-600 to-cyan-600",
+      skills: ["React Native", "Flutter", "Next.js", "Laravel", "Node.js", "AWS", "PostgreSQL", "Postgres", "MySQL", "SQL", "JavaScript", "Firebase", "React", "TypeScript", "Tailwind", "CI/CD", "System Architecture", "REST API Design", "Coolify", "cPanel", "PHP"]
     },
     {
       year: "2024 - Present",
@@ -39,16 +39,16 @@ const Experience = () => {
       description: "Developing and maintaining web applications using the MERN stack. Collaborated with cross-functional teams to deliver scalable solutions, integrating Firebase and Tailwind CSS for enhanced functionality and design. Adopting GitLab and Sentry where applicable for collaboration and error visibility.",
       icon: <Terminal className="w-5 h-5 text-white" />,
       gradient: "from-purple-600 to-pink-600",
-      skills: ["MERN Stack", "Firebase", "Tailwind CSS", "GitLab", "Sentry", "Scalable Solutions", "Collaboration"]
+      skills: ["MERN Stack", "Firebase", "Tailwind CSS", "GitLab", "Sentry", "Scalable Solutions", "Collaboration", "Python", "LangChain", "ChromaDB", "Ollama", "Flask", "RAG", "LLM", "AI", "Machine Learning"]
     },
     {
-      year: "2025 - Present",
-      title: "Software Engineer",
-      company: "GEEKS Global Tech Solutions, Accra, Ghana",
-      description: "Architecting full-stack web and mobile solutions at an award-winning IT firm (Best Digital Solutions Provider 2024) serving clients across Ghana, Canada, USA, and Europe. Engineer cross-platform mobile applications with React Native and Flutter, develop robust Laravel APIs and Next.js frontends, and deploy cloud infrastructure on AWS. Lead end-to-end project delivery — from system architecture and database design to CI/CD pipelines and production monitoring — ensuring scalable, performant, and maintainable software for diverse industry verticals including healthcare, e-commerce, and fintech.",
-      icon: <Globe className="w-5 h-5 text-white" />,
-      gradient: "from-sky-600 to-cyan-600",
-      skills: ["React Native", "Flutter", "Next.js", "Laravel", "Node.js", "AWS", "PostgreSQL", "Firebase", "React", "TypeScript", "Tailwind", "CI/CD", "System Architecture", "REST API Design"]
+      year: "2025 - 2026 June",
+      title: "Junior Web Developer",
+      company: "Jnard IT Consultancy, Accra, Ghana",
+      description: "Building responsive front-end interfaces with React and Tailwind CSS, focusing on user experience and performance optimization. Contributing to backend APIs using Node.js and deploying projects on Netlify. Using Git, GitLab, and Sentry alongside the team where projects require them.",
+      icon: <Code2 className="w-5 h-5 text-white" />,
+      gradient: "from-blue-600 to-indigo-600",
+      skills: ["React", "JavaScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Firebase", "Git", "GitLab", "Sentry", "Netlify", "UI/UX"]
     },
     {
       ...eWorldExperience,
@@ -181,9 +181,9 @@ const Experience = () => {
 
               <div className="relative grid sm:grid-cols-3 gap-8 text-center border-t border-white/10 pt-12">
                 {[
-                  { label: "Code Commits", value: "2.5k+", color: "text-blue-400" },
+                  { label: "Code Commits", value: "3,649+", color: "text-blue-400" },
                   { label: "Projects Completed", value: "20+", color: "text-purple-400" },
-                  { label: "Hours of Coding", value: "1200+", color: "text-emerald-400" },
+                  { label: "Hours of Coding", value: "18000+", color: "text-emerald-400" },
                 ].map((stat, index) => (
                   <div key={index}>
                     <div className={`text-4xl sm:text-5xl font-black ${stat.color} mb-2 tracking-tighter`}>{stat.value}</div>

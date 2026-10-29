@@ -28,8 +28,8 @@ export const rorepCaseStudy = {
 };
 
 export const rorepExperience = {
-  year: "2025",
-  title: "ROREP NGO — Website & donation platform",
+  year: "",
+  title: "ROREP NGO Website & donation platform",
   company: "Lead Engineer · Client project",
   description:
     "Built a 22-page Next.js website for an environmental NGO with Paystack donation integration, Framer Motion/GSAP animations, news, gallery, volunteer management, and impact storytelling.",

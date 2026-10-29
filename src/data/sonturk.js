@@ -5,7 +5,7 @@ export const sonturkProject = {
   gitLink: "https://github.com/Sonturkapp/sonturk-webapp.git",
   gradient: "from-amber-600 to-yellow-500",
   projectDescription:
-    "A full-stack supermarket ecosystem with a customer shopping webapp, admin dashboard, and Laravel API — enabling seamless grocery ordering, inventory management, and real-time tracking for Sonturk University customers.",
+    "A full-stack supermarket ecosystem with a customer shopping webapp, admin dashboard, and Laravel API enabling seamless grocery ordering, inventory management, and real-time tracking for Sonturk University customers.",
   projectTech: [
     "Next.js",
     "React",
@@ -30,7 +30,7 @@ export const sonturkCaseStudy = {
 
 export const sonturkExperience = {
   year: "2025 - Present",
-  title: "Sonturk Supermarket — Full-stack ecosystem",
+  title: "Sonturk Supermarket Full-stack ecosystem",
   company: "Engineered · Team project",
   description:
     "End-to-end supermarket platform: customer Next.js webapp for grocery ordering, admin dashboard with inventory and order management, and Laravel API with PostgreSQL. Zustand for state, Sentry for monitoring, Tailwind/shadcn for UI.",

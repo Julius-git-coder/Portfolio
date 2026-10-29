@@ -145,7 +145,7 @@ const Project = () => {
           <div className="text-center max-w-2xl mx-auto mb-10 lg:mb-14">
             <span className="text-emerald-600 font-bold text-xs uppercase tracking-[0.2em]">Flagship deep-dive</span>
             <h2 id="eworld-case-study-heading" className="text-3xl sm:text-4xl font-black text-gray-900 mt-3 tracking-tight">
-              eWorld — problem, approach, outcome
+              eWorld problem, approach, outcome
             </h2>
             <p className="text-gray-600 mt-4 font-semibold text-sm sm:text-base leading-relaxed">
               One end-to-end product story: what we solved, how it was built, and what that unlocks next.

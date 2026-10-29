@@ -19,8 +19,8 @@ import { FaWhatsapp } from "react-icons/fa";
 const Contact = () => {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/JULIUS DAGANA – Full Stack Software Engineer (SWE).pdf";
-    link.download = "Julius_Dagana_Resume.pdf";
+    link.href = "/JULIUS DAGANA FULL STACK SWE RESUME.pdf";
+    link.download = "Julius_Dagana_Full_Stack_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -278,7 +278,7 @@ const Contact = () => {
               className="group flex items-center gap-3 px-8 py-4 bg-gray-50 text-gray-900 rounded-2xl font-black hover:bg-gray-900 hover:text-white transition-all duration-300 whitespace-nowrap"
             >
               <Download className="w-5 h-5" />
-              Capture Resume
+              Capture Full-Stack CV
             </button>
           </div>
         </motion.div>

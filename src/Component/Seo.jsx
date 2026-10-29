@@ -9,19 +9,19 @@ const ROUTE_META = {
   },
   "/about": {
     title: `About · ${SITE_NAME}`,
-    description: `About ${SITE_NAME} — journey, values, and full-stack engineering focus.`,
+    description: `About ${SITE_NAME} journey, values, and full-stack engineering focus.`,
   },
   "/projects": {
     title: `Projects · ${SITE_NAME}`,
-    description: `Selected work by ${SITE_NAME}: HydroFlow, EasyProfile, eWorld, Grade-A — web, mobile, and APIs.`,
+    description: `Selected work by ${SITE_NAME}: HydroFlow, EasyProfile, eWorld, Grade-A web, mobile, and APIs.`,
   },
   "/experience": {
     title: `Experience · ${SITE_NAME}`,
-    description: `Professional experience and roles for ${SITE_NAME} — web, mobile, and product delivery.`,
+    description: `Professional experience and roles for ${SITE_NAME} web, mobile, and product delivery.`,
   },
   "/skills": {
     title: `Skills · ${SITE_NAME}`,
-    description: `Technical skills and tools — React, React Native, Node.js, MongoDB, testing, Docker, and more.`,
+    description: `Technical skills and tools React, React Native, Node.js, MongoDB, testing, Docker, and more.`,
   },
   "/contact": {
     title: `Contact · ${SITE_NAME}`,
