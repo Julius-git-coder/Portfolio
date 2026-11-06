@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Download, Users, Rocket, Code2, Trophy, BookOpen, Briefcase, GraduationCap, Milestone, ArrowRight } from "lucide-react";
 import { projects } from "../data/projects";
 import { tabPath } from "../config/nav";
+import Reviews from "./Reviews";
 
 const HomeProjectCard = ({ project, index, handleViewAllClick, handleContactClick }) => (
   <motion.div
@@ -714,6 +715,10 @@ const HomeContent = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Reviews Section */}
+      <Reviews />
+
       {/* Featured Services Section - Redesigned */}
       <section
         className="bg-gradient-to-br from-gray-50 via-white to-gray-50 py-16 sm:py-20 lg:py-28"
