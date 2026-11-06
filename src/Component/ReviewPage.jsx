@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
-import { Star, Send, Sparkles, ArrowRight, Quote, X, GripVertical, RefreshCw } from "lucide-react";
+import { Star, Send, Sparkles, ArrowRight, Quote, X, GripVertical, RefreshCw, Lock } from "lucide-react";
 import { Link, useSearchParams } from "react-router-dom";
 import { db } from "../config/firebase";
 import {
@@ -237,13 +237,24 @@ const ReviewPage = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-10"
         >
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:underline mb-6"
-          >
-            <ArrowRight className="w-4 h-4 rotate-180" />
-            Back to Portfolio
-          </Link>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:underline text-sm"
+            >
+              <ArrowRight className="w-4 h-4 rotate-180" />
+              Back to Portfolio
+            </Link>
+            <span className="text-gray-300">•</span>
+            <Link
+              to="/admin"
+              className="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-blue-600 transition-colors"
+              title="Admin Panel"
+            >
+              <Lock className="w-3.5 h-3.5" />
+              Admin
+            </Link>
+          </div>
           <div className="inline-block">
             <Sparkles className="w-12 h-12 text-blue-600 mx-auto mb-4" />
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-3">

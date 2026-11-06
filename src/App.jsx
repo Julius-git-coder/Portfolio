@@ -9,6 +9,7 @@ import Skills from "./Component/Skills";
 import Contact from "./Component/Contact";
 import Insights from "./Component/Insights";
 import ReviewPage from "./Component/ReviewPage";
+import AdminReviews from "./Component/AdminReviews";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Routes>
           <Route path="/insights" element={<Insights />} />
           <Route path="/review" element={<ReviewPage />} />
+          <Route path="/admin" element={<AdminReviews />} />
           <Route element={<SiteLayout />}>
             <Route path="/" element={<HomeContent />} />
             <Route path="/projects" element={<Project />} />
