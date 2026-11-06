@@ -70,152 +70,6 @@ const StarRating = ({ rating, setRating, interactive = false }) => {
   );
 };
 
-const ShareModal = ({ review, onClose }) => {
-  const [copied, setCopied] = useState(false);
-  const portfolioUrl = window.location.origin;
-  const reviewText = `"${review.text}" — ${review.name}, ${review.role} (${review.rating}/5 stars)`;
-
-  const shareLinks = [
-    {
-      name: "WhatsApp",
-      icon: "💬",
-      url: `https://wa.me/?text=${encodeURIComponent(reviewText + " " + portfolioUrl)}`,
-      color: "bg-green-500 hover:bg-green-600",
-    },
-    {
-      name: "Twitter / X",
-      icon: "🐦",
-      url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(reviewText)}&url=${encodeURIComponent(portfolioUrl)}`,
-      color: "bg-black hover:bg-gray-800",
-    },
-    {
-      name: "LinkedIn",
-      icon: "💼",
-      url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(portfolioUrl)}`,
-      color: "bg-blue-700 hover:bg-blue-800",
-    },
-    {
-      name: "Facebook",
-      icon: "📘",
-      url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(portfolioUrl)}`,
-      color: "bg-blue-600 hover:bg-blue-700",
-    },
-    {
-      name: "Email",
-      icon: "📧",
-      url: `mailto:?subject=${encodeURIComponent("Check out this review for Julius")}&body=${encodeURIComponent(reviewText + "\n\n" + portfolioUrl)}`,
-      color: "bg-gray-600 hover:bg-gray-700",
-    },
-  ];
-
-  const copyToClipboard = async () => {
-    try {
-      await navigator.clipboard.writeText(reviewText + "\n\n" + portfolioUrl);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy:", err);
-    }
-  };
-
-  const shareNatively = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: "Review for Julius",
-          text: reviewText,
-          url: portfolioUrl,
-        });
-      } catch (err) {
-        if (err.name !== "AbortError") {
-          console.error("Share failed:", err);
-        }
-      }
-    }
-  };
-
-  return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4"
-        onClick={onClose}
-      >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.9, y: 20 }}
-          className="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden"
-          onClick={(e) => e.stopPropagation()}
-        >
-          {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-gray-100">
-            <h3 className="text-xl font-bold text-gray-900">Share this Review</h3>
-            <button
-              onClick={onClose}
-              className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
-            >
-              <X className="w-4 h-4 text-gray-500" />
-            </button>
-          </div>
-
-          {/* Preview */}
-          <div className="p-6 bg-gray-50 border-b border-gray-100">
-            <p className="text-sm text-gray-600 italic line-clamp-3">"{review.text}"</p>
-            <p className="text-xs text-gray-400 mt-2">— {review.name}, {review.role}</p>
-          </div>
-
-          {/* Share Options */}
-          <div className="p-6">
-            <div className="grid grid-cols-3 gap-3 mb-4">
-              {shareLinks.map((share) => (
-                <a
-                  key={share.name}
-                  href={share.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${share.color} text-white rounded-xl p-3 flex flex-col items-center gap-1.5 transition-all duration-200 hover:scale-105`}
-                >
-                  <span className="text-xl">{share.icon}</span>
-                  <span className="text-xs font-medium">{share.name}</span>
-                </a>
-              ))}
-            </div>
-
-            {/* Copy & Native Share */}
-            <div className="flex gap-3">
-              <button
-                onClick={copyToClipboard}
-                className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl font-semibold text-gray-700 hover:border-gray-400 transition-all duration-200 flex items-center justify-center gap-2"
-              >
-                {copied ? (
-                  <>
-                    <Check className="w-4 h-4 text-green-500" />
-                    <span className="text-green-600">Copied!</span>
-                  </>
-                ) : (
-                  <>Copy Text</>
-                )}
-              </button>
-              {navigator.share && (
-                <button
-                  onClick={shareNatively}
-                  className="flex-1 px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-semibold shadow-lg hover:shadow-blue-500/25 transition-all duration-200 flex items-center justify-center gap-2"
-                >
-                  <Share2 className="w-4 h-4" />
-                  Share
-                </button>
-              )}
-            </div>
-          </div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
-  );
-};
-
 const CopyLinkModal = ({ onClose }) => {
   const [copied, setCopied] = useState(false);
   const reviewUrl = `${window.location.origin}/review`;
@@ -425,26 +279,26 @@ const ReviewCard = ({ review }) => {
           {/* Bottom Row - Extended Actions Full Width */}
           <div className="flex items-center justify-between pt-6 border-t border-gray-100 gap-4">
             <Link
-              to={`/review?id=${review.id}`}
+              to="/review"
               onClick={(e) => e.stopPropagation()}
               className="text-blue-600 text-sm sm:text-base font-semibold hover:text-blue-700 transition-colors inline-flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-blue-50 transition-all duration-200"
             >
-              View details
+              Leave a Review
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
 
             <button
               onClick={() => setShowShare(true)}
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl hover:bg-blue-50 text-gray-500 hover:text-blue-600 transition-all duration-200 cursor-pointer"
-              title="Share this review"
+              title="Share review form link"
             >
               <Share2 className="w-4 h-4 sm:w-5 sm:h-5" />
-              <span className="text-sm font-semibold">Share</span>
+              <span className="text-sm font-semibold">Share Link</span>
             </button>
           </div>
         </div>
       </motion.div>
-      {showShare && <ShareModal review={review} onClose={() => setShowShare(false)} />}
+      {showShare && <CopyLinkModal onClose={() => setShowShare(false)} />}
     </>
   );
 };
@@ -772,13 +626,13 @@ const Reviews = () => {
                   <p className="text-gray-600 mb-6 max-w-lg mx-auto">
                     Share your experience and help others discover what it's like to work with me.
                   </p>
-                  <button
-                    onClick={() => setShowForm(true)}
+                  <Link
+                    to="/review"
                     className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-bold shadow-lg hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2 mx-auto"
                   >
                     <Send className="w-5 h-5" />
                     Leave a Review
-                  </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
