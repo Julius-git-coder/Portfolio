@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star, Send, Sparkles, Quote, Share2, X, Check, Link as LinkIcon, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, Send, Sparkles, Quote, Share2, X, Check, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { FaWhatsapp, FaXTwitter, FaLinkedin, FaFacebook, FaEnvelope } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { db } from "../config/firebase";
 import {
@@ -77,33 +78,33 @@ const CopyLinkModal = ({ onClose }) => {
   const shareLinks = [
     {
       name: "WhatsApp",
-      icon: "💬",
+      icon: FaWhatsapp,
       url: `https://wa.me/?text=${encodeURIComponent("Share your experience working with Julius! Leave a review here: " + reviewUrl)}`,
-      color: "bg-green-500 hover:bg-green-600",
+      color: "bg-[#25D366] hover:bg-[#20ba5a]",
     },
     {
       name: "Twitter / X",
-      icon: "🐦",
+      icon: FaXTwitter,
       url: `https://twitter.com/intent/tweet?text=${encodeURIComponent("Share your experience working with Julius! Leave a review: ")}&url=${encodeURIComponent(reviewUrl)}`,
-      color: "bg-black hover:bg-gray-800",
+      color: "bg-black hover:bg-neutral-800",
     },
     {
       name: "LinkedIn",
-      icon: "💼",
+      icon: FaLinkedin,
       url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(reviewUrl)}`,
-      color: "bg-blue-700 hover:bg-blue-800",
+      color: "bg-[#0A66C2] hover:bg-[#084e96]",
     },
     {
       name: "Facebook",
-      icon: "📘",
+      icon: FaFacebook,
       url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(reviewUrl)}`,
-      color: "bg-blue-600 hover:bg-blue-700",
+      color: "bg-[#1877F2] hover:bg-[#1464cc]",
     },
     {
       name: "Email",
-      icon: "📧",
+      icon: FaEnvelope,
       url: `mailto:?subject=${encodeURIComponent("Leave a review for Julius")}&body=${encodeURIComponent("Share your experience working with Julius! Leave a review here:\n\n" + reviewUrl)}`,
-      color: "bg-gray-600 hover:bg-gray-700",
+      color: "bg-gray-700 hover:bg-gray-800",
     },
   ];
 
@@ -166,21 +167,27 @@ const CopyLinkModal = ({ onClose }) => {
             <p className="text-xs font-mono bg-white px-3 py-2 rounded-lg text-blue-600 break-all">{reviewUrl}</p>
           </div>
 
-          {/* Share Options */}
+          {/* Share Options with Real Official Logos */}
           <div className="p-6">
-            <div className="grid grid-cols-3 gap-3 mb-4">
-              {shareLinks.map((share) => (
-                <a
-                  key={share.name}
-                  href={share.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${share.color} text-white rounded-xl p-3 flex flex-col items-center gap-1.5 transition-all duration-200 hover:scale-105`}
-                >
-                  <span className="text-xl">{share.icon}</span>
-                  <span className="text-xs font-medium">{share.name}</span>
-                </a>
-              ))}
+            <div className="grid grid-cols-5 gap-2 sm:gap-2.5 mb-5">
+              {shareLinks.map((share) => {
+                const IconComponent = share.icon;
+                return (
+                  <a
+                    key={share.name}
+                    href={share.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${share.color} text-white rounded-2xl py-3 px-1 flex flex-col items-center justify-center gap-2 transition-all duration-200 hover:scale-105 active:scale-95 shadow-xs group`}
+                    title={`Share on ${share.name}`}
+                  >
+                    <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:scale-110" />
+                    <span className="text-[10px] sm:text-xs font-semibold text-center leading-tight truncate max-w-full">
+                      {share.name}
+                    </span>
+                  </a>
+                );
+              })}
             </div>
 
             {/* Copy & Native Share */}
