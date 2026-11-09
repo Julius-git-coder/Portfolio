@@ -1,0 +1,20 @@
+# Julius Dagana - Portfolio
+
+## About
+Julius Dagana is a Full-Stack Software Engineer specializing in React, Node.js, Next.js, and AI engineering with LangChain, ChromaDB, and Ollama.
+
+## Pages
+- `/` - Home page with introduction, skills, and projects
+- `/about` - About me, education, and experience
+- `/projects` - Portfolio of completed projects
+- `/skills` - Detailed technical skills overview
+- `/contact` - Contact form and information
+- `/review` - Leave a review
+
+## Technologies
+React, Next.js, Node.js, Express.js, MongoDB, Firebase, Python, LangChain, ChromaDB, Ollama, Flask, Tailwind CSS, TypeScript, React Native, Flutter, Docker, GitLab, Sentry
+
+## Contact
+- Email: juliusdagana@gmail.com
+- GitHub: https://github.com/Julius-git-coder
+- LinkedIn: https://linkedin.com/in/juliusdagana

@@ -155,7 +155,8 @@ const CopyLinkModal = ({ onClose }) => {
             <h3 className="text-xl font-bold text-gray-900">Share Review Link</h3>
             <button
               onClick={onClose}
-              className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
+              aria-label="Close share dialog"
+              className="w-11 h-11 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
             >
               <X className="w-4 h-4 text-gray-500" />
             </button>

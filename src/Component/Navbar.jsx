@@ -93,9 +93,9 @@ const Navbar = () => {
             }`}
         >
           {/* Logo / Branding */}
-          <div className="flex items-center gap-2 group cursor-pointer" onClick={() => handleTabClick("/")}>
+          <div className="flex items-center gap-2 group cursor-pointer" onClick={() => handleTabClick("/")} role="button" tabIndex={0} aria-label="Go to home page" onKeyDown={(e) => { if (e.key === 'Enter') handleTabClick("/"); }}>
             <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center overflow-hidden shadow-lg group-hover:rotate-12 transition-transform duration-300">
-              <img src="/Codetrain.jpg" alt="Julius" className="w-full h-full object-cover" />
+              <img src="/Codetrain-navbar.webp" alt="Julius" width="40" height="40" className="w-full h-full object-cover" />
             </div>
             <span className="text-xl font-black bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
               Julius

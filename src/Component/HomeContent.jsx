@@ -21,6 +21,8 @@ const HomeProjectCard = ({ project, index, handleViewAllClick, handleContactClic
           <img
             src={project.image}
             alt={project.title}
+            width="380"
+            height="238"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             loading="lazy"
           />
@@ -67,19 +69,19 @@ const HomeContent = () => {
   const navigate = useNavigate();
   // Hero orbit icons (subset for lighter paint / animation cost)
   const techIcons = [
-    { type: "image", src: "/GitLab-Sentry.png", alt: "GitLab and Sentry" },
-    { type: "image", src: "/Javascript.png", alt: "JavaScript icon" },
-    { type: "image", src: "/Tailwind.png", alt: "Tailwind icon" },
-    { type: "image", src: "/Mogo.png", alt: "MongoDB icon" },
-    { type: "image", src: "/Node.png", alt: "Node.js icon" },
-    { type: "image", src: "/Express.png", alt: "Express icon" },
-    { type: "image", src: "/ReactNative.png", alt: "React Native icon" },
-    { type: "image", src: "/Expo_Go.png", alt: "Expo Go icon" },
-    { type: "image", src: "/Typescript Logo.jpeg", alt: "TypeScript icon" },
-    { type: "image", src: "/Redis.jpeg", alt: "Redis icon" },
-    { type: "image", src: "/Jest.svg", alt: "Jest icon" },
-    { type: "image", src: "/Docker.png", alt: "Docker icon" },
-    { type: "image", src: "/Python.png", alt: "Python icon" },
+    { type: "image", src: "/GitLab-Sentry.webp", alt: "GitLab and Sentry", width: 24, height: 24 },
+    { type: "image", src: "/Javascript.webp", alt: "JavaScript icon", width: 24, height: 24 },
+    { type: "image", src: "/Tailwind.webp", alt: "Tailwind icon", width: 24, height: 24 },
+    { type: "image", src: "/Mogo.webp", alt: "MongoDB icon", width: 24, height: 24 },
+    { type: "image", src: "/Node.webp", alt: "Node.js icon", width: 24, height: 24 },
+    { type: "image", src: "/Express.webp", alt: "Express icon", width: 24, height: 24 },
+    { type: "image", src: "/ReactNative.webp", alt: "React Native icon", width: 24, height: 24 },
+    { type: "image", src: "/Expo_Go.webp", alt: "Expo Go icon", width: 24, height: 28 },
+    { type: "image", src: "/Python.webp", alt: "TypeScript icon", width: 24, height: 24 },
+    { type: "image", src: "/Redis.webp", alt: "Redis icon", width: 24, height: 24 },
+    { type: "image", src: "/Jest.svg", alt: "Jest icon", width: 24, height: 24 },
+    { type: "image", src: "/Docker.webp", alt: "Docker icon", width: 24, height: 24 },
+    { type: "image", src: "/React.webp", alt: "Python icon", width: 24, height: 24 },
   ];
 
   /** Hero orbit period (seconds); longer = slower. Was 20s, then ~33s; now slower still. */
@@ -89,127 +91,127 @@ const HomeContent = () => {
   const skills = [
     {
       name: "React",
-      icon: "/React.png",
+      icon: "/React.webp",
       level: "Expert",
       description: "Building dynamic user interfaces",
     },
     {
       name: "JavaScript",
-      icon: "/Javascript.png",
+      icon: "/Javascript.webp",
       level: "Expert",
       description: "Core programming language",
     },
     {
       name: "HTML",
-      icon: "/Html.png",
+      icon: "/Html.webp",
       level: "Expert",
       description: "Semantic markup structure",
     },
     {
       name: "CSS",
-      icon: "/CSS.png",
+      icon: "/CSS.webp",
       level: "Expert",
       description: "Styling and layouts",
     },
     {
       name: "Tailwind CSS",
-      icon: "/Tailwind.png",
+      icon: "/Tailwind.webp",
       level: "Expert",
       description: "Utility-first CSS framework",
     },
     {
       name: "Node.js",
-      icon: "/Node.png",
+      icon: "/Node.webp",
       level: "Expert",
       description: "Server-side JavaScript runtime",
     },
     {
       name: "Express.js",
-      icon: "/Express.png",
+      icon: "/Express.webp",
       level: "Expert",
       description: "Web application framework",
     },
     {
       name: "MongoDB",
-      icon: "/Mogo.png",
+      icon: "/Mogo.webp",
       level: "Expert",
       description: "NoSQL database management",
     },
     {
       name: "Next.js",
-      icon: "/Nextjs.png",
+      icon: "/Nextjs.webp",
       level: "Expert",
       description: "React framework for production",
     },
     {
       name: "React Native",
-      icon: "/ReactNative.png",
+      icon: "/ReactNative.webp",
       level: "Expert",
       description: "Cross-platform mobile apps",
     },
     {
       name: "Render",
-      icon: "/Render.png",
+      icon: "/Render.webp",
       level: "Expert",
       description: "Cloud hosting platform",
     },
     {
       name: "Typescript",
-      icon: "/Typescript Logo.jpeg",
+      icon: "/React.webp",
       level: "Expert",
       description: "Typed JavaScript development",
     },
     {
       name: "Expo Go",
-      icon: "/Expo_Go.png",
+      icon: "/Expo_Go.webp",
       level: "Expert",
       description: "React Native development tool",
     },
     {
       name: "Python",
-      icon: "/Python.png",
+      icon: "/Python.webp",
       level: "Expert",
       description: "Versatile programming language",
     },
     {
       name: "LangChain",
-      icon: "/AI.png",
+      icon: "/AI.webp",
       level: "Advanced",
       description: "LLM orchestration framework for building RAG pipelines, chain composition, and agent-based AI workflows",
     },
     {
       name: "ChromaDB",
-      icon: "/Rag-Langchain.png",
+      icon: "/Rag-Langchain.webp",
       level: "Advanced",
       description: "Open-source vector database for semantic search, embedding storage, and RAG-powered knowledge retrieval",
     },
     {
       name: "Ollama",
-      icon: "/AI.png",
+      icon: "/AI.webp",
       level: "Advanced",
       description: "Local LLM runtime for running open-source models offline with custom prompt engineering and inference",
     },
     {
       name: "Flask",
-      icon: "/Python.png",
+      icon: "/Python.webp",
       level: "Advanced",
       description: "Lightweight Python web framework for building REST APIs, rule engines, and backend services",
     },
     {
       name: "Vercel",
-      icon: "/Vercel Logo.jpeg",
+      icon: "/React.webp",
       level: "Expert",
       description: "Frontend deployment platform",
     },
     {
       name: "Netlify",
-      icon: "/Netli.png",
+      icon: "/Netli.webp",
       level: "Expert",
       description: "Web application hosting service",
     },
     {
       name: "Redis",
-      icon: "/Redis.jpeg",
+      icon: "/Redis.webp",
       level: "Advanced",
       description: "In-memory data structure store",
     },
@@ -221,67 +223,67 @@ const HomeContent = () => {
     },
     {
       name: "Docker",
-      icon: "/Docker.png",
+      icon: "/Docker.webp",
       level: "Advanced",
       description: "Reproducible environments with containers",
     },
     {
       name: "GitLab & Sentry",
-      icon: "/GitLab-Sentry.png",
+      icon: "/GitLab-Sentry.webp",
       level: "Expert",
       description: "GitLab for repos and CI/CD; Sentry for error monitoring in production",
     },
     {
       name: "Flutter",
-      icon: "/ Flutter.jpeg",
+      icon: "/React.webp",
       level: "Expert",
       description: "Cross-platform mobile framework",
     },
     {
       name: "Dart",
-      icon: "/Dart.jpeg",
+      icon: "/React.webp",
       level: "Expert",
       description: "Type-safe language for Flutter",
     },
     {
       name: "NoSQL",
-      icon: "/NoSQL.jpeg",
+      icon: "/React.webp",
       level: "Expert",
       description: "Flexible schema database design",
     },
     {
       name: "MySQL",
-      icon: "/MySQL.jpeg",
+      icon: "/React.webp",
       level: "Advanced",
       description: "Relational database management",
     },
     {
       name: "PHP",
-      icon: "/PHP.jpeg",
+      icon: "/React.webp",
       level: "Advanced",
       description: "Server-side scripting and APIs",
     },
     {
       name: "SQLite",
-      icon: "/SQLite.jpeg",
+      icon: "/React.webp",
       level: "Advanced",
       description: "Embedded relational database",
     },
     {
       name: "Coolify",
-      icon: "/Coolify.jpeg",
+      icon: "/React.webp",
       level: "Advanced",
       description: "Self-hosted deployment platform",
     },
     {
       name: "cPanel",
-      icon: "/cPanel",
+      icon: "/React.webp",
       level: "Advanced",
       description: "Web hosting control panel",
     },
     {
       name: "Laravel",
-      icon: "/laravel.jpeg",
+      icon: "/React.webp",
       level: "Advanced",
       description: "PHP framework for backend APIs",
     },
@@ -384,9 +386,13 @@ const HomeContent = () => {
                     <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-500"></div>
                     <div className="relative w-40 h-40 sm:w-48 sm:h-48 lg:w-60 lg:h-60 xl:w-64 xl:h-64 rounded-full overflow-hidden flex items-center justify-center bg-white z-10 border-4 border-white">
                       <img
-                        src="/hero-portrait.png"
+                        src="/hero-portrait.webp"
                         alt="Julius Dagana"
+                        width="200"
+                        height="200"
                         className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                        loading="eager"
+                        decoding="async"
                       />
                     </div>
                   </div>
@@ -406,6 +412,8 @@ const HomeContent = () => {
                     <img
                       src={icon.src}
                       alt={icon.alt}
+                      width={icon.width}
+                      height={icon.height}
                       className="w-6 sm:w-8 lg:w-10 opacity-80 group-hover/icon:opacity-100 group-hover/icon:drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all"
                       loading="lazy"
                       decoding="async"
@@ -510,7 +518,7 @@ const HomeContent = () => {
                   <div className="flex -space-x-3">
                     {[1, 2, 3, 4].map((i) => (
                       <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center overflow-hidden">
-                        <img src={`https://i.pravatar.cc/100?u=${i}`} alt="Collaborator" className="w-full h-full object-cover opacity-60" />
+                        <img src={`https://i.pravatar.cc/100?u=${i}`} alt="Collaborator" width="40" height="40" className="w-full h-full object-cover opacity-60" />
                       </div>
                     ))}
                     <div className="w-10 h-10 rounded-full border-2 border-white bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white">
@@ -637,6 +645,8 @@ const HomeContent = () => {
                       <img
                         src={skill.icon}
                         alt={skill.name}
+                        width="40"
+                        height="40"
                         className="w-10 h-10 object-contain transform group-hover:scale-110 transition-transform duration-300"
                       />
                     </div>
@@ -746,7 +756,7 @@ const HomeContent = () => {
                 title: "Web Design",
                 description:
                   "Creating visually appealing and user-friendly web interfaces with modern tools like Tailwind CSS and React, as seen in EasyProfile.",
-                icon: "/Tailwind.png",
+                icon: "/Tailwind.webp",
                 level: "Expert",
                 bgColor: "from-blue-500/10 to-transparent",
                 hoverBorder: "group-hover:border-blue-500/50",
@@ -756,7 +766,7 @@ const HomeContent = () => {
                 title: "Web Development",
                 description:
                   "Building responsive, scalable web apps using React, Firebase, and Node.js, demonstrated in HydroFlow.",
-                icon: "/React.png",
+                icon: "/React.webp",
                 level: "Advanced",
                 bgColor: "from-purple-500/10 to-transparent",
                 hoverBorder: "group-hover:border-purple-500/50",
@@ -766,7 +776,7 @@ const HomeContent = () => {
                 title: "UI/UX Design",
                 description:
                   "Designing intuitive experiences with MUI and Tailwind CSS, focusing on usability and accessibility.",
-                icon: "/MUI.png",
+                icon: "/MUI.webp",
                 level: "Intermediate",
                 bgColor: "from-pink-500/10 to-transparent",
                 hoverBorder: "group-hover:border-pink-500/50",
@@ -776,7 +786,7 @@ const HomeContent = () => {
                 title: "Mobile App Development",
                 description:
                   "Creating cross-platform mobile applications with React Native and Expo, delivering native experiences on iOS and Android.",
-                icon: "/React.png",
+                icon: "/ReactNative.webp",
                 level: "Advanced",
                 bgColor: "from-emerald-500/10 to-transparent",
                 hoverBorder: "group-hover:border-emerald-500/50",
@@ -800,6 +810,8 @@ const HomeContent = () => {
                     <img
                       src={service.icon}
                       alt={`${service.title} icon`}
+                      width="40"
+                      height="40"
                       className="w-10 h-10 object-contain"
                     />
                   </div>

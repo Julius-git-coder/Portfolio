@@ -10,7 +10,7 @@ export const projects = [
   {
     title: ragLangchainProject.title,
     description: ragLangchainProject.projectDescription,
-    image: ragLangchainProject.image,
+    image: ragLangchainProject.image.replace(/\.(png|jpeg|jpg)$/i, ".webp"),
     link: ragLangchainProject.link,
     gitLink: ragLangchainProject.gitLink,
     tech: ragLangchainProject.projectTech,
@@ -21,7 +21,7 @@ export const projects = [
   {
     title: rorepProject.title,
     description: rorepProject.projectDescription,
-    image: rorepProject.image,
+    image: rorepProject.image.replace(/\.(png|jpeg|jpg)$/i, ".webp"),
     link: rorepProject.link,
     gitLink: rorepProject.gitLink,
     tech: rorepProject.projectTech,
@@ -32,7 +32,7 @@ export const projects = [
   {
     title: eWorldProject.title,
     description: eWorldProject.projectDescription,
-    image: eWorldProject.image,
+    image: eWorldProject.image.replace(/\.(png|jpeg|jpg)$/i, ".webp"),
     link: eWorldProject.link,
     gitLink: eWorldProject.gitLink,
     tech: eWorldProject.projectTech,
@@ -44,7 +44,7 @@ export const projects = [
     title: "HydroFlow",
     description:
       "A high-performance water tracking intelligence system designed to optimize hydration through weather-based recommendations and daily goal synchronization.",
-    image: "/AquqTrack.png",
+    image: "/AquqTrack.webp",
     link: "https://hydro-flow-y4rx.vercel.app/",
     gitLink: "https://github.com/Julius-git-coder/hydroFlow.git",
     tech: ["React", "Tailwind", "Vite", "Web API", "GitLab"],
@@ -56,7 +56,7 @@ export const projects = [
     title: "Grade-A",
     description:
       "A comprehensive educational management system features an administrator dashboard for tracking students, assignments, and roadmaps.",
-    image: "/Grade.png",
+    image: "/Grade.webp",
     link: "https://grade-a-s1sm.vercel.app/",
     gitLink: "https://github.com/Julius-git-coder/Grade-A-",
     tech: ["React", "Tailwind", "Vercel", "GitLab"],
@@ -68,7 +68,7 @@ export const projects = [
     title: "Healthe",
     description:
       "A health and wellness mobile application built with React Native and Expo, designed to help users track fitness goals, monitor health metrics, and maintain a healthier lifestyle.",
-    image: "/Healthe.png",
+    image: "/Healthe.webp",
     link: "#",
     gitLink: "https://github.com/Julius-git-coder/Healthe.git",
     tech: ["React Native", "Expo", "TypeScript", "NativeWind", "React Navigation"],
@@ -80,7 +80,7 @@ export const projects = [
     title: "EasyProfile",
     description:
       "An advanced profile orchestration platform that enables seamless identity management and dynamic user customization with a high-tier UI/UX focus.",
-    image: "/EassyP.png",
+    image: "/EassyP.webp",
     link: "https://easy-profile-ms2l.vercel.app/",
     gitLink: "https://github.com/Julius-git-coder/EasyProfile.git",
     tech: ["Next.js", "Firebase", "TypeScript", "Framer", "GitLab"],
@@ -91,7 +91,7 @@ export const projects = [
   {
     title: sonturkProject.title,
     description: sonturkProject.projectDescription,
-    image: sonturkProject.image,
+    image: sonturkProject.image.replace(/\.(png|jpeg|jpg)$/i, ".webp"),
     link: sonturkProject.link,
     gitLink: sonturkProject.gitLink,
     tech: sonturkProject.projectTech,
@@ -125,7 +125,7 @@ export const projects = [
     title: "Student Management",
     description:
       "A comprehensive school management dashboard featuring student records, attendance tracking, assignments, grading, and class scheduling with interactive data visualizations.",
-    image: "/Student-Mgmt.png",
+    image: "/Student-Mgmt.webp",
     link: "#",
     gitLink: "https://github.com/TARIQQ-coder/Student-Management-Proj.git",
     tech: ["React", "Vite", "Tailwind", "Recharts", "Zustand", "Headless UI"],
@@ -148,7 +148,7 @@ export const projects = [
     title: "ShopMart",
     description:
       "A modern shopping web application with a clean React interface, offering product browsing, cart management, and seamless checkout for an intuitive e-commerce experience.",
-    image: "/ShopMart.png",
+    image: "/ShopMart.webp",
     link: "#",
     gitLink: "https://github.com/Julius-git-coder/shortmart-main.git",
     tech: ["React", "Vite", "Tailwind", "React Router"],

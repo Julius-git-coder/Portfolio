@@ -83,8 +83,10 @@ export default function SiteLayout() {
         >
           <div className="absolute inset-0 bg-blue-400/20 blur-2xl rounded-full -z-10 animate-pulse"></div>
           <img
-            src="/Ai Robot Vector Art.gif"
-            alt=""
+            src="/Ai Robot Vector Art.webp"
+            alt="Animated robot illustration"
+            width="208"
+            height="208"
             className="w-full h-full object-contain"
             style={{ filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.1))" }}
             loading="lazy"
@@ -94,7 +96,7 @@ export default function SiteLayout() {
         </motion.div>
       </div>
 
-      <div className="pt-20 md:pt-24 pb-24 sm:pb-28 md:pb-32">
+      <main className="pt-20 md:pt-24 pb-24 sm:pb-28 md:pb-32">
         <AnimatePresence mode="wait">
           <motion.div
             key={pathname}
@@ -106,7 +108,7 @@ export default function SiteLayout() {
             <Outlet />
           </motion.div>
         </AnimatePresence>
-      </div>
+      </main>
     </div>
   );
 }

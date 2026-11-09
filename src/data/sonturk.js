@@ -1,6 +1,6 @@
 export const sonturkProject = {
   title: "Sonturk",
-  image: "/Sonturk.png",
+  image: "/Sonturk.webp",
   link: "#",
   gitLink: "https://github.com/Sonturkapp/sonturk-webapp.git",
   gradient: "from-amber-600 to-yellow-500",

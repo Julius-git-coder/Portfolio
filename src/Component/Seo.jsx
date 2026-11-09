@@ -57,7 +57,7 @@ export default function Seo() {
 
     const origin = typeof window !== "undefined" ? window.location.origin : "";
     const url = `${origin}${pathname}`;
-    const ogImage = `${origin}/Ewash.png`;
+    const ogImage = `${origin}/Ewash.webp`;
 
     upsertOg("og:type", "website");
     upsertOg("og:title", meta.title);

@@ -1,6 +1,6 @@
 export const ggtPrintProject = {
   title: "GGT Print POS",
-  image: "/GGT-Print.png",
+  image: "/GGT-Print.webp",
   link: "#",
   gitLink: "https://github.com/Geeks-Global/ggt-print-pos-fe",
   gradient: "from-cyan-600 to-blue-500",

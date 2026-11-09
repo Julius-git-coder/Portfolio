@@ -23,7 +23,7 @@ const Skills = () => {
   const allSkills = [
     {
       name: "React",
-      icon: "/React.png",
+      icon: "/React.webp",
       level: "Expert",
       description: "Building dynamic user interfaces with hooks, context, and advanced patterns",
       experience: "1+ year",
@@ -32,7 +32,7 @@ const Skills = () => {
     },
     {
       name: "JavaScript",
-      icon: "/Javascript.png",
+      icon: "/Javascript.webp",
       level: "Expert",
       description: "ES6+, async programming, and modern JavaScript patterns",
       experience: "1+ year",
@@ -41,7 +41,7 @@ const Skills = () => {
     },
     {
       name: "HTML",
-      icon: "/Html.png",
+      icon: "/Html.webp",
       level: "Expert",
       description: "Semantic markup, accessibility, and modern HTML5 features",
       experience: "1+ year",
@@ -50,7 +50,7 @@ const Skills = () => {
     },
     {
       name: "CSS",
-      icon: "/CSS.png",
+      icon: "/CSS.webp",
       level: "Expert",
       description: "Flexbox, Grid, animations, and responsive design principles",
       experience: "1+ year",
@@ -59,7 +59,7 @@ const Skills = () => {
     },
     {
       name: "Tailwind CSS",
-      icon: "/Tailwind.png",
+      icon: "/Tailwind.webp",
       level: "Expert",
       description: "Utility-first CSS framework for rapid UI development",
       experience: "1+ year",
@@ -67,7 +67,7 @@ const Skills = () => {
     },
     {
       name: "Node.js",
-      icon: "/Node.png",
+      icon: "/Node.webp",
       level: "Expert",
       description: "Server-side JavaScript runtime for building scalable applications",
       experience: "1+ year",
@@ -76,7 +76,7 @@ const Skills = () => {
     },
     {
       name: "Express.js",
-      icon: "/Express.png",
+      icon: "/Express.webp",
       level: "Expert",
       description: "Fast, unopinionated web framework for Node.js applications",
       experience: "1+ year",
@@ -85,7 +85,7 @@ const Skills = () => {
     },
     {
       name: "Python",
-      icon: "/Python.png",
+      icon: "/Python.webp",
       level: "Advanced",
       description: "General-purpose language used for Flask APIs, LangChain pipelines, and AI/ML data processing",
       experience: "1+ year",
@@ -94,7 +94,7 @@ const Skills = () => {
     },
     {
       name: "LangChain",
-      icon: "/AI.png",
+      icon: "/AI.webp",
       level: "Advanced",
       description: "LLM orchestration framework for building RAG pipelines, chain composition, and agent-based AI workflows",
       experience: "Recent",
@@ -103,7 +103,7 @@ const Skills = () => {
     },
     {
       name: "ChromaDB",
-      icon: "/Rag-Langchain.png",
+      icon: "/Rag-Langchain.webp",
       level: "Advanced",
       description: "Open-source vector database for semantic search, embedding storage, and RAG-powered knowledge retrieval",
       experience: "Recent",
@@ -112,7 +112,7 @@ const Skills = () => {
     },
     {
       name: "Ollama",
-      icon: "/AI.png",
+      icon: "/AI.webp",
       level: "Advanced",
       description: "Local LLM runtime for running open-source models offline with custom prompt engineering and inference",
       experience: "Recent",
@@ -121,7 +121,7 @@ const Skills = () => {
     },
     {
       name: "Flask",
-      icon: "/Python.png",
+      icon: "/Python.webp",
       level: "Advanced",
       description: "Lightweight Python web framework for building REST APIs, rule engines, and backend services",
       experience: "Recent",
@@ -130,7 +130,7 @@ const Skills = () => {
     },
     {
       name: "Render",
-      icon: "/Render.png",
+      icon: "/Render.webp",
       level: "Expert",
       description: "Cloud platform for deploying and scaling web services and APIs",
       experience: "1+ year",
@@ -139,7 +139,7 @@ const Skills = () => {
     },
     {
       name: "MongoDB",
-      icon: "/Mogo.png",
+      icon: "/Mogo.webp",
       level: "Expert",
       description: "NoSQL database for flexible, scalable data storage solutions",
       experience: "1+ year",
@@ -148,7 +148,7 @@ const Skills = () => {
     },
     {
       name: "Firebase",
-      icon: "/Firebase.png",
+      icon: "/Firebase.webp",
       level: "Expert",
       description: "Backend-as-a-Service platform for authentication and real-time data",
       experience: "1+ year",
@@ -157,7 +157,7 @@ const Skills = () => {
     },
     {
       name: "GitLab & Sentry",
-      icon: "/GitLab-Sentry.png",
+      icon: "/GitLab-Sentry.webp",
       level: "Expert",
       description: "GitLab for repos and CI/CD workflows; Sentry for error monitoring and production observability",
       experience: "1+ year",
@@ -166,7 +166,7 @@ const Skills = () => {
     },
     {
       name: "Material-UI",
-      icon: "/MUI.png",
+      icon: "/MUI.webp",
       level: "Intermediate",
       description: "React component library implementing Google's Material Design",
       experience: "1+ year",
@@ -175,7 +175,7 @@ const Skills = () => {
     },
     {
       name: "Netlify",
-      icon: "/Netli.png",
+      icon: "/Netli.webp",
       level: "Expert",
       description: "Platform for deploying and hosting modern web applications",
       experience: "1+ year",
@@ -184,7 +184,7 @@ const Skills = () => {
     },
     {
       name: "Cloudinary",
-      icon: "/Cloudinary.png",
+      icon: "/Cloudinary.webp",
       level: "Expert",
       description: "Cloud-based image and video management platform",
       experience: "1+ year",
@@ -193,7 +193,7 @@ const Skills = () => {
     },
     {
       name: "Next.js",
-      icon: "/Nextjs.png",
+      icon: "/Nextjs.webp",
       level: "Expert",
       description: "React framework for production with SSR and static generation",
       experience: "1+ year",
@@ -202,7 +202,7 @@ const Skills = () => {
     },
     {
       name: "TypeScript",
-      icon: "/Typescript Logo.jpeg",
+      icon: "/Typescript Logo.webp",
       level: "Expert",
       description: "Typed superset of JavaScript for scalable applications",
       experience: "1+ year",
@@ -211,7 +211,7 @@ const Skills = () => {
     },
     {
       name: "React Native",
-      icon: "/ReactNative.png",
+      icon: "/ReactNative.webp",
       level: "Expert",
       description: "Cross-platform mobile app development framework",
       experience: "1+ year",
@@ -220,7 +220,7 @@ const Skills = () => {
     },
     {
       name: "Expo Go",
-      icon: "/Expo_Go.png",
+      icon: "/Expo_Go.webp",
       level: "Expert",
       description: "Development platform for React Native applications",
       experience: "1+ year",
@@ -229,7 +229,7 @@ const Skills = () => {
     },
     {
       name: "Vercel",
-      icon: "/Vercel Logo.jpeg",
+      icon: "/Vercel Logo.webp",
       level: "Expert",
       description: "Frontend deployment and hosting platform",
       experience: "1+ year",
@@ -238,7 +238,7 @@ const Skills = () => {
     },
     {
       name: "Redis",
-      icon: "/Redis.jpeg",
+      icon: "/Redis.webp",
       level: "Advanced",
       description: "In-memory data structure store, used as a database, cache, and message broker",
       experience: "1+ year",
@@ -256,7 +256,7 @@ const Skills = () => {
     },
     {
       name: "Docker",
-      icon: "/Docker.png",
+      icon: "/Docker.webp",
       level: "Advanced",
       description: "Container images and compose workflows for reproducible dev, test, and deploy environments",
       experience: "Recent",
@@ -265,7 +265,7 @@ const Skills = () => {
     },
     {
       name: "Flutter",
-      icon: "/ Flutter.jpeg",
+      icon: "/ Flutter.webp",
       level: "Expert",
       description: "Cross-platform mobile and web UI framework for high-performance applications",
       experience: "1+ year",
@@ -274,7 +274,7 @@ const Skills = () => {
     },
     {
       name: "Dart",
-      icon: "/Dart.jpeg",
+      icon: "/Dart.webp",
       level: "Expert",
       description: "Type-safe programming language optimized for client-side development and Flutter",
       experience: "1+ year",
@@ -283,7 +283,7 @@ const Skills = () => {
     },
     {
       name: "NoSQL",
-      icon: "/NoSQL.jpeg",
+      icon: "/NoSQL.webp",
       level: "Expert",
       description: "Document-oriented database design and flexible schema modeling",
       experience: "1+ year",
@@ -292,7 +292,7 @@ const Skills = () => {
     },
     {
       name: "MySQL",
-      icon: "/MySQL.jpeg",
+      icon: "/MySQL.webp",
       level: "Advanced",
       description: "Relational database management with structured queries and optimized indexing",
       experience: "1+ year",
@@ -301,7 +301,7 @@ const Skills = () => {
     },
     {
       name: "PHP",
-      icon: "/PHP.jpeg",
+      icon: "/PHP.webp",
       level: "Advanced",
       description: "Server-side scripting for dynamic web applications, APIs, and CMS integrations",
       experience: "1+ year",
@@ -310,7 +310,7 @@ const Skills = () => {
     },
     {
       name: "SQLite",
-      icon: "/SQLite.jpeg",
+      icon: "/SQLite.webp",
       level: "Advanced",
       description: "Lightweight embedded relational database for local and mobile data persistence",
       experience: "Recent",
@@ -319,7 +319,7 @@ const Skills = () => {
     },
     {
       name: "Coolify",
-      icon: "/Coolify.jpeg",
+      icon: "/Coolify.webp",
       level: "Advanced",
       description: "Self-hosted deployment platform for containerized applications and CI/CD automation",
       experience: "Recent",
@@ -337,7 +337,7 @@ const Skills = () => {
     },
     {
       name: "Laravel",
-      icon: "/laravel.jpeg",
+      icon: "/laravel.webp",
       level: "Advanced",
       description: "PHP web framework for elegant backend APIs, MVC architecture, and scalable applications",
       experience: "1+ year",
@@ -467,7 +467,7 @@ const Skills = () => {
                       <div className="relative flex items-center justify-between mb-8">
                         <div className="flex items-center gap-4">
                           <div className="w-14 h-14 bg-white rounded-2xl shadow-inner border border-gray-50 flex items-center justify-center p-3 group-hover:shadow-blue-500/20 transition-all duration-300">
-                            <img src={skill.icon} alt={skill.name} className="w-full h-full object-contain" />
+                            <img src={skill.icon} alt={skill.name} width="56" height="56" className="w-full h-full object-contain" />
                           </div>
                           <div>
                             <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">{skill.name}</h3>

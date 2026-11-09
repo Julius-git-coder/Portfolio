@@ -1,6 +1,6 @@
 export const ragLangchainProject = {
   title: "AI Website Auditor",
-  image: "/Rag-Langchain.png",
+  image: "/Rag-Langchain.webp",
   link: "#",
   gitLink: "https://github.com/Julius-git-coder/Raglangchain.git",
   gradient: "from-blue-700 to-indigo-600",

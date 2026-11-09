@@ -4,7 +4,7 @@
 
 export const eWorldProject = {
   title: "eWorld",
-  image: "/Ewash.png",
+  image: "/Ewash.webp",
   link: "#",
   gitLink: "https://github.com/Julius-git-coder/Ewash-On-Back.git",
   gradient: "from-emerald-600 to-teal-500",

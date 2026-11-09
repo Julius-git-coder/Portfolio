@@ -1,0 +1,47 @@
+{
+  "version": "1.0.0",
+  "name": "Julius Dagana Portfolio",
+  "description": "Full-Stack Software Engineer portfolio showcasing projects, skills, and experience in React, Node.js, and AI engineering.",
+  "url": "https://portfolio-dun-five-g4ge92lpjp.vercel.app",
+  "author": {
+    "name": "Julius Dagana",
+    "url": "https://linkedin.com/in/juliusdagana"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "title": "Home",
+      "description": "Introduction, featured projects, and skills overview"
+    },
+    {
+      "path": "/about",
+      "title": "About",
+      "description": "Background, education, and professional experience"
+    },
+    {
+      "path": "/projects",
+      "title": "Projects",
+      "description": "Portfolio of completed web and mobile applications"
+    },
+    {
+      "path": "/skills",
+      "title": "Skills",
+      "description": "Detailed technical skills and technologies"
+    },
+    {
+      "path": "/contact",
+      "title": "Contact",
+      "description": "Contact form and social media links"
+    },
+    {
+      "path": "/review",
+      "title": "Review",
+      "description": "Leave a review or testimonial"
+    }
+  ],
+  "technologies": [
+    "React", "Next.js", "Node.js", "Express.js", "MongoDB", "Firebase",
+    "Python", "LangChain", "ChromaDB", "Ollama", "Flask", "Tailwind CSS",
+    "TypeScript", "React Native", "Flutter", "Docker", "GitLab", "Sentry"
+  ]
+}

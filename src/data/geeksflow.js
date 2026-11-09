@@ -1,6 +1,6 @@
 export const geeksflowProject = {
   title: "GeeksFlow",
-  image: "/GeeksFlow.png",
+  image: "/GeeksFlow.webp",
   link: "#",
   gitLink: "https://github.com/Julius-git-coder/GeeksFlow-Api.git",
   gradient: "from-violet-600 to-purple-500",

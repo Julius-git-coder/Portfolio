@@ -261,8 +261,10 @@ const AboutMe = () => {
                   <div className="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-full animate-spin-slow opacity-20"></div>
                   <div className="relative w-full h-full rounded-full border-4 border-white shadow-xl overflow-hidden">
                     <img
-                      src="/Codetrain.jpg"
+                      src="/Codetrain-about.webp"
                       alt="Julius Dagana"
+                      width="160"
+                      height="160"
                       className="w-full h-full object-cover"
                     />
                   </div>

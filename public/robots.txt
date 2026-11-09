@@ -1,0 +1,8 @@
+# https://www.robotstxt.org/
+# https://developers.google.com/search/docs/advanced/robots/intro
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://portfolio-dun-five-g4ge92lpjp.vercel.app/sitemap.xml

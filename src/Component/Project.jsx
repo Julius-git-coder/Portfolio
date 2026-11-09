@@ -24,6 +24,8 @@ const RenderProjectCard = ({ project, index }) => (
       <img
         src={project.image}
         alt={project.title}
+        width="800"
+        height="500"
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         loading="lazy"
         decoding="async"

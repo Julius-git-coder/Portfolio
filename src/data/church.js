@@ -1,6 +1,6 @@
 export const churchProject = {
   title: "Church Management",
-  image: "/Church-Mgmt.png",
+  image: "/Church-Mgmt.webp",
   link: "#",
   gitLink: "https://github.com/Julius-git-coder/WTI-church-website.git",
   gradient: "from-indigo-600 to-violet-500",
