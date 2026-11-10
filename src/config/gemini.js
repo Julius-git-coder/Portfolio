@@ -9,7 +9,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 // 3. Paste it below
 // ============================================================
 
-const GEMINI_API_KEY = "AIzaSyCrvImWDqCGp1gTn8g88FQHqNQXHXAh5JE"; // Gemini API Key for portfolio chatbot
+const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY; // Gemini API Key for portfolio chatbot
 
 let genAI = null;
 let model = null;

@@ -4,7 +4,7 @@ import { getAnalytics } from "firebase/analytics";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCrvImWDqCGp1gTn8g88FQHqNQXHXAh5JE",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "aquatrack-34a8b.firebaseapp.com",
   projectId: "aquatrack-34a8b",
   storageBucket: "aquatrack-34a8b.firebasestorage.app",
