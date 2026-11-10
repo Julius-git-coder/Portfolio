@@ -386,7 +386,7 @@ const HomeContent = () => {
                     <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-500"></div>
                     <div className="relative w-40 h-40 sm:w-48 sm:h-48 lg:w-60 lg:h-60 xl:w-64 xl:h-64 rounded-full overflow-hidden flex items-center justify-center bg-white z-10 border-4 border-white">
                       <img
-                        src="/hero-portrait.webp"
+                        src="/Portimage.jpeg"
                         alt="Julius Dagana"
                         width="200"
                         height="200"

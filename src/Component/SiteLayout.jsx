@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence, motion, useSpring, useMotionValue } from "framer-motion";
 import Navbar from "./Navbar";
 import Seo from "./Seo";
+import ChatModal from "./ChatModal";
 
 const contentVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -20,6 +21,7 @@ const contentVariants = {
 
 export default function SiteLayout() {
   const { pathname } = useLocation();
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -65,10 +67,15 @@ export default function SiteLayout() {
       <Seo />
       <Navbar />
 
-      <div className="fixed bottom-4 right-3 sm:bottom-6 sm:right-5 w-28 h-28 sm:w-36 sm:h-36 lg:w-52 lg:h-52 z-40 pointer-events-none select-none flex items-center justify-center p-2 sm:p-3">
+      <div 
+        className="fixed bottom-4 right-3 sm:bottom-6 sm:right-5 w-28 h-28 sm:w-36 sm:h-36 lg:w-52 lg:h-52 z-40 cursor-pointer flex items-center justify-center p-2 sm:p-3" 
+        onClick={() => setIsChatOpen(true)}
+      >
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
           style={{
             x: robotX,
             y: robotY,
@@ -84,7 +91,7 @@ export default function SiteLayout() {
           <div className="absolute inset-0 bg-blue-400/20 blur-2xl rounded-full -z-10 animate-pulse"></div>
           <img
             src="/Ai Robot Vector Art.webp"
-            alt="Animated robot illustration"
+            alt="Click to chat with Portfolio Assistant"
             width="208"
             height="208"
             className="w-full h-full object-contain"
@@ -95,6 +102,8 @@ export default function SiteLayout() {
           />
         </motion.div>
       </div>
+
+      <ChatModal isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
 
       <main className="pt-20 md:pt-24 pb-24 sm:pb-28 md:pb-32">
         <AnimatePresence mode="wait">
