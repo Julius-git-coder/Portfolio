@@ -6,7 +6,7 @@ import { projects } from "../data/projects";
 import { tabPath } from "../config/nav";
 import Reviews from "./Reviews";
 
-const HomeProjectCard = ({ project, index, handleViewAllClick, handleContactClick }) => (
+const HomeProjectCard = ({ project, index, onViewDetails, handleContactClick }) => (
   <motion.div
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ const HomeProjectCard = ({ project, index, handleViewAllClick, handleContactClic
           </div>
           <div className="flex gap-3 mt-auto">
             <button
-              onClick={handleViewAllClick}
+              onClick={() => onViewDetails(project.title)}
               className={`flex-1 px-4 py-2.5 bg-gradient-to-r ${project.gradient} text-white rounded-xl text-sm font-bold hover:shadow-lg hover:scale-105 transition-all duration-300`}
             >
               View Details
@@ -328,6 +328,12 @@ const HomeContent = () => {
     navigate(tabPath("Project"));
   };
 
+  const handleViewProjectDetails = (projectTitle) => {
+    const params = new URLSearchParams();
+    params.set("highlight", projectTitle);
+    navigate(`${tabPath("Project")}?${params.toString()}`);
+  };
+
   return (
     <div className="min-h-screen bg-[#fcfcfd] pb-8 sm:pb-12">
       {/* Hero & Orbit Section - Redesigned */}
@@ -559,7 +565,7 @@ const HomeContent = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {projects.filter(p => p.category === "featured").map((project, index) => (
-              <HomeProjectCard key={project.title} project={project} index={index} handleViewAllClick={handleViewAllClick} handleContactClick={handleContactClick} />
+              <HomeProjectCard key={project.title} project={project} index={index} onViewDetails={handleViewProjectDetails} handleContactClick={handleContactClick} />
             ))}
           </div>
 
@@ -579,7 +585,7 @@ const HomeContent = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {projects.filter(p => p.category === "client").map((project, index) => (
-                <HomeProjectCard key={project.title} project={project} index={index} handleViewAllClick={handleViewAllClick} handleContactClick={handleContactClick} />
+                <HomeProjectCard key={project.title} project={project} index={index} onViewDetails={handleViewProjectDetails} handleContactClick={handleContactClick} />
               ))}
             </div>
           </div>

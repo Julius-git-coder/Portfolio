@@ -1,7 +1,7 @@
 export const rorepProject = {
   title: "ROREP",
   image: "/ROREP.webp",
-  link: "#",
+  link: "https://rorep.org/",
   gitLink: "https://github.com/Julius-git-coder/NGO-fe.git",
   gradient: "from-green-600 to-emerald-500",
   projectDescription:

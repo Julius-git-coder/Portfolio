@@ -4,7 +4,9 @@ import { geeksflowProject } from "./geeksflow";
 import { ggtPrintProject } from "./ggt-print";
 import { churchProject } from "./church";
 import { rorepProject } from "./rorep";
+import { bbluxuryProject } from "./bbluxury";
 import { ragLangchainProject } from "./rag-langchain";
+import { justfreddiesghProject } from "./justfreddiesgh";
 
 export const projects = [
   {
@@ -19,15 +21,15 @@ export const projects = [
     category: "featured",
   },
   {
-    title: rorepProject.title,
-    description: rorepProject.projectDescription,
-    image: rorepProject.image.replace(/\.(png|jpeg|jpg)$/i, ".webp"),
-    link: rorepProject.link,
-    gitLink: rorepProject.gitLink,
-    tech: rorepProject.projectTech,
-    gradient: rorepProject.gradient,
+    title: justfreddiesghProject.title,
+    description: justfreddiesghProject.projectDescription,
+    image: justfreddiesghProject.image,
+    link: justfreddiesghProject.link,
+    gitLink: justfreddiesghProject.gitLink,
+    tech: justfreddiesghProject.projectTech,
+    gradient: justfreddiesghProject.gradient,
     type: "Web App",
-    category: "featured",
+    category: "client",
   },
   {
     title: eWorldProject.title,
@@ -100,29 +102,29 @@ export const projects = [
     category: "client",
   },
   {
-    title: geeksflowProject.title,
-    description: geeksflowProject.projectDescription,
-    image: geeksflowProject.image,
-    link: geeksflowProject.link,
-    gitLink: geeksflowProject.gitLink,
-    tech: geeksflowProject.projectTech,
-    gradient: geeksflowProject.gradient,
-    type: "Ecosystem",
+    title: bbluxuryProject.title,
+    description: bbluxuryProject.projectDescription,
+    image: bbluxuryProject.image.replace(/\.(png|jpeg|jpg)$/i, ".webp"),
+    link: bbluxuryProject.link,
+    gitLink: bbluxuryProject.gitLink,
+    tech: bbluxuryProject.projectTech,
+    gradient: bbluxuryProject.gradient,
+    type: "Web App",
     category: "client",
   },
   {
-    title: ggtPrintProject.title,
-    description: ggtPrintProject.projectDescription,
-    image: ggtPrintProject.image,
-    link: ggtPrintProject.link,
-    gitLink: ggtPrintProject.gitLink,
-    tech: ggtPrintProject.projectTech,
-    gradient: ggtPrintProject.gradient,
-    type: "POS System",
+    title: rorepProject.title,
+    description: rorepProject.projectDescription,
+    image: rorepProject.image.replace(/\.(png|jpeg|jpg)$/i, ".webp"),
+    link: rorepProject.link,
+    gitLink: rorepProject.gitLink,
+    tech: rorepProject.projectTech,
+    gradient: rorepProject.gradient,
+    type: "Web App",
     category: "client",
   },
   {
-    title: "Student Management",
+    title: "SmartSkuul",
     description:
       "A comprehensive school management dashboard featuring student records, attendance tracking, assignments, grading, and class scheduling with interactive data visualizations.",
     image: "/Student-Mgmt.webp",
@@ -154,6 +156,28 @@ export const projects = [
     tech: ["React", "Vite", "Tailwind", "React Router"],
     gradient: "from-sky-600 to-indigo-500",
     type: "Web App",
+    category: "client",
+  },
+  {
+    title: geeksflowProject.title,
+    description: geeksflowProject.projectDescription,
+    image: geeksflowProject.image,
+    link: geeksflowProject.link,
+    gitLink: geeksflowProject.gitLink,
+    tech: geeksflowProject.projectTech,
+    gradient: geeksflowProject.gradient,
+    type: "Ecosystem",
+    category: "client",
+  },
+  {
+    title: ggtPrintProject.title,
+    description: ggtPrintProject.projectDescription,
+    image: ggtPrintProject.image,
+    link: ggtPrintProject.link,
+    gitLink: ggtPrintProject.gitLink,
+    tech: ggtPrintProject.projectTech,
+    gradient: ggtPrintProject.gradient,
+    type: "POS System",
     category: "client",
   },
 ];

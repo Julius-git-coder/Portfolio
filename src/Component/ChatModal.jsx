@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, User, Lock, Sparkles } from "lucide-react";
+import { model as geminiModel, GEMINI_API_KEY } from "../config/gemini";
 
 // ============================================================
 // RAG-POWERED CHAT BOT — Trained on ALL Portfolio Data
@@ -90,12 +91,13 @@ const SYNONYMS = {
   'geeksflow': ['project management', 'workflow', 'task management'],
   'ggt': ['print', 'pos', 'point of sale', 'print shop'],
   'church': ['church management', 'attendance', 'finance', 'worship'],
+  'justfreddiesgh': ['just freddie', 'justfreddie', 'restaurant', 'food', 'ordering'],
   'hydroflow': ['water', 'hydration', 'health tracking'],
   'gradea': ['grade-a', 'education', 'student', 'school', 'academic'],
   'healthe': ['health', 'wellness', 'fitness', 'medical'],
   'easyprofile': ['profile', 'identity', 'user profile'],
   'shopmart': ['shop', 'ecommerce', 'shopping', 'store'],
-  'student': ['student management', 'school dashboard', 'academic'],
+  'student': ['student management', 'smartskuul', 'school dashboard', 'academic'],
   'auditor': ['ai website', 'website auditor', 'rag', 'audit'],
 };
 
@@ -165,13 +167,13 @@ const KNOWLEDGE_CORPUS = [
   },
   {
     id: 'experience-1',
-    text: 'Julius experience timeline: 2024-Present: eWorld Lead Engineer (React Native + Express API). 2025-Present: Sonturk Supermarket ecosystem (Next.js + Laravel + PostgreSQL). 2026: AI Website Auditor Lead Developer (offline RAG platform), GGT Print POS Lead Engineer (solo). Client projects include ROREP, GeeksFlow, Church Management, and more.',
+    text: 'Julius experience timeline: 2024-Present: eWorld Lead Engineer (React Native + Express API). 2025-Present: Sonturk Supermarket ecosystem (Next.js + Laravel + PostgreSQL). 2026: AI Website Auditor Lead Developer (offline RAG platform), GGT Print POS Lead Engineer (solo). Client projects include ROREP, GeeksFlow, Church Management, justfreddiesgh, and more.',
     tags: ['experience', 'career', 'job', 'work history', 'background', 'professional', 'how long', 'years', 'timeline', 'history'],
     category: 'experience',
   },
 
   // === SKILLS (37 technologies) ===
-  { id: 'skill-react', text: 'React — Expert Level. Building dynamic user interfaces with hooks, context, and advanced patterns. 1+ year experience. Projects: HydroFlow, EasyProfile, eWorld, Portfolio, ShopMart, Student Management.', tags: ['react', 'reactjs', 'frontend', 'library', 'hooks', 'component'], category: 'skill', level: 'Expert' },
+  { id: 'skill-react', text: 'React — Expert Level. Building dynamic user interfaces with hooks, context, and advanced patterns. 1+ year experience. Projects: HydroFlow, EasyProfile, eWorld, Portfolio, ShopMart, SmartSkuul, justfreddiesgh.', tags: ['react', 'reactjs', 'frontend', 'library', 'hooks', 'component'], category: 'skill', level: 'Expert' },
   { id: 'skill-javascript', text: 'JavaScript — Expert Level. ES6+, async programming, modern patterns including async/await, closures, promises. Used in all 20+ projects. Foundation of full-stack expertise.', tags: ['javascript', 'js', 'es6', 'async', 'promise', 'closure'], category: 'skill', level: 'Expert' },
   { id: 'skill-html', text: 'HTML — Expert Level. Semantic markup, accessibility, modern HTML5 features. Used in all web projects following web standards and accessibility best practices.', tags: ['html', 'html5', 'semantic', 'markup', 'accessibility'], category: 'skill', level: 'Expert' },
   { id: 'skill-css', text: 'CSS — Expert Level. Flexbox, Grid, animations, responsive design principles. Combines raw CSS with Tailwind for maximum flexibility.', tags: ['css', 'flexbox', 'grid', 'animation', 'responsive', 'styling'], category: 'skill', level: 'Expert' },
@@ -191,7 +193,7 @@ const KNOWLEDGE_CORPUS = [
   { id: 'skill-firebase', text: 'Firebase — Expert Level. Backend-as-a-Service platform for authentication and real-time data. Projects: HydroFlow, EasyProfile, real-time apps, Portfolio Reviews. Features: Real-time database, authentication, Firestore.', tags: ['firebase', 'firestore', 'realtime', 'baaS', 'authentication', 'real-time'], category: 'skill', level: 'Expert' },
   { id: 'skill-laravel', text: 'Laravel — Advanced Level. PHP web framework for elegant backend APIs, MVC architecture, and scalable applications. Projects: Sonturk, GeeksFlow, GGT Print POS, Church Management. Features: API development, Sanctum auth, DOMPDF, workflow engine.', tags: ['laravel', 'php', 'framework', 'mvc', 'api', 'backend', 'sanctum'], category: 'skill', level: 'Advanced' },
   { id: 'skill-php', text: 'PHP — Advanced Level. Server-side scripting for dynamic web applications, APIs, and CMS integrations. Projects: Backend services, web platforms. Used with Laravel framework.', tags: ['php', 'server', 'scripting', 'backend', 'cms'], category: 'skill', level: 'Advanced' },
-  { id: 'skill-nextjs', text: 'Next.js — Expert Level. React framework for production with SSR and static generation. Projects: ROREP (22-page NGO site), Sonturk, GGT Print POS, Church Management, EasyProfile. Features: Server-side rendering, static generation, API routes.', tags: ['nextjs', 'next.js', 'next', 'ssr', 'ssg', 'react', 'framework'], category: 'skill', level: 'Expert' },
+  { id: 'skill-nextjs', text: 'Next.js — Expert Level. React framework for production with SSR and static generation. Projects: ROREP (22-page NGO site), Sonturk, GGT Print POS, Church Management, EasyProfile, justfreddiesgh. Features: Server-side rendering, static generation, API routes.', tags: ['nextjs', 'next.js', 'next', 'ssr', 'ssg', 'react', 'framework'], category: 'skill', level: 'Expert' },
   { id: 'skill-typescript', text: 'TypeScript — Expert Level. Typed superset of JavaScript for scalable applications. Projects: eWorld, AI Website Auditor, Sonturk, Church Management, EasyProfile. Benefits: Type safety, better IDE support, fewer runtime errors.', tags: ['typescript', 'ts', 'typed', 'type safe', 'javascript', 'superset'], category: 'skill', level: 'Expert' },
   { id: 'skill-reactnative', text: 'React Native — Expert Level. Cross-platform mobile app development. Projects: eWorld (booking app), Healthe (health & wellness), GeeksFlow (admin + customer apps). Features: Maps, gestures, navigation, real-time updates.', tags: ['reactnative', 'react native', 'rn', 'mobile', 'cross platform', 'app'], category: 'skill', level: 'Expert' },
   { id: 'skill-expo', text: 'Expo — Expert Level. Development platform for React Native applications. Projects: eWorld, Healthe, GeeksFlow. Features: Fast development, OTA updates, native APIs.', tags: ['expo', 'expo go', 'mobile', 'react native', 'ota'], category: 'skill', level: 'Expert' },
@@ -209,9 +211,9 @@ const KNOWLEDGE_CORPUS = [
   { id: 'skill-coolify', text: 'Coolify — Advanced Level. Self-hosted deployment platform for containerized applications and CI/CD automation. Projects: Deployment pipelines, self-hosted applications.', tags: ['coolify', 'self hosted', 'self-hosted', 'deployment', 'ci cd'], category: 'skill', level: 'Advanced' },
   { id: 'skill-cpanel', text: 'cPanel — Advanced Level. Web hosting control panel for server management, domain, and database administration. Projects: Server management, hosting setup.', tags: ['cpanel', 'hosting', 'server', 'control panel', 'domain'], category: 'skill', level: 'Advanced' },
   { id: 'skill-socketio', text: 'Socket.io — Real-Time Communication. Bidirectional real-time communication. Projects: eWorld (live updates), GeeksFlow (notifications). Features: Live data sync, notifications, chat.', tags: ['socketio', 'socket', 'websocket', 'realtime', 'real time', 'live'], category: 'skill', level: 'Advanced' },
-  { id: 'skill-zustand', text: 'Zustand — State Management. Lightweight state management with simple API and minimal boilerplate. Projects: Sonturk, GeeksFlow, Student Management.', tags: ['zustand', 'state', 'management', 'store'], category: 'skill', level: 'Advanced' },
+  { id: 'skill-zustand', text: 'Zustand — State Management. Lightweight state management with simple API and minimal boilerplate. Projects: Sonturk, GeeksFlow, SmartSkuul.', tags: ['zustand', 'state', 'management', 'store'], category: 'skill', level: 'Advanced' },
   { id: 'skill-shadcn', text: 'shadcn/ui — UI Components. Accessible pre-built component libraries. Projects: ROREP, Sonturk, Church Management. Features: Pre-built accessible components, theming.', tags: ['shadcn', 'shadcn ui', 'component', 'accessible', 'ui'], category: 'skill', level: 'Expert' },
-  { id: 'skill-framer', text: 'Framer Motion — Animations. React-native animations for smooth transitions and page animations. Projects: ROREP, Portfolio, EasyProfile.', tags: ['framer', 'framer motion', 'animation', 'animate', 'transition'], category: 'skill', level: 'Expert' },
+  { id: 'skill-framer', text: 'Framer Motion — Animations. React-native animations for smooth transitions and page animations. Projects: ROREP, Portfolio, EasyProfile, justfreddiesgh.', tags: ['framer', 'framer motion', 'animation', 'animate', 'transition'], category: 'skill', level: 'Expert' },
   { id: 'skill-gsap', text: 'GSAP — Professional Animations. Professional-grade animation engine for complex animations and storytelling. Projects: ROREP.', tags: ['gsap', 'animation', 'animate', 'greensock', 'storytelling'], category: 'skill', level: 'Expert' },
   { id: 'skill-paystack', text: 'Paystack — Payment Integration. African payment gateway for real-time payments and donation processing. Project: ROREP (NGO donations in GHS).', tags: ['paystack', 'payment', 'pay', 'donation', 'african', 'transaction'], category: 'skill', level: 'Expert' },
   { id: 'skill-imagekit', text: 'ImageKit — Image Management. Media management with image optimization and transformations. Project: eWorld API.', tags: ['imagekit', 'image', 'media', 'optimization'], category: 'skill', level: 'Advanced' },
@@ -224,12 +226,13 @@ const KNOWLEDGE_CORPUS = [
   { id: 'proj-geeksflow', text: 'GeeksFlow — Comprehensive project management system with dual React Native apps and Laravel API. Admin app: dashboard, customers, projects, tasks, payments, meetings. Customer app: project participation. Laravel API: workflow engine, notifications, PostgreSQL, comprehensive reporting. Tech: React Native, Expo, Laravel, PostgreSQL, Zustand, React Navigation, NativeWind, Socket.io. Problem: Organizations needed unified project management. Result: Full-featured ecosystem with admin/customer separation and real-time collaboration. GitHub: GeeksFlow-Api.git', tags: ['geeksflow', 'project management', 'workflow', 'task', 'react native', 'laravel', 'postgresql'], category: 'project' },
   { id: 'proj-ggt', text: 'GGT Print POS — Full-featured print shop point-of-sale system. Next.js frontend with intuitive order management and payment flows, Laravel API backend for business logic. Tech: Next.js, React, TypeScript, Tailwind, Laravel, Axios. Features: Order management, job tracking, payment processing, customer history. Problem: Print shops needed modern POS without enterprise complexity. Result: Streamlined POS for print businesses. GitHub: ggt-print-pos-fe', tags: ['ggt', 'print', 'pos', 'point of sale', 'nextjs', 'laravel', 'order'], category: 'project' },
   { id: 'proj-church', text: 'Church Management — Full-stack multi-app church platform. Four applications: public Next.js website, admin dashboard (members, attendance, finance, groups, roles, announcements, SMS broadcast, reports), member portal, Laravel API with Sanctum auth and DOMPDF. Tech: Next.js, React, TypeScript, Tailwind, Laravel, shadcn/ui, Axios, jsPDF, Sanctum. Problem: Churches needed unified platform without disjointed tools. Result: Comprehensive ecosystem connecting visitors, members, and administrators. GitHub: WTI-church-website.git', tags: ['church', 'church management', 'attendance', 'finance', 'worship', 'nextjs', 'laravel', 'sanctum', 'sms'], category: 'project' },
+  { id: 'proj-justfreddiesgh', text: 'justfreddiesgh — Modern restaurant website for Just Freddie\'s GH featuring menu showcases, online ordering, and seamless contact integration. Tech: React, Next.js, TypeScript, Tailwind, Framer Motion. Features: Menu showcases, online ordering system, contact integration, warm design aesthetic, smooth animations. Problem: Just Freddie\'s GH needed a professional online presence to showcase their menu and enable online ordering. Result: Polished restaurant website that drives online orders through an intuitive experience. Link: justfreddiesgh.com', tags: ['justfreddiesgh', 'just freddie', 'justfreddie', 'restaurant', 'food', 'ordering', 'nextjs', 'framer'], category: 'project' },
   { id: 'proj-hydroflow', text: 'HydroFlow — High-performance water tracking intelligence system for optimizing hydration. Tech: React, Tailwind, Vite, Web API, GitLab, Firebase. Features: Weather-based hydration recommendations, daily goal synchronization, real-time tracking, smart insights. Problem: People needed intelligent hydration tracking that adapts to environment. Result: Smart water tracking that personalizes goals based on weather data.', tags: ['hydroflow', 'water', 'hydration', 'health', 'react', 'firebase', 'weather'], category: 'project' },
   { id: 'proj-gradea', text: 'Grade-A — Comprehensive educational management system with admin dashboard. Tech: React, Tailwind, Vercel, GitLab. Features: Student tracking, assignment management, roadmap planning, admin dashboard, interactive data visualizations. Problem: Schools needed centralized system for managing students and academics. Result: Complete educational management platform.', tags: ['gradea', 'grade-a', 'education', 'student', 'school', 'academic', 'react'], category: 'project' },
   { id: 'proj-healthe', text: 'Healthe — Health and wellness mobile application for tracking fitness and health metrics. Tech: React Native, Expo, TypeScript, NativeWind, React Navigation. Features: Fitness goal tracking, health metrics monitoring, lifestyle recommendations, mobile-first design. Problem: Users needed simple way to track health and fitness. Result: Mobile app for healthier lifestyle.', tags: ['healthe', 'health', 'wellness', 'fitness', 'medical', 'react native', 'expo'], category: 'project' },
   { id: 'proj-easyprofile', text: 'EasyProfile — Advanced profile orchestration platform for seamless identity management. Tech: Next.js, Firebase, TypeScript, Framer Motion, GitLab, Cloudinary. Features: Dynamic user customization, high-tier UI/UX design, identity management, image optimization via Cloudinary, real-time data via Firebase. Problem: Users needed platform for seamless profile management. Result: Polished profile platform with excellent UI/UX.', tags: ['easyprofile', 'profile', 'identity', 'user', 'nextjs', 'firebase', 'cloudinary'], category: 'project' },
   { id: 'proj-shopmart', text: 'ShopMart — Modern shopping web application with clean React interface. Tech: React, Vite, Tailwind, React Router. Features: Product browsing, cart management, seamless checkout flow, intuitive e-commerce experience. Problem: Users needed clean modern shopping experience. Result: Intuitive e-commerce app.', tags: ['shopmart', 'shop', 'ecommerce', 'shopping', 'store', 'react', 'cart'], category: 'project' },
-  { id: 'proj-student', text: 'Student Management — Comprehensive school management dashboard with interactive data visualizations. Tech: React, Vite, Tailwind, Recharts, Zustand, Headless UI. Features: Student records, attendance tracking, assignment management, grading system, class scheduling, interactive charts with Recharts. Problem: Schools needed dashboard for managing student data. Result: Complete school management system with beautiful visualizations.', tags: ['student', 'student management', 'school', 'dashboard', 'academic', 'react', 'recharts'], category: 'project' },
+  { id: 'proj-student', text: 'SmartSkuul — Comprehensive school management dashboard with interactive data visualizations. Tech: React, Vite, Tailwind, Recharts, Zustand, Headless UI. Features: Student records, attendance tracking, assignment management, grading system, class scheduling, interactive charts with Recharts. Problem: Schools needed dashboard for managing student data. Result: Complete school management system with beautiful visualizations.', tags: ['student', 'student management', 'smartskuul', 'school', 'dashboard', 'academic', 'react', 'recharts'], category: 'project' },
 
   // === TOPIC CLUSTERS ===
   { id: 'topic-ai', text: 'Julius specializes in AI engineering: LangChain for LLM orchestration and RAG pipelines, ChromaDB for vector databases (12K+ vectors), Ollama for local offline LLM inference, Flask for Python AI backends, and LoRA fine-tuning. His flagship AI project is the AI Website Auditor — a fully offline RAG-powered analysis platform with 60+ rule checks.', tags: ['ai', 'artificial intelligence', 'machine learning', 'ml', 'llm', 'rag', 'langchain', 'chromadb', 'ollama', 'neural', 'model', 'fine tuning', 'lora'], category: 'topic' },
@@ -239,7 +242,7 @@ const KNOWLEDGE_CORPUS = [
   { id: 'topic-uiux', text: 'Julius focuses on beautiful, functional interfaces: shadcn/ui for accessible components (ROREP, Sonturk, Church), Framer Motion for React animations (ROREP, Portfolio, EasyProfile), GSAP for professional animations (ROREP), Tailwind CSS for utility-first styling across most projects. He creates interfaces that are both beautiful and accessible.', tags: ['ui', 'ux', 'design', 'interface', 'animation', 'accessible', 'shadcn', 'framer', 'gsap', 'tailwind'], category: 'topic' },
   { id: 'topic-realtime', text: 'Julius implements real-time features: Socket.io for bidirectional communication in eWorld (live updates) and GeeksFlow (notifications), Firebase Realtime for Portfolio Reviews and HydroFlow. His apps keep users informed with live data.', tags: ['realtime', 'real time', 'live', 'socket', 'websocket', 'notification', 'update'], category: 'topic' },
   { id: 'topic-payment', text: 'Julius integrates payment systems: Paystack for African payment gateway in ROREP (NGO donations in GHS) with real-time payments and donation processing. He enables real transactions in his applications.', tags: ['payment', 'pay', 'donation', 'stripe', 'transaction', 'paystack', 'money'], category: 'topic' },
-  { id: 'topic-state', text: 'Julius uses multiple state management approaches: Zustand for lightweight state (Sonturk, GeeksFlow, Student Management), React Context for global state in smaller projects, TanStack Query for server state management (eWorld) with caching and background refetching.', tags: ['state', 'zustand', 'redux', 'context', 'management', 'store', 'tanstack', 'query'], category: 'topic' },
+  { id: 'topic-state', text: 'Julius uses multiple state management approaches: Zustand for lightweight state (Sonturk, GeeksFlow, SmartSkuul), React Context for global state in smaller projects, TanStack Query for server state management (eWorld) with caching and background refetching.', tags: ['state', 'zustand', 'redux', 'context', 'management', 'store', 'tanstack', 'query'], category: 'topic' },
   { id: 'topic-devops', text: 'Julius handles DevOps: Docker for containerized environments (eWorld), GitLab CI/CD for automated pipelines (all projects), Vercel for frontend deployment, Netlify for web hosting, Render for API hosting, Coolify for self-hosted deployment, cPanel for server management, Sentry for production monitoring across all apps.', tags: ['devops', 'dev ops', 'deploy', 'deployment', 'docker', 'ci cd', 'pipeline', 'infrastructure', 'hosting', 'server'], category: 'topic' },
   { id: 'topic-testing', text: 'Julius writes tests to keep features safe to ship: Jest for unit and integration tests (eWorld), Supertest for API testing (eWorld), Maestro for mobile E2E tests (eWorld). He ensures code quality through automated testing.', tags: ['test', 'testing', 'jest', 'maestro', 'supertest', 'unit', 'integration', 'e2e', 'quality'], category: 'topic' },
   { id: 'topic-compare', text: 'Julius chooses technologies based on project needs: React vs Next.js — React for SPAs, Next.js for SSR/SEO; Node.js vs Python — Node for JS full-stack, Python for AI/ML; MongoDB vs PostgreSQL — MongoDB for flexible schemas, PostgreSQL for relational data; React Native vs Flutter — React Native for React devs, Flutter for pure Dart; Firebase vs Custom API — Firebase for speed, Custom API for control.', tags: ['compare', 'vs', 'versus', 'difference', 'better', 'which', 'choose', 'between', 'alternative'], category: 'topic' },
@@ -251,7 +254,7 @@ const KNOWLEDGE_CORPUS = [
   { id: 'hr-salary', text: 'For salary and rate inquiries, please contact Julius directly at juliusdagana@gmail.com or through LinkedIn: linkedin.com/in/juliusdagana. He is open to discussing compensation based on the project scope, role, and requirements.', tags: ['salary', 'rate', 'compensation', 'budget', 'price', 'pricing', 'payment', 'negotiable', 'discount', 'hourly', 'charge', 'terms', 'methods'], category: 'hr' },
   { id: 'hr-motivation', text: 'Julius is motivated by building impactful products that solve real problems. He enjoys working with cutting-edge technologies like AI and machine learning, and takes pride in delivering production-ready applications. He is continuously learning and expanding his skill set.', tags: ['motivation', 'motivate', 'goals', '5 years', 'future', 'weakness', 'learning next', 'career goals'], category: 'hr' },
   { id: 'hr-skills-list', text: 'Julius has mastered 37+ technologies across frontend, backend, mobile, AI, and DevOps. His core stack includes React, Next.js, TypeScript, Node.js, Python, Laravel, and AI tools like LangChain and ChromaDB. He is proficient in both relational and NoSQL databases, cloud deployment, and mobile development.', tags: ['programming languages', 'languages', 'frameworks', 'frontend technologies', 'backend technologies', 'rest api', 'devops', 'cloud platforms', 'testing tools', 'state management', 'css frameworks', 'animation', 'real-time', 'deploy', 'databases', 'proficient', 'expertise', 'good with', 'familiar', 'optimize'], category: 'hr' },
-  { id: 'hr-projects-list', text: 'Julius has built 20+ projects spanning web applications, mobile apps, AI platforms, e-commerce, healthcare, education, and more. His flagship projects include AI Website Auditor (offline AI RAG platform), eWorld (mobile booking with real-time updates), and ROREP (NGO website with donations). He has delivered real-time applications, dashboard tools, and POS systems.', tags: ['type of projects', 'delivered', 'real-time applications', 'dashboard', 'mobile apps', 'ai projects', 'ngo', 'healthcare', 'education', 'ecommerce', 'pos', 'booking', 'supermarket', 'student management', 'health tracking', 'project management', 'ecommerce', 'healthcare'], category: 'hr' },
+  { id: 'hr-projects-list', text: 'Julius has built 20+ projects spanning web applications, mobile apps, AI platforms, e-commerce, healthcare, education, and more. His flagship projects include AI Website Auditor (offline AI RAG platform), eWorld (mobile booking with real-time updates), and ROREP (NGO website with donations). He has delivered real-time applications, dashboard tools, and POS systems.', tags: ['type of projects', 'delivered', 'real-time applications', 'dashboard', 'mobile apps', 'ai projects', 'ngo', 'healthcare', 'education', 'ecommerce', 'pos', 'booking', 'supermarket', 'student management', 'smartskuul', 'health tracking', 'project management', 'ecommerce', 'healthcare'], category: 'hr' },
 ];
 
 // ---- RAG ENGINE ----
@@ -485,7 +488,7 @@ function detectDirectIntent(query, results) {
     q.includes('international clients') || q.includes('enterprise projects') || q.includes('startup projects') ||
     q.includes('delivered projects') || q.includes('coding') || q.includes('start his career') ||
     q.includes('level of experience') || q.includes('junior') || q.includes('senior')) {
-    return "Julius's experience:\n\n**2024-Present:** eWorld Lead Engineer (React Native + Express API)\n**2025-Present:** Sonturk Supermarket ecosystem (Next.js + Laravel + PostgreSQL)\n**2026:** AI Website Auditor Lead Developer, GGT Print POS Lead Engineer\n\nClient projects include ROREP, GeeksFlow, Church Management, and more.\n\nHe has 1+ years of professional experience, worked with 10+ clients worldwide, and has served as Lead Engineer on multiple projects.";
+    return "Julius's experience:\n\n**2024-Present:** eWorld Lead Engineer (React Native + Express API)\n**2025-Present:** Sonturk Supermarket ecosystem (Next.js + Laravel + PostgreSQL)\n**2026:** AI Website Auditor Lead Developer, GGT Print POS Lead Engineer\n\nClient projects include ROREP, GeeksFlow, Church Management, justfreddiesgh, and more.\n\nHe has 1+ years of professional experience, worked with 10+ clients worldwide, and has served as Lead Engineer on multiple projects.";
   }
 
   // WORK STYLE / TEAM / TECHNICAL — catch HR-specific patterns before WHAT_DOES
@@ -526,7 +529,7 @@ function detectDirectIntent(query, results) {
   }
 
   // SPECIFIC PROJECT DETECTION — "tell me about [project name]" or "has he built [type]"
-  const projectNames = ['rorep', 'eworld', 'ewash', 'sonturk', 'geeksflow', 'ggt', 'church', 'hydroflow', 'gradea', 'grade-a', 'healthe', 'easyprofile', 'shopmart', 'student', 'auditor'];
+  const projectNames = ['rorep', 'eworld', 'ewash', 'sonturk', 'geeksflow', 'ggt', 'church', 'justfreddiesgh', 'hydroflow', 'gradea', 'grade-a', 'healthe', 'easyprofile', 'shopmart', 'student', 'auditor'];
   const mentionedProject = projectNames.find(name => tokens.has(name) || q.includes(name));
   if (mentionedProject && (q.includes('about') || q.includes('tell me') || q.includes('what is') || q.includes('what is the'))) {
     return null;
@@ -547,6 +550,7 @@ function detectDirectIntent(query, results) {
     if (q.includes('dashboard') || q.includes('admin')) return null;
     if (q.includes('supermarket') || q.includes('grocery')) return null;
     if (q.includes('student') || q.includes('school')) return null;
+    if (q.includes('restaurant') || q.includes('food') || q.includes('dining')) return null;
   }
 
   // SPECIFIC TOPIC DETECTION — "tell me about his skills", "tell me about his projects", etc.
@@ -556,7 +560,7 @@ function detectDirectIntent(query, results) {
   }
 
   if (q.includes('about') && (tokens.has('project') || tokens.has('projects') || tokens.has('work') || tokens.has('built'))) {
-    return "Julius has built **20+ projects** including:\n\n**Flagship:** AI Website Auditor (offline AI RAG platform), eWorld (mobile booking app), ROREP (NGO website with donations).\n\n**Client Work:** Sonturk (supermarket ecosystem), GeeksFlow (project management), Church Management, GGT Print POS.\n\n**Personal Projects:** HydroFlow (water tracking), Grade-A (education), Healthe (health & wellness), EasyProfile (identity management), ShopMart (e-commerce), Student Management.\n\nWant to know about a specific project?";
+    return "Julius has built **20+ projects** including:\n\n**Flagship:** AI Website Auditor (offline AI RAG platform), eWorld (mobile booking app), ROREP (NGO website with donations).\n\n**Client Work:** Sonturk (supermarket ecosystem), GeeksFlow (project management), Church Management, GGT Print POS, justfreddiesgh (restaurant website).\n\n**Personal Projects:** HydroFlow (water tracking), Grade-A (education), Healthe (health & wellness), EasyProfile (identity management), ShopMart (e-commerce), SmartSkuul.\n\nWant to know about a specific project?";
   }
 
   // WHO IS HE / ABOUT — only match when asking about Julius specifically
@@ -643,11 +647,61 @@ function generateResponse(query, results, corpus) {
   return responseParts.join('\n\n') + followUp;
 }
 
-// Pre-build the index
-const RAG_INDEX = buildIndex(KNOWLEDGE_CORPUS);
+// Build the system prompt from knowledge corpus
+function buildSystemPrompt() {
+  const sections = [];
+  
+  // Group by category
+  const byCategory = {};
+  KNOWLEDGE_CORPUS.forEach(chunk => {
+    if (!byCategory[chunk.category]) byCategory[chunk.category] = [];
+    byCategory[chunk.category].push(chunk.text);
+  });
+  
+  for (const [category, texts] of Object.entries(byCategory)) {
+    sections.push(`## ${category.toUpperCase()}\n${texts.join('\n\n')}`);
+  }
+  
+  return `You are Julius Dagana's AI Portfolio Assistant. You are friendly, helpful, and knowledgeable about Julius's work.
 
-// Main response function
-function getResponse(message) {
+IMPORTANT RULES:
+- Answer questions directly and concisely. No vague or overly long responses.
+- Use the information below about Julius to answer questions accurately.
+- If asked about something not in your knowledge, say you don't know and suggest related topics.
+- Keep responses under 3 paragraphs unless the user asks for details.
+- Use markdown formatting (bold, lists) to make responses readable.
+- Never make up information about Julius that isn't in your knowledge base.
+- Be conversational and natural, not robotic.
+
+KNOWLEDGE BASE:
+
+${sections.join('\n\n---\n\n')}`;
+}
+
+const SYSTEM_PROMPT = buildSystemPrompt();
+
+// Main response function — uses Gemini AI when configured, falls back to TF-IDF
+async function getResponse(message) {
+  // Try Gemini first
+  if (geminiModel && GEMINI_API_KEY) {
+    try {
+      const result = await geminiModel.generateContent([
+        { role: 'user', parts: [{ text: message }] }
+      ], {
+        systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] }
+      });
+      return result.response.text();
+    } catch (error) {
+      console.error('Gemini API error, falling back to TF-IDF:', error);
+      // Fall back to TF-IDF
+      const RAG_INDEX = buildIndex(KNOWLEDGE_CORPUS);
+      const results = searchQuery(message, RAG_INDEX, KNOWLEDGE_CORPUS, 8);
+      return generateResponse(message, results, KNOWLEDGE_CORPUS);
+    }
+  }
+  
+  // No Gemini configured — use TF-IDF fallback
+  const RAG_INDEX = buildIndex(KNOWLEDGE_CORPUS);
   const results = searchQuery(message, RAG_INDEX, KNOWLEDGE_CORPUS, 8);
   return generateResponse(message, results, KNOWLEDGE_CORPUS);
 }
@@ -713,16 +767,30 @@ export default function ChatModal({ isOpen, onClose }) {
 
     // Generate bot response
     setIsTyping(true);
-    setTimeout(() => {
+    
+    // Store the user input in a ref so the async callback can access it
+    const userQuestion = input;
+    
+    getResponse(userQuestion).then((responseText) => {
       const botMessage = {
         id: Date.now() + 1,
-        text: getResponse(input),
+        text: responseText,
         sender: "bot",
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, botMessage]);
       setIsTyping(false);
-    }, 800);
+    }).catch((error) => {
+      console.error('Chat error:', error);
+      const errorMessage = {
+        id: Date.now() + 1,
+        text: "Sorry, I'm having trouble connecting right now. Please try again.",
+        sender: "bot",
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, errorMessage]);
+      setIsTyping(false);
+    });
   };
 
   const handleKeyDown = (e) => {
@@ -736,14 +804,6 @@ export default function ChatModal({ isOpen, onClose }) {
     <AnimatePresence>
       {isOpen && (
         <>
-          {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
-          />
           
           {/* Chat Window */}
           <motion.div

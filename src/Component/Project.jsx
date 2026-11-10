@@ -1,4 +1,5 @@
-import React, { createElement } from "react";
+import React, { createElement, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ExternalLink,
@@ -12,13 +13,18 @@ import {
 import { projects } from "../data/projects";
 import { eWorldCaseStudy } from "../data/eWorld";
 
-const RenderProjectCard = ({ project, index }) => (
+const RenderProjectCard = ({ project, index, isHighlighted, cardRef }) => (
   <motion.div
+    ref={cardRef}
     initial={{ opacity: 0, y: 50 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.6, delay: index * 0.2 }}
-    className="group relative h-[30rem] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+    className={`group relative h-[30rem] rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 ${
+      isHighlighted
+        ? "ring-4 ring-blue-500 ring-offset-4 ring-offset-gray-900 shadow-2xl shadow-blue-500/50 scale-[1.02]"
+        : "shadow-lg hover:shadow-2xl"
+    }`}
   >
     <div className="absolute inset-0">
       <img
@@ -86,6 +92,16 @@ const RenderProjectCard = ({ project, index }) => (
 );
 
 const Project = () => {
+  const [searchParams] = useSearchParams();
+  const highlightedTitle = searchParams.get("highlight");
+  const highlightedCardRef = React.useRef(null);
+
+  useEffect(() => {
+    if (highlightedTitle && highlightedCardRef.current) {
+      highlightedCardRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [highlightedTitle]);
+
   return (
     <div className="min-h-screen bg-[#fcfcfd] py-16 sm:py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,7 +130,13 @@ const Project = () => {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
             {projects.filter(p => p.category === "featured").map((project, index) => (
-              <RenderProjectCard key={project.title} project={project} index={index} />
+              <RenderProjectCard
+                key={project.title}
+                project={project}
+                index={index}
+                isHighlighted={project.title === highlightedTitle}
+                cardRef={project.title === highlightedTitle ? highlightedCardRef : null}
+              />
             ))}
           </div>
         </div>
@@ -131,7 +153,13 @@ const Project = () => {
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
             {projects.filter(p => p.category === "client").map((project, index) => (
-              <RenderProjectCard key={project.title} project={project} index={index} />
+              <RenderProjectCard
+                key={project.title}
+                project={project}
+                index={index}
+                isHighlighted={project.title === highlightedTitle}
+                cardRef={project.title === highlightedTitle ? highlightedCardRef : null}
+              />
             ))}
           </div>
         </div>

@@ -5,7 +5,7 @@
 export const eWorldProject = {
   title: "eWorld",
   image: "/Ewash.webp",
-  link: "#",
+  link: "https://eworld-policies.vercel.app/",
   gitLink: "https://github.com/Julius-git-coder/Ewash-On-Back.git",
   gradient: "from-emerald-600 to-teal-500",
   homeSummaryClient:
